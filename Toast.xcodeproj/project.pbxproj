@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		965E2C4C158258B30007F167 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4B158258B30007F167 /* UIKit.framework */; };
+		965E2C4E158258B30007F167 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4D158258B30007F167 /* Foundation.framework */; };
+		965E2C50158258B30007F167 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4F158258B30007F167 /* CoreGraphics.framework */; };
+		965E2C52158258B30007F167 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C51158258B30007F167 /* CoreData.framework */; };
+		965E2C58158258B30007F167 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 965E2C56158258B30007F167 /* InfoPlist.strings */; };
+		965E2C5A158258B30007F167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C59158258B30007F167 /* main.m */; };
+		965E2C5E158258B30007F167 /* STRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C5D158258B30007F167 /* STRAppDelegate.m */; };
+		965E2C61158258B30007F167 /* Toast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C5F158258B30007F167 /* Toast.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		965E2C47158258B30007F167 /* Toast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		965E2C4B158258B30007F167 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		965E2C4D158258B30007F167 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		965E2C4F158258B30007F167 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		965E2C51158258B30007F167 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		965E2C55158258B30007F167 /* Toast-Info.plist */ = {isa = PBXFileReference; path = "Toast-Info.plist"; sourceTree = "<group>"; };
+		965E2C57158258B30007F167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		965E2C59158258B30007F167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		965E2C5B158258B30007F167 /* Toast-Prefix.pch */ = {isa = PBXFileReference; path = "Toast-Prefix.pch"; sourceTree = "<group>"; };
+		965E2C5C158258B30007F167 /* STRAppDelegate.h */ = {isa = PBXFileReference; path = STRAppDelegate.h; sourceTree = "<group>"; };
+		965E2C5D158258B30007F167 /* STRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STRAppDelegate.m; sourceTree = "<group>"; };
+		965E2C60158258B30007F167 /* Toast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Toast.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		965E2C44158258B30007F167 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				965E2C4C158258B30007F167 /* UIKit.framework in Frameworks */,
+				965E2C4E158258B30007F167 /* Foundation.framework in Frameworks */,
+				965E2C50158258B30007F167 /* CoreGraphics.framework in Frameworks */,
+				965E2C52158258B30007F167 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		965E2C3C158258B30007F167 = {
+			isa = PBXGroup;
+			children = (
+				965E2C53158258B30007F167 /* Toast */,
+				965E2C4A158258B30007F167 /* Frameworks */,
+				965E2C48158258B30007F167 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		965E2C48158258B30007F167 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				965E2C47158258B30007F167 /* Toast.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		965E2C4A158258B30007F167 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				965E2C4B158258B30007F167 /* UIKit.framework */,
+				965E2C4D158258B30007F167 /* Foundation.framework */,
+				965E2C4F158258B30007F167 /* CoreGraphics.framework */,
+				965E2C51158258B30007F167 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		965E2C53158258B30007F167 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				965E2C5C158258B30007F167 /* STRAppDelegate.h */,
+				965E2C5D158258B30007F167 /* STRAppDelegate.m */,
+				965E2C5F158258B30007F167 /* Toast.xcdatamodeld */,
+				965E2C54158258B30007F167 /* Supporting Files */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		965E2C54158258B30007F167 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				965E2C55158258B30007F167 /* Toast-Info.plist */,
+				965E2C56158258B30007F167 /* InfoPlist.strings */,
+				965E2C59158258B30007F167 /* main.m */,
+				965E2C5B158258B30007F167 /* Toast-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		965E2C46158258B30007F167 /* Toast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 965E2C64158258B30007F167 /* Build configuration list for PBXNativeTarget "Toast" */;
+			buildPhases = (
+				965E2C43158258B30007F167 /* Sources */,
+				965E2C44158258B30007F167 /* Frameworks */,
+				965E2C45158258B30007F167 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Toast;
+			productName = Toast;
+			productReference = 965E2C47158258B30007F167 /* Toast.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		965E2C3E158258B30007F167 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = STR;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Strabo;
+			};
+			buildConfigurationList = 965E2C41158258B30007F167 /* Build configuration list for PBXProject "Toast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 965E2C3C158258B30007F167;
+			productRefGroup = 965E2C48158258B30007F167 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				965E2C46158258B30007F167 /* Toast */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		965E2C45158258B30007F167 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				965E2C58158258B30007F167 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		965E2C43158258B30007F167 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				965E2C5A158258B30007F167 /* main.m in Sources */,
+				965E2C5E158258B30007F167 /* STRAppDelegate.m in Sources */,
+				965E2C61158258B30007F167 /* Toast.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		965E2C56158258B30007F167 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				965E2C57158258B30007F167 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		965E2C62158258B30007F167 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		965E2C63158258B30007F167 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		965E2C65158258B30007F167 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Toast/Toast-Prefix.pch";
+				INFOPLIST_FILE = "Toast/Toast-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		965E2C66158258B30007F167 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Toast/Toast-Prefix.pch";
+				INFOPLIST_FILE = "Toast/Toast-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		965E2C41158258B30007F167 /* Build configuration list for PBXProject "Toast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				965E2C62158258B30007F167 /* Debug */,
+				965E2C63158258B30007F167 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		965E2C64158258B30007F167 /* Build configuration list for PBXNativeTarget "Toast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				965E2C65158258B30007F167 /* Debug */,
+				965E2C66158258B30007F167 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		965E2C5F158258B30007F167 /* Toast.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				965E2C60158258B30007F167 /* Toast.xcdatamodel */,
+			);
+			currentVersion = 965E2C60158258B30007F167 /* Toast.xcdatamodel */;
+			path = Toast.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 965E2C3E158258B30007F167 /* Project object */;
+}
