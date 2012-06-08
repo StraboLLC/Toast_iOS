@@ -15,6 +15,7 @@
 		965E2C5A158258B30007F167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C59158258B30007F167 /* main.m */; };
 		965E2C5E158258B30007F167 /* STRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C5D158258B30007F167 /* STRAppDelegate.m */; };
 		965E2C61158258B30007F167 /* Toast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C5F158258B30007F167 /* Toast.xcdatamodeld */; };
+		965E2C68158258C80007F167 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965E2C67158258C80007F167 /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +24,14 @@
 		965E2C4D158258B30007F167 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		965E2C4F158258B30007F167 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		965E2C51158258B30007F167 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		965E2C55158258B30007F167 /* Toast-Info.plist */ = {isa = PBXFileReference; path = "Toast-Info.plist"; sourceTree = "<group>"; };
+		965E2C55158258B30007F167 /* Toast-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Toast-Info.plist"; sourceTree = "<group>"; };
 		965E2C57158258B30007F167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		965E2C59158258B30007F167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		965E2C5B158258B30007F167 /* Toast-Prefix.pch */ = {isa = PBXFileReference; path = "Toast-Prefix.pch"; sourceTree = "<group>"; };
-		965E2C5C158258B30007F167 /* STRAppDelegate.h */ = {isa = PBXFileReference; path = STRAppDelegate.h; sourceTree = "<group>"; };
+		965E2C5B158258B30007F167 /* Toast-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Toast-Prefix.pch"; sourceTree = "<group>"; };
+		965E2C5C158258B30007F167 /* STRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STRAppDelegate.h; sourceTree = "<group>"; };
 		965E2C5D158258B30007F167 /* STRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STRAppDelegate.m; sourceTree = "<group>"; };
 		965E2C60158258B30007F167 /* Toast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Toast.xcdatamodel; sourceTree = "<group>"; };
+		965E2C67158258C80007F167 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				965E2C5C158258B30007F167 /* STRAppDelegate.h */,
 				965E2C5D158258B30007F167 /* STRAppDelegate.m */,
 				965E2C5F158258B30007F167 /* Toast.xcdatamodeld */,
+				965E2C67158258C80007F167 /* MainStoryboard.storyboard */,
 				965E2C54158258B30007F167 /* Supporting Files */,
 			);
 			path = Toast;
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				965E2C58158258B30007F167 /* InfoPlist.strings in Resources */,
+				965E2C68158258C80007F167 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
