@@ -10,6 +10,9 @@
       |_| |___|__,|___|_|    |___|_  |  |_____|_| |_| |__,|___|___|
                                  |___|                             
 
+Toast Mobile Application
+========================
 
-Toast by Strabo
-===
+
+
+Copyright (c) 2012 Strabo, LLC. All rights reserved.
