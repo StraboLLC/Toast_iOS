@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STRRootViewController.h"
 
 @interface STRAppDelegate : UIResponder <UIApplicationDelegate>
 
