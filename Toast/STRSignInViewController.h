@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface STRSignInViewController : UIViewController
+@interface STRSignInViewController : UIViewController {
+    
+    IBOutlet UITextField * emailField;
+    IBOutlet UITextField * passwordField;
+
+}
+
+/**
+ Handles the action when the login button is pressed.
+ 
+ Should call the login method on the login manager to log the user in.
+ */
+-(IBAction)signInButtonWasPressed:(id)sender;
 
 @end

@@ -18,6 +18,9 @@
 		965E2C68158258C80007F167 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965E2C67158258C80007F167 /* MainStoryboard.storyboard */; };
 		969F1DA7158687D20094154B /* STRSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969F1DA6158687D20094154B /* STRSignInViewController.m */; };
 		96C9ABDD15867259002F8260 /* STRRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C9ABDC15867259002F8260 /* STRRootViewController.m */; };
+		96F422C61586A9BC002AE72D /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422C51586A9BC002AE72D /* NSString+MD5.m */; };
+		96F422CD1586AA68002AE72D /* CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422CA1586AA68002AE72D /* CurrentUser.m */; };
+		96F422CE1586AA68002AE72D /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422CC1586AA68002AE72D /* LoginManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,13 @@
 		969F1DA6158687D20094154B /* STRSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRSignInViewController.m; sourceTree = "<group>"; };
 		96C9ABDB15867259002F8260 /* STRRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRRootViewController.h; sourceTree = "<group>"; };
 		96C9ABDC15867259002F8260 /* STRRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRRootViewController.m; sourceTree = "<group>"; };
+		96F422C41586A9BC002AE72D /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		96F422C51586A9BC002AE72D /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		96F422C91586AA68002AE72D /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUser.h; sourceTree = "<group>"; };
+		96F422CA1586AA68002AE72D /* CurrentUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentUser.m; sourceTree = "<group>"; };
+		96F422CB1586AA68002AE72D /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
+		96F422CC1586AA68002AE72D /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
+		96F422D11586AE21002AE72D /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +96,14 @@
 		965E2C53158258B30007F167 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
+				96F422D11586AE21002AE72D /* Header.h */,
 				965E2C5C158258B30007F167 /* STRAppDelegate.h */,
 				965E2C5D158258B30007F167 /* STRAppDelegate.m */,
 				965E2C5F158258B30007F167 /* Toast.xcdatamodeld */,
 				965E2C67158258C80007F167 /* MainStoryboard.storyboard */,
 				96C9ABDF1586725F002F8260 /* View Controllers */,
+				96F422CF1586AA70002AE72D /* Model Objects */,
+				96F422C81586A9C9002AE72D /* Categories */,
 				965E2C54158258B30007F167 /* Supporting Files */,
 			);
 			path = Toast;
@@ -112,10 +125,46 @@
 			children = (
 				96C9ABDB15867259002F8260 /* STRRootViewController.h */,
 				96C9ABDC15867259002F8260 /* STRRootViewController.m */,
+				96DFCB1515868FDF002BA57C /* Log In */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		96DFCB1515868FDF002BA57C /* Log In */ = {
+			isa = PBXGroup;
+			children = (
 				969F1DA5158687D20094154B /* STRSignInViewController.h */,
 				969F1DA6158687D20094154B /* STRSignInViewController.m */,
 			);
-			name = "View Controllers";
+			name = "Log In";
+			sourceTree = "<group>";
+		};
+		96F422C81586A9C9002AE72D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				96F422C41586A9BC002AE72D /* NSString+MD5.h */,
+				96F422C51586A9BC002AE72D /* NSString+MD5.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		96F422CF1586AA70002AE72D /* Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				96F422D01586AA82002AE72D /* Login */,
+			);
+			name = "Model Objects";
+			sourceTree = "<group>";
+		};
+		96F422D01586AA82002AE72D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				96F422CB1586AA68002AE72D /* LoginManager.h */,
+				96F422CC1586AA68002AE72D /* LoginManager.m */,
+				96F422C91586AA68002AE72D /* CurrentUser.h */,
+				96F422CA1586AA68002AE72D /* CurrentUser.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +236,9 @@
 				965E2C61158258B30007F167 /* Toast.xcdatamodeld in Sources */,
 				96C9ABDD15867259002F8260 /* STRRootViewController.m in Sources */,
 				969F1DA7158687D20094154B /* STRSignInViewController.m in Sources */,
+				96F422C61586A9BC002AE72D /* NSString+MD5.m in Sources */,
+				96F422CD1586AA68002AE72D /* CurrentUser.m in Sources */,
+				96F422CE1586AA68002AE72D /* LoginManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

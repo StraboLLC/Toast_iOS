@@ -14,15 +14,6 @@
 
 @implementation STRSignInViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad
@@ -40,6 +31,12 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Button Handling
+
+-(IBAction)signInButtonWasPressed:(id)sender {
+    NSLog(@"Sign In button was pressed.");
 }
 
 @end
