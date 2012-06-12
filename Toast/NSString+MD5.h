@@ -11,7 +11,6 @@
 /**
  Extends NSString with a function produce a string encrypted with the MD5 hash algorithm.
  */
-
 @interface NSString(MD5)
 
 /**

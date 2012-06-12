@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "STRRootViewController.h"
+#import "LoginManager.h"
 
-@interface STRAppDelegate : UIResponder <UIApplicationDelegate>
+@interface STRAppDelegate : UIResponder <UIApplicationDelegate> {
+    LoginManager * loginManager;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic, readonly) LoginManager * loginManager;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

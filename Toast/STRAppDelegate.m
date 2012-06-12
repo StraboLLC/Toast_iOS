@@ -8,9 +8,18 @@
 
 #import "STRAppDelegate.h"
 
+@interface STRAppDelegate ()
+
+@property(nonatomic, strong, readwrite) LoginManager * loginManager;
+
+@end
+
 @implementation STRAppDelegate
 
 @synthesize window = _window;
+
+@synthesize loginManager;
+
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
@@ -18,6 +27,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [_window setBackgroundColor:[UIColor redColor]];
+    
+    // Set up the login manager
+    loginManager = [[LoginManager alloc] init];
+    
+    // For testing only
+    //[loginManager logUserInWithEmail:@"potter@isaprick.com" password:@"asdf"];
+    //[loginManager registerNewUserWithName:@"Potter Fucks Goats" email:@"potter@isaprick.com" password:@"asdf"];
+    [loginManager logCurrentUserOut];
+    
     return YES;
 }
 

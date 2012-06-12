@@ -13,5 +13,14 @@
 #define kSTRUploadSalt @"fuckch0p"
 #define kSTRDownloadSalt @"g04ts"
 
+// Server connections
+#define KSTRBaseURL @"http://toastit.heroku.com/"
+#define kSTRLoginURL KSTRBaseURL @"/mobile/api/login"
+#define kSTRRegisterURL KSTRBaseURL @"/mobile/api/register"
+
+// NSUserDefaults constants
+#define STRNSUserDefaultsTokenKey @"STRNSUserDefaultsTokenKey"
+#define STRNSUserDefaultsEmailKey @"STRNSUserDefaultsEmailKey"
+#define STRNSUserDefaultsUserIDKey @"STRNSUserDefaultsUserIDKey"
 
 #endif

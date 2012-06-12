@@ -5,11 +5,13 @@
 //  Created by Thomas Beatty on 6/12/12.
 //  Copyright (c) 2012 Strabo. All rights reserved.
 //
+#import "Constants.h"
 
 #import <Foundation/Foundation.h>
 #import "CurrentUser.h"
 
-#import "NSString+MD5.h"
+#import "NSString+uploadHash.h"
+#import "NSString+downloadHash.h"
 
 /**
  The LoginManagerDelegate protocol defines optional methods for receiving status updates about a login to the Strabo and Facebook systems.
@@ -28,7 +30,7 @@
 /**
  Called in the case of a failed login.
  
- The error contains an error number as well as a text error that can be presented to the user.
+ The error contains an error number as well as a text error that can be presented to the user. Error is nil if the error is unknown.
  */
 -(void)loginDidFailWithError:(NSError *)error;
 
@@ -107,7 +109,7 @@
  
  Builds a post request with the create user data and sends it to the server. The server attempts to create a new user and responds. Upon receiving a server response, one of two delegate methods, userAccountCreatedSuccessfully or userAccountCreationDidFailWithError:, is called.
  */
--(void)createNewUserWithName:(NSString *)name email:(NSString *)emailAddress password:(NSString *)password;
+-(void)registerNewUserWithName:(NSString *)name email:(NSString *)emailAddress password:(NSString *)password;
 
 /**
  Logs the current user out.
@@ -120,6 +122,11 @@
 /// @name Login Actions
 ///---------------------------------------------------------------------------------------
 
+/**
+ Determines whether the user is logged in.
+ 
+ An alternative to checking to see if currentUser is nil.
+ */
 -(BOOL)isUserLoggedIn;
 
 @end
