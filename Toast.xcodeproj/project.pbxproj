@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		963EE5151587BF870046BD04 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 963EE5141587BF870046BD04 /* SenTestingKit.framework */; };
+		963EE5161587BF870046BD04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4B158258B30007F167 /* UIKit.framework */; };
+		963EE5171587BF870046BD04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4D158258B30007F167 /* Foundation.framework */; };
+		963EE51D1587BF870046BD04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 963EE51B1587BF870046BD04 /* InfoPlist.strings */; };
+		963EE5201587BF870046BD04 /* ToastLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EE51F1587BF870046BD04 /* ToastLogicTests.m */; };
 		965E2C4C158258B30007F167 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4B158258B30007F167 /* UIKit.framework */; };
 		965E2C4E158258B30007F167 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4D158258B30007F167 /* Foundation.framework */; };
 		965E2C50158258B30007F167 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4F158258B30007F167 /* CoreGraphics.framework */; };
@@ -23,7 +28,24 @@
 		96F422D415877321002AE72D /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422D315877321002AE72D /* LoginManager.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		963EE5261587C0DD0046BD04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 965E2C3E158258B30007F167 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 965E2C46158258B30007F167;
+			remoteInfo = Toast;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		963EE5131587BF870046BD04 /* ToastLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToastLogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		963EE5141587BF870046BD04 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		963EE51A1587BF870046BD04 /* ToastLogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToastLogicTests-Info.plist"; sourceTree = "<group>"; };
+		963EE51C1587BF870046BD04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		963EE51E1587BF870046BD04 /* ToastLogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToastLogicTests.h; sourceTree = "<group>"; };
+		963EE51F1587BF870046BD04 /* ToastLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToastLogicTests.m; sourceTree = "<group>"; };
+		963EE5211587BF870046BD04 /* ToastLogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToastLogicTests-Prefix.pch"; sourceTree = "<group>"; };
 		965E2C47158258B30007F167 /* Toast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965E2C4B158258B30007F167 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		965E2C4D158258B30007F167 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,6 +73,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		963EE50F1587BF870046BD04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963EE5151587BF870046BD04 /* SenTestingKit.framework in Frameworks */,
+				963EE5161587BF870046BD04 /* UIKit.framework in Frameworks */,
+				963EE5171587BF870046BD04 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		965E2C44158258B30007F167 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,10 +97,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		963EE5181587BF870046BD04 /* ToastLogicTests */ = {
+			isa = PBXGroup;
+			children = (
+				963EE51E1587BF870046BD04 /* ToastLogicTests.h */,
+				963EE51F1587BF870046BD04 /* ToastLogicTests.m */,
+				963EE5191587BF870046BD04 /* Supporting Files */,
+			);
+			path = ToastLogicTests;
+			sourceTree = "<group>";
+		};
+		963EE5191587BF870046BD04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				963EE51A1587BF870046BD04 /* ToastLogicTests-Info.plist */,
+				963EE51B1587BF870046BD04 /* InfoPlist.strings */,
+				963EE5211587BF870046BD04 /* ToastLogicTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		965E2C3C158258B30007F167 = {
 			isa = PBXGroup;
 			children = (
 				965E2C53158258B30007F167 /* Toast */,
+				963EE5181587BF870046BD04 /* ToastLogicTests */,
 				965E2C4A158258B30007F167 /* Frameworks */,
 				965E2C48158258B30007F167 /* Products */,
 			);
@@ -78,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				965E2C47158258B30007F167 /* Toast.app */,
+				963EE5131587BF870046BD04 /* ToastLogicTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +143,7 @@
 				965E2C4D158258B30007F167 /* Foundation.framework */,
 				965E2C4F158258B30007F167 /* CoreGraphics.framework */,
 				965E2C51158258B30007F167 /* CoreData.framework */,
+				963EE5141587BF870046BD04 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,6 +225,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		963EE5121587BF870046BD04 /* ToastLogicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 963EE5241587BF870046BD04 /* Build configuration list for PBXNativeTarget "ToastLogicTests" */;
+			buildPhases = (
+				963EE50E1587BF870046BD04 /* Sources */,
+				963EE50F1587BF870046BD04 /* Frameworks */,
+				963EE5101587BF870046BD04 /* Resources */,
+				963EE5111587BF870046BD04 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				963EE5271587C0DD0046BD04 /* PBXTargetDependency */,
+			);
+			name = ToastLogicTests;
+			productName = ToastLogicTests;
+			productReference = 963EE5131587BF870046BD04 /* ToastLogicTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		965E2C46158258B30007F167 /* Toast */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 965E2C64158258B30007F167 /* Build configuration list for PBXNativeTarget "Toast" */;
@@ -210,11 +284,20 @@
 			projectRoot = "";
 			targets = (
 				965E2C46158258B30007F167 /* Toast */,
+				963EE5121587BF870046BD04 /* ToastLogicTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		963EE5101587BF870046BD04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963EE51D1587BF870046BD04 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		965E2C45158258B30007F167 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,7 +309,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		963EE5111587BF870046BD04 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		963EE50E1587BF870046BD04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963EE5201587BF870046BD04 /* ToastLogicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		965E2C43158258B30007F167 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,7 +351,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		963EE5271587C0DD0046BD04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 965E2C46158258B30007F167 /* Toast */;
+			targetProxy = 963EE5261587C0DD0046BD04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		963EE51B1587BF870046BD04 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				963EE51C1587BF870046BD04 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		965E2C56158258B30007F167 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -256,6 +379,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		963EE5221587BF870046BD04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toast.app/Toast";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ToastLogicTests/ToastLogicTests-Prefix.pch";
+				INFOPLIST_FILE = "ToastLogicTests/ToastLogicTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		963EE5231587BF870046BD04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toast.app/Toast";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ToastLogicTests/ToastLogicTests-Prefix.pch";
+				INFOPLIST_FILE = "ToastLogicTests/ToastLogicTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		965E2C62158258B30007F167 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -330,6 +487,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		963EE5241587BF870046BD04 /* Build configuration list for PBXNativeTarget "ToastLogicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				963EE5221587BF870046BD04 /* Debug */,
+				963EE5231587BF870046BD04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		965E2C41158258B30007F167 /* Build configuration list for PBXProject "Toast" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

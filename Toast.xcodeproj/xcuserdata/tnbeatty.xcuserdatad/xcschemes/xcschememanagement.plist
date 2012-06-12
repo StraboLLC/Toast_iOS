@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ToastLogicTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>963EE5121587BF870046BD04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>965E2C46158258B30007F167</key>
 		<dict>
 			<key>primary</key>
