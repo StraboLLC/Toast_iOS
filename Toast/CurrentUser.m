@@ -10,6 +10,6 @@
 
 @implementation CurrentUser
 
-@synthesize token, userID;
+@synthesize name, email, token, userID;
 
 @end

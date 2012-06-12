@@ -14,6 +14,8 @@
  This object holds information pertaining to a Strabo user.
  */
 @interface CurrentUser : NSObject {
+    NSString * name;
+    NSString * email;
     NSString * token;
     NSNumber * userID;
 }
@@ -21,6 +23,20 @@
 ///---------------------------------------------------------------------------------------
 /// @name User Login Data
 ///---------------------------------------------------------------------------------------
+
+/**
+ User-defined name.
+ 
+ This should be the user's name or username. It is non-strabo-specific and could be many words.
+ */
+@property(nonatomic, strong)NSString * name;
+
+/**
+ The user's email address.
+ 
+ A unique string used to identify the user.
+ */
+@property(nonatomic, strong)NSString * email;
 
 /** 
  Strabo-specific login token. 

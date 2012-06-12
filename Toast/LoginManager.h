@@ -1,15 +1,14 @@
 //
 //  LoginManager.h
-//  Ramble
+//  Toast
 //
-//  Created by Thomas Beatty on 1/18/12.
-//  Copyright (c) 2012 Strabo LLC. All rights reserved.
+//  Created by Thomas Beatty on 6/12/12.
+//  Copyright (c) 2012 Strabo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Constants.h"
-#import "FBConnect.h"
 #import "CurrentUser.h"
+
 #import "NSString+MD5.h"
 
 /**
@@ -20,97 +19,107 @@
 @optional
 
 /**
- Called upon successful login to both the Strabo and Facebook systems.
+ Called in the case of a successful login.
+ 
+ Called when the user is completely logged in to the Strabo system and the login is confirmed.
  */
--(void)userDidLoginSuccessfully;
+-(void)userWasLoggedInSuccessfully;
 
 /**
- Called if the facebook login failed.
+ Called in the case of a failed login.
  
- @param error The error which caused the Facebook login to fail.
+ The error contains an error number as well as a text error that can be presented to the user.
  */
--(void)facebookLoginDidFailWithError:(NSError *)error;
+-(void)loginDidFailWithError:(NSError *)error;
 
 /**
- Called if the strabo login failed.
- 
- @param error The error which caused the Strabo login to fail.
+ Called when the user has been successfully logged out.
  */
--(void)straboLoginDidFailWithError:(NSError *)error;
+-(void)userWasLoggedOutSuccessfully;
+
+/**
+ Called if a user account is created successfully.
+ 
+ Only called if the request is sent and the user creation is verified by the server.
+ */
+-(void)userAccountCreatedSuccessfully;
+
+/**
+ Called if a user account was not created successfully.
+ 
+ 
+ */
+-(void)userAccountCreationDidFailWithError:(NSError *)error;
+
 @end
 
 /**
- The LoginManager is used to log a user into any web services associated with the product.
+ The LoginManager is used to log a user into the Strabo system. It should be owned by the Application Delegate and accessed through the appDelegate object although the loginManagerDelegate can be set to any controller that is handling logins and log outs.
  
- Due to the nature of the Facebook login API, the application delegate should instantiate only one LoginManager at application start. To reference information about the current logged in user, it is important to refreence the specific LoginManager whose parent is the AppDelegate. Again, due to the nature of the Facebook API, the LoginManager is not a standalone login system and needs to be connected with the AppDelegate to receive callbacks from Facebook.
+ ##Logging the User In
  
- @bug The LoginManager should be a standalone system its tie to the AppDelegate will need to be severed in a future version of the application.
+ To log the user in, logUserInWithEmail:password: should be called. The object that calls this method should also implement the delegate methods userWasLoggedInSuccessfully and loginDidFailWithError to determine the status of a login.
  
- ##Working with CurrentUser
+ ##Logging the User Out
  
- Accessing CurrentUser from other parts of the application can be done by obtaining a pointer to the LoginManager which is the child of the AppDelegate. This can be done by using code similar to the following:
+ To log the user out, you should call the logCurrentUserOut method. Implementing userWasLoggedOutSuccessfully will allow you to know when the user was successfully logged out.
  
-        AppDelegate * appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        LoginManager * loginManager = appDelegate.loginManager;
+ ##Creating New User Accounts
  
- Then the [CurrentUser](CurrentUser) object can be accessed (it is the object associated with the object currentUser) to obtain essential user information.
+ To create a new user account, call the createNewUserWithName:email:password: method.
  
- ##Login Flow
+ ##Checking to see if a user is logged in.
  
- When logInWithFacebook is called, the object attempts to log into the facebook system. If Facebook login is successful, the application performs the necessary tasks to log into the Strabo system. Once a Strabo login is completed successfully, the LoginManager alerts its [delegate](LoginManagerDelegate). If there are any errors in either the Facebook or Strabo logins, seperate error delegate methods are called, alerting the receiver of a failed login.
- 
- ##Checking for a Current User
- 
- To check to see if a user is currently logged in, determine if the currentUser property is set to nil. A nil response verifies that a user is not currently logged in while a non-nil response verifies the presence of a logged in user. For example:
-        
-        if (currentUser) {
-            NSLog("User is logged in. Now logging the current user out");
-            [loginManager logOut];
-        } else {
-            NSLog("There is no user currently logged in");
-        }
+ You can check to see if a user is logged in with the following techniques:
+    
+    * Check to see if currentUser == nil. If true, the user is logged out. If currentUser exists, the user is logged in.
+    * Call the isUserLoggedIn method to determine if the user logged in.
  */
 @interface LoginManager : NSObject {
     id delegate;
-    Facebook * facebook;
     CurrentUser * currentUser;
 }
 
+/**
+ The LoginManagerDelegate to determine the status of the user login after login or logout are called.
+ */
+@property(strong) id delegate;
+
+/**
+ The object to hold information about the current user.
+ */
+@property(nonatomic, strong) CurrentUser * currentUser;
+
+
 ///---------------------------------------------------------------------------------------
-/// @name Specifying a Delegate
+/// @name Login Actions
 ///---------------------------------------------------------------------------------------
- 
-/**
- The delegate for the receiver.
- */
-@property(strong)id delegate;
 
 /**
- The Facebook object necessary for the Facebook login.
+ Logs the user into the Strabo system with an email and password.
  
- This is the facebook login object specified in the Facebook login [API](https://developers.facebook.com/docs/mobile/ios/build/#implementsso).
+ Builds a post request on the login data and then sends it to the server. Calls either userWasLoggedInSuccessfully or loginDidFailWithError: based on the server's response to the login request.
  */
-@property(nonatomic, retain)Facebook * facebook;
+-(void)logUserInWithEmail:(NSString *)emailAddress password:(NSString *)password;
 
 /**
- A [CurrentUser](CurrentUser) object to hold login information about the current user.
+ Creates a new user in the Strabo system.
  
- The currentUser should be set to nil if the user is not logged in.
+ Builds a post request with the create user data and sends it to the server. The server attempts to create a new user and responds. Upon receiving a server response, one of two delegate methods, userAccountCreatedSuccessfully or userAccountCreationDidFailWithError:, is called.
  */
-@property(nonatomic, retain)CurrentUser * currentUser;
+-(void)createNewUserWithName:(NSString *)name email:(NSString *)emailAddress password:(NSString *)password;
 
 /**
- Logs the user in using the Facebook API.
+ Logs the current user out.
  
- If the facebook login is successful, the user is then logged into the Strabo system. This method sets that chain of calls in motion.
+ Deletes the currentUser object (currentUser will return nil) and notifies the delegate via userWasLoggedOutSuccessfully.
  */
--(void)logInWithFacebook;
+-(void)logCurrentUserOut;
 
-/**
- Logs the user out.
- 
- This performs the necessary tasks to log the user out. At the end of the log out process, the currentUser property will be set to nil.
- */
--(void)logOut;
+///---------------------------------------------------------------------------------------
+/// @name Login Actions
+///---------------------------------------------------------------------------------------
+
+-(BOOL)isUserLoggedIn;
 
 @end
