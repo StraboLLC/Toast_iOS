@@ -2,14 +2,14 @@
 //  STRRootViewController.m
 //  Toast
 //
-//  Created by Thomas Beatty on 6/11/12.
+//  Created by Thomas Beatty on 6/13/12.
 //  Copyright (c) 2012 Strabo. All rights reserved.
 //
 
 #import "STRRootViewController.h"
 
-@interface STRRootViewController ()
-
+@interface STRRootViewController (InternalMethods)
+-(void)presentLoginControllerIfNecessary;
 @end
 
 @implementation STRRootViewController
@@ -23,24 +23,22 @@
     return self;
 }
 
-#pragma mark - View Lifecycle
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    // Load the child view controllers
-    loginNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginNavigationController"];
+
+	// Load the child view controllers
+    UINavigationController * albumNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"albumNavigationController"];
     
-    // Set up the child view controllers
-    loginNavigationController.view.frame = self.view.frame;
-    loginNavigationController.navigationBar.hidden = YES;
-    
-    // Load the first child view
-    [self.view addSubview:loginNavigationController.view];
-    
-    // Present the nav controller
-    [self presentViewController:loginNavigationController animated:NO completion:NULL];
+    // Set up the child view controller
+    albumNavigationController.view.frame = self.view.frame;
+    albumNavigationController.navigationBar.hidden = YES;
+    [self addChildViewController:albumNavigationController];
+    [self.view addSubview:albumNavigationController.view];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self presentLoginControllerIfNecessary];
 }
 
 - (void)viewDidUnload
@@ -54,4 +52,22 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark -
+
+-(void)dismissLoginViewController {
+    NSLog(@"STRAlbumViewController: Dismissing presentedViewController.");
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+@end
+
+@implementation STRRootViewController (InternalMethods)
+-(void)presentLoginControllerIfNecessary {
+    if (![[(STRAppDelegate *)[[UIApplication sharedApplication] delegate] loginManager] isUserLoggedIn]) {
+        NSLog(@"STRRootViewController: Presenting the login screen.");
+        UINavigationController * loginNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginNavigationController"];
+        loginNavigationController.navigationBar.hidden = YES;
+        [self presentViewController:loginNavigationController animated:YES completion:nil];
+    }
+}
 @end

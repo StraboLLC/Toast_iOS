@@ -29,12 +29,10 @@
     [_window setBackgroundColor:[UIColor redColor]];
     
     // Set up the login manager
-    loginManager = [[LoginManager alloc] init];
+    self.loginManager = [[LoginManager alloc] init];
     
-    // For testing only
-    [loginManager logUserInWithEmail:@"nate@toast.com" password:@"asdf"];
-    //[loginManager registerNewUserWithName:@"Nate Beatty" email:@"nate@toast.com" password:@"asdf"];
-    [loginManager logCurrentUserOut];
+    // FOR TESTING ONLY
+    //[self.loginManager logCurrentUserOut];
     
     return YES;
 }

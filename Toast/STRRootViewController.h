@@ -2,17 +2,17 @@
 //  STRRootViewController.h
 //  Toast
 //
-//  Created by Thomas Beatty on 6/11/12.
+//  Created by Thomas Beatty on 6/13/12.
 //  Copyright (c) 2012 Strabo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "STRAppDelegate.h"
+#import "STRAlbumViewController.h"
+#import "STRSignInViewController.h"
 
-@interface STRRootViewController : UIViewController {
-    
-    // Relevant child view controllers
-    UINavigationController * loginNavigationController;
-    
-}
+@interface STRRootViewController : UIViewController
+
+-(void)dismissLoginViewController;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STRRootViewController.h"
 #import "LoginManager.h"
 
 @interface STRSignInViewController : UIViewController {
@@ -16,11 +17,22 @@
 
 }
 
+///---------------------------------------------------------------------------------------
+/// @name Button Handling
+///---------------------------------------------------------------------------------------
+
 /**
  Handles the action when the login button is pressed.
  
  Should call the login method on the login manager to log the user in.
  */
 -(IBAction)signInButtonWasPressed:(id)sender;
+
+/**
+ Handles the action when the back button is pressed.
+ 
+ Pops the current view controller from the navigation view controller stack.
+ */
+-(IBAction)backButtonWasPressed:(id)sender;
 
 @end

@@ -15,6 +15,8 @@
 		963EE5291587C8DD0046BD04 /* AppledocSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963EE5281587C8DD0046BD04 /* AppledocSettings.plist */; };
 		963EE52C1587E2510046BD04 /* NSString+uploadHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EE52B1587E2510046BD04 /* NSString+uploadHash.m */; };
 		963EE52F1587E2C10046BD04 /* NSString+downloadHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EE52E1587E2C10046BD04 /* NSString+downloadHash.m */; };
+		964C765515890E9D0020E315 /* STRAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964C765415890E9D0020E315 /* STRAlbumViewController.m */; };
+		964C765915891DFF0020E315 /* STRRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964C765815891DFF0020E315 /* STRRootViewController.m */; };
 		965E2C4C158258B30007F167 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4B158258B30007F167 /* UIKit.framework */; };
 		965E2C4E158258B30007F167 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4D158258B30007F167 /* Foundation.framework */; };
 		965E2C50158258B30007F167 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4F158258B30007F167 /* CoreGraphics.framework */; };
@@ -25,7 +27,6 @@
 		965E2C61158258B30007F167 /* Toast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C5F158258B30007F167 /* Toast.xcdatamodeld */; };
 		965E2C68158258C80007F167 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965E2C67158258C80007F167 /* MainStoryboard.storyboard */; };
 		969F1DA7158687D20094154B /* STRSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969F1DA6158687D20094154B /* STRSignInViewController.m */; };
-		96C9ABDD15867259002F8260 /* STRRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C9ABDC15867259002F8260 /* STRRootViewController.m */; };
 		96F422C61586A9BC002AE72D /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422C51586A9BC002AE72D /* NSString+MD5.m */; };
 		96F422CD1586AA68002AE72D /* CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422CA1586AA68002AE72D /* CurrentUser.m */; };
 		96F422D415877321002AE72D /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422D315877321002AE72D /* LoginManager.m */; };
@@ -54,6 +55,10 @@
 		963EE52B1587E2510046BD04 /* NSString+uploadHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+uploadHash.m"; sourceTree = "<group>"; };
 		963EE52D1587E2C10046BD04 /* NSString+downloadHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+downloadHash.h"; sourceTree = "<group>"; };
 		963EE52E1587E2C10046BD04 /* NSString+downloadHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+downloadHash.m"; sourceTree = "<group>"; };
+		964C765315890E9D0020E315 /* STRAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumViewController.h; sourceTree = "<group>"; };
+		964C765415890E9D0020E315 /* STRAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumViewController.m; sourceTree = "<group>"; };
+		964C765715891DFF0020E315 /* STRRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRRootViewController.h; sourceTree = "<group>"; };
+		964C765815891DFF0020E315 /* STRRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRRootViewController.m; sourceTree = "<group>"; };
 		965E2C47158258B30007F167 /* Toast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965E2C4B158258B30007F167 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		965E2C4D158258B30007F167 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,8 +74,6 @@
 		965E2C67158258C80007F167 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		969F1DA5158687D20094154B /* STRSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRSignInViewController.h; sourceTree = "<group>"; };
 		969F1DA6158687D20094154B /* STRSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRSignInViewController.m; sourceTree = "<group>"; };
-		96C9ABDB15867259002F8260 /* STRRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRRootViewController.h; sourceTree = "<group>"; };
-		96C9ABDC15867259002F8260 /* STRRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRRootViewController.m; sourceTree = "<group>"; };
 		96F422C41586A9BC002AE72D /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		96F422C51586A9BC002AE72D /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		96F422C91586AA68002AE72D /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUser.h; sourceTree = "<group>"; };
@@ -187,8 +190,10 @@
 		96C9ABDF1586725F002F8260 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				96C9ABDB15867259002F8260 /* STRRootViewController.h */,
-				96C9ABDC15867259002F8260 /* STRRootViewController.m */,
+				964C765715891DFF0020E315 /* STRRootViewController.h */,
+				964C765815891DFF0020E315 /* STRRootViewController.m */,
+				964C765315890E9D0020E315 /* STRAlbumViewController.h */,
+				964C765415890E9D0020E315 /* STRAlbumViewController.m */,
 				96DFCB1515868FDF002BA57C /* Log In */,
 			);
 			name = "View Controllers";
@@ -355,13 +360,14 @@
 				965E2C5A158258B30007F167 /* main.m in Sources */,
 				965E2C5E158258B30007F167 /* STRAppDelegate.m in Sources */,
 				965E2C61158258B30007F167 /* Toast.xcdatamodeld in Sources */,
-				96C9ABDD15867259002F8260 /* STRRootViewController.m in Sources */,
 				969F1DA7158687D20094154B /* STRSignInViewController.m in Sources */,
 				96F422C61586A9BC002AE72D /* NSString+MD5.m in Sources */,
 				96F422CD1586AA68002AE72D /* CurrentUser.m in Sources */,
 				96F422D415877321002AE72D /* LoginManager.m in Sources */,
 				963EE52C1587E2510046BD04 /* NSString+uploadHash.m in Sources */,
 				963EE52F1587E2C10046BD04 /* NSString+downloadHash.m in Sources */,
+				964C765515890E9D0020E315 /* STRAlbumViewController.m in Sources */,
+				964C765915891DFF0020E315 /* STRRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +516,7 @@
 				963EE5231587BF870046BD04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		965E2C41158258B30007F167 /* Build configuration list for PBXProject "Toast" */ = {
 			isa = XCConfigurationList;

@@ -32,14 +32,14 @@
 }
 
 -(void)logUserInWithEmail:(NSString *)emailAddress password:(NSString *)password {
-    NSLog(@"Attempting to log in user: %@", emailAddress);
+    NSLog(@"LoginManager: Attempting to log in user: %@", emailAddress);
     
     // Request login response from the server
     NSDictionary * keyValuePairs = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:emailAddress, password.MD5, emailAddress.uploadHash, nil] 
                                                                forKeys:[NSArray arrayWithObjects:@"email", @"password", @"token", nil]];
     NSData * responseData = [self sendSynchronousPostRequestTo:[NSURL URLWithString:kSTRLoginURL] 
                                              withKeyValuePairs:keyValuePairs];
-    NSLog(@"Returned Data: %@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+    NSLog(@"LoginManager: Returned Data: %@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
     
     // Check for errors
     NSError * error;
@@ -47,7 +47,7 @@
     // Notify the delegate of an error if one exists
     if (!responseDictionary || error) {
         if ([self.delegate respondsToSelector:@selector(loginDidFailWithError:)]) {
-            NSLog(@"Notifying delegate loginDidFailWithError: %@.", error.localizedDescription);
+            NSLog(@"LoginManager: Notifying delegate loginDidFailWithError: %@.", error.localizedDescription);
             [delegate loginDidFailWithError:error];
         }
         return;
@@ -57,7 +57,7 @@
     // Notify the delegate of an error if one exists
     if (!isValidJSON || error) {
         if ([self.delegate respondsToSelector:@selector(loginDidFailWithError:)]) {
-            NSLog(@"Notifying delegate loginDidFailWithError: %@.", error.localizedDescription);
+            NSLog(@"LoginManager: Notifying delegate loginDidFailWithError: %@.", error.localizedDescription);
             [delegate loginDidFailWithError:error];
         }
         return;
@@ -71,7 +71,7 @@
 }
 
 -(void)registerNewUserWithName:(NSString *)name email:(NSString *)emailAddress password:(NSString *)password {
-    NSLog(@"Attempting to register a user.");
+    NSLog(@"LoginManager: Attempting to register a user.");
     
     // Send a request to the server
     // Request login response from the server
@@ -79,7 +79,7 @@
                                                                forKeys:[NSArray arrayWithObjects:@"name", @"email", @"password", @"token", nil]];
     NSData * responseData = [self sendSynchronousPostRequestTo:[NSURL URLWithString:kSTRRegisterURL] 
                                              withKeyValuePairs:keyValuePairs];
-    NSLog(@"Returned Data: %@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+    NSLog(@"LoginManager: Returned Data: %@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
     
     // Check for errors
     NSError * error;
@@ -87,7 +87,7 @@
     // Notify the delegate of an error if one exists
     if (!responseDictionary || error) {
         if ([self.delegate respondsToSelector:@selector(userAccountCreationDidFailWithError:)]) {
-            NSLog(@"Notifying delegate userAccountCreationDidFailWithError: %@.", error.localizedDescription);
+            NSLog(@"LoginManager: Notifying delegate userAccountCreationDidFailWithError: %@.", error.localizedDescription);
             [delegate userAccountCreationDidFailWithError:error];
         }
         return;
@@ -97,14 +97,14 @@
     // Notify the delegate of an error if one exists
     if (!isValidJSON || error) {
         if ([self.delegate respondsToSelector:@selector(userAccountCreationDidFailWithError:)]) {
-            NSLog(@"Notifying delegate userAccountCreationDidFailWithError: %@.", error.localizedDescription);
+            NSLog(@"LoginManager: Notifying delegate userAccountCreationDidFailWithError: %@.", error.localizedDescription);
             [delegate userAccountCreationDidFailWithError:error];
         }
         return;
     }
     
     if ([self.delegate respondsToSelector:@selector(userAccountCreatedSuccessfully)]) {
-        NSLog(@"Notifying delegate userAccountCreatedSuccessfully.");
+        NSLog(@"LoginManager: Notifying delegate userAccountCreatedSuccessfully.");
         [delegate userAccountCreatedSuccessfully];
     }
     
@@ -116,7 +116,7 @@
 }
 
 -(void)logCurrentUserOut {
-    NSLog(@"Logging the current user out");
+    NSLog(@"LoginManager: Logging the current user out");
     // Set the currentUser to nil
     self.currentUser = nil;
     // Remove necessary values from NSUserDefaults
@@ -143,13 +143,13 @@
 #warning Not multithreaded: This needs to be done eventually.
 #warning Server does not timeout: This also needs to be handled.
     
-    NSLog(@"Will generate POST request to send to %@.", [outgoingURL absoluteURL]);
+    NSLog(@"LoginManager: Will generate POST request to send to %@.", [outgoingURL absoluteURL]);
     
     // Set the params for the request
     NSMutableString * params = [NSMutableString stringWithCapacity:200];
     NSString * key;
     for (key in args) {
-        NSLog(@"Appending value: %@ for key: %@ to the params.", [args objectForKey:key], key);
+        NSLog(@"LoginManager: Appending value: %@ for key: %@ to the params.", [args objectForKey:key], key);
         [params appendString:[NSString stringWithFormat:@"%@=%@&", key, [args objectForKey:key]]];
     }
     
@@ -166,7 +166,7 @@
     
     // Returns nil if there was an error
     if (error) {
-        NSLog(@"!!!Error occurred while sending the post request: %@.", error);
+        NSLog(@"LoginManager: !!!Error occurred while sending the post request: %@.", error);
         
         return nil;
     }
@@ -178,7 +178,7 @@
 #pragma mark - Login Handling
 
 -(void)saveLoginEmail:(NSString *)email userID:(NSNumber *)userID token:(NSString *)token {
-    NSLog(@"Saving login information to make login persistent.");
+    NSLog(@"LoginManager: Saving login information to make login persistent.");
     // Create the currentUser object and add
     // the appropriate values to NSUserDefaults
     self.currentUser = [CurrentUser currentUserWithEmail:email userID:userID token:token];
@@ -188,15 +188,15 @@
     [defaults setObject:self.currentUser.token forKey:STRNSUserDefaultsTokenKey];
     [defaults synchronize];
     
-    NSLog(@"Login of user: %@ was successful.", email);
+    NSLog(@"LoginManager: Login of user: %@ was successful.", email);
     if ([self.delegate respondsToSelector:@selector(userWasLoggedInSuccessfully)]) {
-        NSLog(@"Notifying delegate: userWasLoggedInSuccessfully");
+        NSLog(@"LoginManager: Notifying delegate: userWasLoggedInSuccessfully");
         [self.delegate userWasLoggedInSuccessfully];
     }
 }
 
 -(void)refreshLogin {
-    NSLog(@"Refreshing login from NSUserDefaults.");
+    NSLog(@"LoginManager: Refreshing login from NSUserDefaults.");
     // Check for logged in user in NSUserDefaults and
     // create a currentUser object if necessary
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -204,12 +204,12 @@
     if ([defaults objectForKey:STRNSUserDefaultsEmailKey]
         &&[defaults objectForKey:STRNSUserDefaultsUserIDKey]
         &&[defaults objectForKey:STRNSUserDefaultsTokenKey]) {
-        NSLog(@"User appears to be logged in. Setting up current user object now");
+        NSLog(@"LoginManager: User appears to be logged in. Setting up current user object now");
         self.currentUser = [CurrentUser currentUserWithEmail:[defaults objectForKey:STRNSUserDefaultsEmailKey] 
                                                       userID:[defaults objectForKey:STRNSUserDefaultsUserIDKey] 
                                                        token:[defaults objectForKey:STRNSUserDefaultsTokenKey]];
     } else {
-        NSLog(@"User is not currently logged in.");
+        NSLog(@"LoginManager: User is not currently logged in.");
         [self logCurrentUserOut];
     }
 }
@@ -217,19 +217,19 @@
 #pragma mark - Server Validation
 
 -(BOOL)validateResponseToken:(NSString *)token forUserID:(NSNumber *)userID {
-    NSLog(@"Validating server response token.");
+    NSLog(@"LoginManager: Validating server response token.");
     if ([token isEqualToString:userID.stringValue.downloadHash]) {
-        NSLog(@"Server response token is valid.");
+        NSLog(@"LoginManager: Server response token is valid.");
         return YES;
     } 
-    NSLog(@"Server response token is invalid.");
+    NSLog(@"LoginManager: Server response token is invalid.");
     return NO;
 }
 
 -(NSDictionary *)validateResponseData:(NSData *)responseData forError:(NSError *__autoreleasing *)error {
     // Check for non-nil response data.
     if (!responseData) {
-        NSLog(@"!!!ERROR: Response data is nil - an unknown error occurred.");
+        NSLog(@"LoginManager: !!!ERROR: Response data is nil - an unknown error occurred.");
         *error = [NSError errorWithDomain:@"STR" 
                                      code:5101
                                  userInfo:[NSDictionary dictionaryWithObject:@"Unknown Error" 
@@ -241,19 +241,19 @@
     NSError * parseError;
     NSDictionary * responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&parseError];
     if (parseError) {
-        NSLog(@"!!!ERROR: There was an error parsing the JSON data from the server.");
+        NSLog(@"LoginManager: !!!ERROR: There was an error parsing the JSON data from the server.");
         *error = parseError;
         return nil;
     }
-    NSLog(@"Successfully created dictionary from server JSON response.");
+    NSLog(@"LoginManager: Successfully created dictionary from server JSON response.");
     return responseDictionary;
 }
 
 -(BOOL)validateJSON:(NSDictionary *)responseDictionary forServerError:(NSError *__autoreleasing *)error {
-    NSLog(@"Validating response dictionary.");
+    NSLog(@"LoginManager: Validating response dictionary.");
     // Check for an error from the server.
     if ([[responseDictionary objectForKey:@"error_present"] boolValue]) {
-        NSLog(@"!!!ERROR: Server error detected:\n     Error number: %@\n     Error description:%@.", [responseDictionary objectForKey:@"error_number"], [responseDictionary objectForKey:@"error_string"]);
+        NSLog(@"LoginManager: !!!ERROR: Server error detected:\n     Error number: %@\n     Error description:%@.", [responseDictionary objectForKey:@"error_number"], [responseDictionary objectForKey:@"error_string"]);
         *error = [NSError errorWithDomain:@"STR" 
                                      code:[[responseDictionary objectForKey:@"error_number"] intValue]
                                  userInfo:[NSDictionary dictionaryWithObject:[responseDictionary objectForKey:@"error_string"] 
@@ -268,7 +268,7 @@
                                                              forKey:NSLocalizedDescriptionKey]];
         return NO;
     }
-    NSLog(@"Dictionary validated and server returned positive, error-free response.");
+    NSLog(@"LoginManager: Dictionary validated and server returned positive, error-free response.");
     return YES;
 }
 

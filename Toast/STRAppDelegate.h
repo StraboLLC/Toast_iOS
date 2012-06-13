@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "STRRootViewController.h"
 #import "LoginManager.h"
 
 @interface STRAppDelegate : UIResponder <UIApplicationDelegate> {
