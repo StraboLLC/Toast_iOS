@@ -33,8 +33,7 @@
     
     // For testing only
     [loginManager logUserInWithEmail:@"nate@toast.com" password:@"asdf"];
-    //[loginManager registerNewUserWithName:@"Nate Beatty" email:@"nate@toast.com" password:@"asdf"];
-    [loginManager logCurrentUserOut];
+    //[loginManager
     
     return YES;
 }

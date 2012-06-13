@@ -12,7 +12,9 @@
 -(NSData *)sendSynchronousPostRequestTo:(NSURL *)outgoingURL withKeyValuePairs:(NSDictionary *)args;
 -(void)saveLoginEmail:(NSString *)email userID:(NSNumber *)userID token:(NSString *)token;
 -(void)refreshLogin;
--(BOOL)isValidResponseToken:(NSString *)token forUserID:(NSNumber *)userID;
+-(BOOL)validateResponseToken:(NSString *)token forUserID:(NSNumber *)userID;
+-(NSDictionary *)validateResponseData:(NSData *)responseData forError:(NSError *__autoreleasing *)error;
+-(BOOL)validateJSON:(NSDictionary *)responseDictionary forServerError:(NSError *__autoreleasing *)error;
 @end
 
 @implementation LoginManager
@@ -22,7 +24,7 @@
 
 -(id)init {
     if (self) {
-    
+        
         [self refreshLogin];
         
     }
@@ -39,52 +41,37 @@
                                              withKeyValuePairs:keyValuePairs];
     NSLog(@"Returned Data: %@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
     
-    // Determine if there were errors
-    /************************************************************************************/
-    if (!responseData) {
-        NSLog(@"!!!Response data is nil - an unknown error occurred");
-        if ([self.delegate respondsToSelector:@selector(loginDidFailWithError:)]) {
-            [self.delegate loginDidFailWithError:nil];
-        }
-        // Stop executing if there was an error
-        return;
-    }
+    // Check for errors
     NSError * error;
-    NSDictionary * responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
-    if (error) {
-        NSLog(@"!!!Error parsing the JSON data: %@", error);
+    NSDictionary * responseDictionary = [self validateResponseData:responseData forError:&error];
+    // Notify the delegate of an error if one exists
+    if (!responseDictionary || error) {
         if ([self.delegate respondsToSelector:@selector(loginDidFailWithError:)]) {
-            [self.delegate loginDidFailWithError:error];
+            NSLog(@"Notifying delegate loginDidFailWithError: %@.", error.localizedDescription);
+            [delegate loginDidFailWithError:error];
         }
-    }
-    if ([[responseDictionary objectForKey:@"error_present"] boolValue]) {
-        // Log the error
-        NSLog(@"!!!Server error detected:\n     Error number: %@\n     Error description:%@", [responseDictionary objectForKey:@"error_number"], [responseDictionary objectForKey:@"error_string"]);
-        if ([self.delegate respondsToSelector:@selector(loginDidFailWithError:)]) {
-            // Create an error to pass to the delegate
-            NSError * theError = [NSError errorWithDomain:@"STR" 
-                                                     code:[[responseDictionary objectForKey:@"error_number"] intValue]
-                                                 userInfo:[NSDictionary dictionaryWithObject:[responseDictionary objectForKey:@"error_string"] 
-                                                                                      forKey:NSLocalizedDescriptionKey]];
-            // Call the delegate method
-            [self.delegate loginDidFailWithError:theError];
-        }
-        // Stop executing
         return;
     }
-    /************************************************************************************/
     
-    // Handle the response data if there were no errors
-    // Log the user in
+    BOOL isValidJSON = [self validateJSON:responseDictionary forServerError:&error];
+    // Notify the delegate of an error if one exists
+    if (!isValidJSON || error) {
+        if ([self.delegate respondsToSelector:@selector(loginDidFailWithError:)]) {
+            NSLog(@"Notifying delegate loginDidFailWithError: %@.", error.localizedDescription);
+            [delegate loginDidFailWithError:error];
+        }
+        return;
+    }
+    
+    // Handle the response (if there were no errors)
+    // by logging the user in.
     [self saveLoginEmail:emailAddress 
                   userID:[responseDictionary objectForKey:@"user_id"] 
                    token:emailAddress.uploadHash];
 }
 
 -(void)registerNewUserWithName:(NSString *)name email:(NSString *)emailAddress password:(NSString *)password {
-    NSLog(@"Attempting to register a user");
-    #warning Incomplete implementation - error handling
-#warning Notify user of successful registration
+    NSLog(@"Attempting to register a user.");
     
     // Send a request to the server
     // Request login response from the server
@@ -94,42 +81,35 @@
                                              withKeyValuePairs:keyValuePairs];
     NSLog(@"Returned Data: %@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
     
-    // Determine if there were errors
-    /************************************************************************************/
-    if (!responseData) {
-        NSLog(@"!!!Response data is nil - an unknown error occurred");
-        if ([self.delegate respondsToSelector:@selector(loginDidFailWithError:)]) {
-            [self.delegate loginDidFailWithError:nil];
-        }
-        // Stop executing if there was an error
-        return;
-    }
+    // Check for errors
     NSError * error;
-    NSDictionary * responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
-    if (error) {
-        NSLog(@"!!!Error parsing the JSON data: %@", error);
-        if ([self.delegate respondsToSelector:@selector(loginDidFailWithError:)]) {
-            [self.delegate loginDidFailWithError:error];
+    NSDictionary * responseDictionary = [self validateResponseData:responseData forError:&error];
+    // Notify the delegate of an error if one exists
+    if (!responseDictionary || error) {
+        if ([self.delegate respondsToSelector:@selector(userAccountCreationDidFailWithError:)]) {
+            NSLog(@"Notifying delegate userAccountCreationDidFailWithError: %@.", error.localizedDescription);
+            [delegate userAccountCreationDidFailWithError:error];
         }
-    }
-    if ([[responseDictionary objectForKey:@"error_present"] boolValue]) {
-        // Log the error
-        NSLog(@"!!!Server error detected:\n     Error number: %@\n     Error description:%@", [responseDictionary objectForKey:@"error_number"], [responseDictionary objectForKey:@"error_string"]);
-        if ([self.delegate respondsToSelector:@selector(loginDidFailWithError:)]) {
-            // Create an error to pass to the delegate
-            NSError * theError = [NSError errorWithDomain:@"STR" 
-                                                     code:[[responseDictionary objectForKey:@"error_number"] intValue]
-                                                 userInfo:[NSDictionary dictionaryWithObject:[responseDictionary objectForKey:@"error_string"] 
-                                                                                      forKey:NSLocalizedDescriptionKey]];
-            // Call the delegate method
-            [self.delegate loginDidFailWithError:theError];
-        }
-        // Stop executing
         return;
     }
-    /************************************************************************************/
     
-    // Handle the response data if there were no errors
+    BOOL isValidJSON = [self validateJSON:responseDictionary forServerError:&error];
+    // Notify the delegate of an error if one exists
+    if (!isValidJSON || error) {
+        if ([self.delegate respondsToSelector:@selector(userAccountCreationDidFailWithError:)]) {
+            NSLog(@"Notifying delegate userAccountCreationDidFailWithError: %@.", error.localizedDescription);
+            [delegate userAccountCreationDidFailWithError:error];
+        }
+        return;
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(userAccountCreatedSuccessfully)]) {
+        NSLog(@"Notifying delegate userAccountCreatedSuccessfully.");
+        [delegate userAccountCreatedSuccessfully];
+    }
+    
+    // Handle the response data (if there were no errors)
+    // by logging the user in.
     [self saveLoginEmail:emailAddress 
                   userID:[responseDictionary objectForKey:@"user_id"] 
                    token:emailAddress.uploadHash];
@@ -163,13 +143,13 @@
 #warning Not multithreaded: This needs to be done eventually.
 #warning Server does not timeout: This also needs to be handled.
     
-    NSLog(@"Will generate POST request to send to %@", [outgoingURL absoluteURL]);
+    NSLog(@"Will generate POST request to send to %@.", [outgoingURL absoluteURL]);
     
     // Set the params for the request
     NSMutableString * params = [NSMutableString stringWithCapacity:200];
     NSString * key;
     for (key in args) {
-        NSLog(@"Appending value: %@ for key: %@ to the params", [args objectForKey:key], key);
+        NSLog(@"Appending value: %@ for key: %@ to the params.", [args objectForKey:key], key);
         [params appendString:[NSString stringWithFormat:@"%@=%@&", key, [args objectForKey:key]]];
     }
     
@@ -181,11 +161,12 @@
     // Keep track of any errors
     NSError * error;
     
+    // Send the request
     NSData * responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&error];
     
     // Returns nil if there was an error
     if (error) {
-        NSLog(@"!!!Error occurred while sending the post request: %@", error);
+        NSLog(@"!!!Error occurred while sending the post request: %@.", error);
         
         return nil;
     }
@@ -194,8 +175,10 @@
     return responseData;
 }
 
+#pragma mark - Login Handling
+
 -(void)saveLoginEmail:(NSString *)email userID:(NSNumber *)userID token:(NSString *)token {
-    NSLog(@"Saving login information to make login persistent");
+    NSLog(@"Saving login information to make login persistent.");
     // Create the currentUser object and add
     // the appropriate values to NSUserDefaults
     self.currentUser = [CurrentUser currentUserWithEmail:email userID:userID token:token];
@@ -204,10 +187,16 @@
     [defaults setObject:self.currentUser.userID forKey:STRNSUserDefaultsUserIDKey];
     [defaults setObject:self.currentUser.token forKey:STRNSUserDefaultsTokenKey];
     [defaults synchronize];
+    
+    NSLog(@"Login of user: %@ was successful.", email);
+    if ([self.delegate respondsToSelector:@selector(userWasLoggedInSuccessfully)]) {
+        NSLog(@"Notifying delegate: userWasLoggedInSuccessfully");
+        [self.delegate userWasLoggedInSuccessfully];
+    }
 }
 
 -(void)refreshLogin {
-    NSLog(@"Refreshing login from NSUserDefaults");
+    NSLog(@"Refreshing login from NSUserDefaults.");
     // Check for logged in user in NSUserDefaults and
     // create a currentUser object if necessary
     NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
@@ -220,18 +209,67 @@
                                                       userID:[defaults objectForKey:STRNSUserDefaultsUserIDKey] 
                                                        token:[defaults objectForKey:STRNSUserDefaultsTokenKey]];
     } else {
-        NSLog(@"User is not currently logged in");
+        NSLog(@"User is not currently logged in.");
         [self logCurrentUserOut];
     }
 }
 
--(BOOL)isValidResponseToken:(NSString *)token forUserID:(NSNumber *)userID {
-    #warning Incomplete implementation
-    NSLog(@"Validating server response.");
-    if (0) {
-        
+#pragma mark - Server Validation
+
+-(BOOL)validateResponseToken:(NSString *)token forUserID:(NSNumber *)userID {
+    NSLog(@"Validating server response token.");
+    if ([token isEqualToString:userID.stringValue.downloadHash]) {
+        NSLog(@"Server response token is valid.");
+        return YES;
+    } 
+    NSLog(@"Server response token is invalid.");
+    return NO;
+}
+
+-(NSDictionary *)validateResponseData:(NSData *)responseData forError:(NSError *__autoreleasing *)error {
+    // Check for non-nil response data.
+    if (!responseData) {
+        NSLog(@"!!!ERROR: Response data is nil - an unknown error occurred.");
+        *error = [NSError errorWithDomain:@"STR" 
+                                     code:5101
+                                 userInfo:[NSDictionary dictionaryWithObject:@"Unknown Error" 
+                                                                      forKey:NSLocalizedDescriptionKey]];
+        return nil;
     }
-    return nil; // Shut the compiler up
+    
+    // Check for a parse error
+    NSError * parseError;
+    NSDictionary * responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&parseError];
+    if (parseError) {
+        NSLog(@"!!!ERROR: There was an error parsing the JSON data from the server.");
+        *error = parseError;
+        return nil;
+    }
+    NSLog(@"Successfully created dictionary from server JSON response.");
+    return responseDictionary;
+}
+
+-(BOOL)validateJSON:(NSDictionary *)responseDictionary forServerError:(NSError *__autoreleasing *)error {
+    NSLog(@"Validating response dictionary.");
+    // Check for an error from the server.
+    if ([[responseDictionary objectForKey:@"error_present"] boolValue]) {
+        NSLog(@"!!!ERROR: Server error detected:\n     Error number: %@\n     Error description:%@.", [responseDictionary objectForKey:@"error_number"], [responseDictionary objectForKey:@"error_string"]);
+        *error = [NSError errorWithDomain:@"STR" 
+                                     code:[[responseDictionary objectForKey:@"error_number"] intValue]
+                                 userInfo:[NSDictionary dictionaryWithObject:[responseDictionary objectForKey:@"error_string"] 
+                                                                      forKey:NSLocalizedDescriptionKey]];
+        return NO;
+    }
+    // Crosscheck the server response token
+    if (![self validateResponseToken:[responseDictionary objectForKey:@"token"] forUserID:[responseDictionary objectForKey:@"user_id"]]) {
+        *error = [NSError errorWithDomain:@"STR" 
+                            code:5111
+                        userInfo:[NSDictionary dictionaryWithObject:@"Server returned invalid token" 
+                                                             forKey:NSLocalizedDescriptionKey]];
+        return NO;
+    }
+    NSLog(@"Dictionary validated and server returned positive, error-free response.");
+    return YES;
 }
 
 @end
