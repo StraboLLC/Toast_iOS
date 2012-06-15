@@ -31,7 +31,7 @@
     self.loginManager = [[LoginManager alloc] init];
     
     // FOR TESTING ONLY
-    //[self.loginManager logCurrentUserOut];
+    [self.loginManager logCurrentUserOut];
     
     return YES;
 }

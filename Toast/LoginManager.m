@@ -7,6 +7,7 @@
 //
 
 #import "LoginManager.h"
+#import "STRAppDelegate.h"
 
 @interface LoginManager (InternalMethods)
 -(NSData *)sendSynchronousPostRequestTo:(NSURL *)outgoingURL withKeyValuePairs:(NSDictionary *)args;
@@ -15,6 +16,7 @@
 -(BOOL)validateResponseToken:(NSString *)token forUserID:(NSNumber *)userID;
 -(NSDictionary *)validateResponseData:(NSData *)responseData forError:(NSError *__autoreleasing *)error;
 -(BOOL)validateJSON:(NSDictionary *)responseDictionary forServerError:(NSError *__autoreleasing *)error;
+-(void)newCoreDataUserObjectWithID:(NSNumber *)userID;
 @end
 
 @implementation LoginManager
@@ -188,6 +190,9 @@
     [defaults setObject:self.currentUser.token forKey:STRNSUserDefaultsTokenKey];
     [defaults synchronize];
     
+    // Be sure to save the user to the database of logged-in users.
+    [self newCoreDataUserObjectWithID:userID];
+    
     NSLog(@"LoginManager: Login of user: %@ was successful.", email);
     if ([self.delegate respondsToSelector:@selector(userWasLoggedInSuccessfully)]) {
         NSLog(@"LoginManager: Notifying delegate: userWasLoggedInSuccessfully");
@@ -211,6 +216,43 @@
     } else {
         NSLog(@"LoginManager: User is not currently logged in.");
         [self logCurrentUserOut];
+    }
+}
+
+-(void)newCoreDataUserObjectWithID:(NSNumber *)userID {
+    
+    // To prevent duplicate users in the Core Data stack,
+    // search for user objects with the given userID.
+    // Set up the predicate
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"userID == %@", userID];
+    // Get pointers to the managed object contexts
+    STRAppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext * context = [appDelegate managedObjectContext];
+    // Set up the request
+    NSEntityDescription * entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entity];
+    [request setPredicate:predicate];
+    NSError * error;
+    NSArray *users = [context executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"LoginManager: There was an error accessing the managed object context.");
+        // Handle error
+        
+    } else if ([users count] != 0) {
+        NSLog(@"LoginManager: %i duplicate user object found in the Core Data stack.", [users count]);
+        
+    } else {
+        NSLog(@"LoginManager: No duplicate core data user objects found.");
+        User * newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
+        newUser.userID = userID;
+        NSError * error;
+        [context save:&error];
+        if (error) {
+            // Handle error
+        } else {
+            NSLog(@"LoginManager: New user object saved successfully to core data stack.");
+        }
     }
 }
 
@@ -263,9 +305,9 @@
     // Crosscheck the server response token
     if (![self validateResponseToken:[responseDictionary objectForKey:@"token"] forUserID:[responseDictionary objectForKey:@"user_id"]]) {
         *error = [NSError errorWithDomain:@"STR" 
-                            code:5111
-                        userInfo:[NSDictionary dictionaryWithObject:@"Server returned invalid token" 
-                                                             forKey:NSLocalizedDescriptionKey]];
+                                     code:5111
+                                 userInfo:[NSDictionary dictionaryWithObject:@"Server returned invalid token" 
+                                                                      forKey:NSLocalizedDescriptionKey]];
         return NO;
     }
     NSLog(@"LoginManager: Dictionary validated and server returned positive, error-free response.");

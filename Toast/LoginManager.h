@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 Strabo. All rights reserved.
 //
 #import "Constants.h"
+#import "CoreDataObjects.h"
 
 #import <Foundation/Foundation.h>
 #import "CurrentUser.h"
@@ -92,6 +93,12 @@
  */
 @property(nonatomic, strong) CurrentUser * currentUser;
 
+/**
+ Determines whether the user is logged in.
+ 
+ An alternative to checking to see if currentUser is nil.
+ */
+-(BOOL)isUserLoggedIn;
 
 ///---------------------------------------------------------------------------------------
 /// @name Login Actions
@@ -117,16 +124,5 @@
  Deletes the currentUser object (currentUser will return nil) and notifies the delegate via userWasLoggedOutSuccessfully.
  */
 -(void)logCurrentUserOut;
-
-///---------------------------------------------------------------------------------------
-/// @name Login Actions
-///---------------------------------------------------------------------------------------
-
-/**
- Determines whether the user is logged in.
- 
- An alternative to checking to see if currentUser is nil.
- */
--(BOOL)isUserLoggedIn;
 
 @end

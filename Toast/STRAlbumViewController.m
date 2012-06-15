@@ -7,6 +7,7 @@
 //
 
 #import "STRAlbumsViewController.h"
+#import "STRAppDelegate.h"
 
 @interface STRAlbumsViewController ()
 

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "STRAppDelegate.h"
 
 /**
  Handles the coverflow view of a user's albums.

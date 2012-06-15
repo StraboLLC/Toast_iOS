@@ -71,6 +71,7 @@
 		964C765415890E9D0020E315 /* STRAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumViewController.m; sourceTree = "<group>"; };
 		964C765715891DFF0020E315 /* STRRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRRootViewController.h; sourceTree = "<group>"; };
 		964C765815891DFF0020E315 /* STRRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRRootViewController.m; sourceTree = "<group>"; };
+		965DE4FF158BD7B100DAAA92 /* CoreDataObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataObjects.h; sourceTree = "<group>"; };
 		965E2C47158258B30007F167 /* Toast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965E2C4B158258B30007F167 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		965E2C4D158258B30007F167 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -192,6 +193,7 @@
 			children = (
 				963EE5281587C8DD0046BD04 /* AppledocSettings.plist */,
 				96F422D11586AE21002AE72D /* Constants.h */,
+				965DE4FF158BD7B100DAAA92 /* CoreDataObjects.h */,
 				965E2C5C158258B30007F167 /* STRAppDelegate.h */,
 				965E2C5D158258B30007F167 /* STRAppDelegate.m */,
 				965E2C5F158258B30007F167 /* Toast.xcdatamodeld */,
