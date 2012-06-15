@@ -36,6 +36,10 @@
 		96F79B64158BAFA200F29BEC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B63158BAFA200F29BEC /* User.m */; };
 		96F79B67158BAFA300F29BEC /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B66158BAFA300F29BEC /* Album.m */; };
 		96F79B6A158BAFA300F29BEC /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B69158BAFA300F29BEC /* Capture.m */; };
+		96F79B6E158BBC6000F29BEC /* STRNewAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B6D158BBC6000F29BEC /* STRNewAlbumViewController.m */; };
+		96F79B71158BBC7F00F29BEC /* STRAlbumPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B70158BBC7E00F29BEC /* STRAlbumPreferencesViewController.m */; };
+		96F79B75158BBDEC00F29BEC /* STRAlbumGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B74158BBDEC00F29BEC /* STRAlbumGalleryViewController.m */; };
+		96F79B7C158BC91B00F29BEC /* STRPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B7B158BC91B00F29BEC /* STRPreferencesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +67,7 @@
 		963EE52B1587E2510046BD04 /* NSString+uploadHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+uploadHash.m"; sourceTree = "<group>"; };
 		963EE52D1587E2C10046BD04 /* NSString+downloadHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+downloadHash.h"; sourceTree = "<group>"; };
 		963EE52E1587E2C10046BD04 /* NSString+downloadHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+downloadHash.m"; sourceTree = "<group>"; };
-		964C765315890E9D0020E315 /* STRAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumViewController.h; sourceTree = "<group>"; };
+		964C765315890E9D0020E315 /* STRAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumsViewController.h; sourceTree = "<group>"; };
 		964C765415890E9D0020E315 /* STRAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumViewController.m; sourceTree = "<group>"; };
 		964C765715891DFF0020E315 /* STRRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRRootViewController.h; sourceTree = "<group>"; };
 		964C765815891DFF0020E315 /* STRRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRRootViewController.m; sourceTree = "<group>"; };
@@ -97,6 +101,14 @@
 		96F79B66158BAFA300F29BEC /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		96F79B68158BAFA300F29BEC /* Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
 		96F79B69158BAFA300F29BEC /* Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Capture.m; sourceTree = "<group>"; };
+		96F79B6C158BBC6000F29BEC /* STRNewAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRNewAlbumViewController.h; sourceTree = "<group>"; };
+		96F79B6D158BBC6000F29BEC /* STRNewAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRNewAlbumViewController.m; sourceTree = "<group>"; };
+		96F79B6F158BBC7E00F29BEC /* STRAlbumPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumPreferencesViewController.h; sourceTree = "<group>"; };
+		96F79B70158BBC7E00F29BEC /* STRAlbumPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumPreferencesViewController.m; sourceTree = "<group>"; };
+		96F79B73158BBDEC00F29BEC /* STRAlbumGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumGalleryViewController.h; sourceTree = "<group>"; };
+		96F79B74158BBDEC00F29BEC /* STRAlbumGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumGalleryViewController.m; sourceTree = "<group>"; };
+		96F79B7A158BC91B00F29BEC /* STRPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRPreferencesViewController.h; sourceTree = "<group>"; };
+		96F79B7B158BC91B00F29BEC /* STRPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRPreferencesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,8 +221,9 @@
 			children = (
 				964C765715891DFF0020E315 /* STRRootViewController.h */,
 				964C765815891DFF0020E315 /* STRRootViewController.m */,
-				964C765315890E9D0020E315 /* STRAlbumViewController.h */,
-				964C765415890E9D0020E315 /* STRAlbumViewController.m */,
+				96F79B7A158BC91B00F29BEC /* STRPreferencesViewController.h */,
+				96F79B7B158BC91B00F29BEC /* STRPreferencesViewController.m */,
+				96F79B72158BBC8A00F29BEC /* Album VCs */,
 				96DFCB1515868FDF002BA57C /* Log In */,
 			);
 			name = "View Controllers";
@@ -280,6 +293,21 @@
 				96F79B69158BAFA300F29BEC /* Capture.m */,
 			);
 			name = "Core Data Objects";
+			sourceTree = "<group>";
+		};
+		96F79B72158BBC8A00F29BEC /* Album VCs */ = {
+			isa = PBXGroup;
+			children = (
+				964C765315890E9D0020E315 /* STRAlbumsViewController.h */,
+				964C765415890E9D0020E315 /* STRAlbumViewController.m */,
+				96F79B6C158BBC6000F29BEC /* STRNewAlbumViewController.h */,
+				96F79B6D158BBC6000F29BEC /* STRNewAlbumViewController.m */,
+				96F79B6F158BBC7E00F29BEC /* STRAlbumPreferencesViewController.h */,
+				96F79B70158BBC7E00F29BEC /* STRAlbumPreferencesViewController.m */,
+				96F79B73158BBDEC00F29BEC /* STRAlbumGalleryViewController.h */,
+				96F79B74158BBDEC00F29BEC /* STRAlbumGalleryViewController.m */,
+			);
+			name = "Album VCs";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +444,10 @@
 				96F79B64158BAFA200F29BEC /* User.m in Sources */,
 				96F79B67158BAFA300F29BEC /* Album.m in Sources */,
 				96F79B6A158BAFA300F29BEC /* Capture.m in Sources */,
+				96F79B6E158BBC6000F29BEC /* STRNewAlbumViewController.m in Sources */,
+				96F79B71158BBC7F00F29BEC /* STRAlbumPreferencesViewController.m in Sources */,
+				96F79B75158BBDEC00F29BEC /* STRAlbumGalleryViewController.m in Sources */,
+				96F79B7C158BC91B00F29BEC /* STRPreferencesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

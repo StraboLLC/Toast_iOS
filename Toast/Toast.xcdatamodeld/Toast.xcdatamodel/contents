@@ -4,6 +4,7 @@
         <attribute name="coverArtURL" attributeType="String" syncable="YES"/>
         <attribute name="creationDate" attributeType="Date" syncable="YES"/>
         <attribute name="title" attributeType="String" defaultValueString="Untitled Track" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="capture" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Capture" inverseName="album" inverseEntity="Capture" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="album" inverseEntity="User" syncable="YES"/>
     </entity>
@@ -25,7 +26,7 @@
         <relationship name="album" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Album" inverseName="user" inverseEntity="Album" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Album" positionX="-3807" positionY="-2421" width="128" height="105"/>
+        <element name="Album" positionX="-3807" positionY="-2421" width="128" height="45"/>
         <element name="User" positionX="-4016" positionY="-2376" width="128" height="75"/>
         <element name="Capture" positionX="-3647" positionY="-2217" width="128" height="210"/>
     </elements>

@@ -1,18 +1,18 @@
 //
-//  STRAlbumViewController.m
+//  STRAlbumsViewController.m
 //  Toast
 //
 //  Created by Thomas Beatty on 6/13/12.
 //  Copyright (c) 2012 Strabo. All rights reserved.
 //
 
-#import "STRAlbumViewController.h"
+#import "STRAlbumsViewController.h"
 
-@interface STRAlbumViewController ()
+@interface STRAlbumsViewController ()
 
 @end
 
-@implementation STRAlbumViewController
+@implementation STRAlbumsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,13 +25,13 @@
 
 #pragma mark - View Lifecycle
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    
+    [self reloadAlbums];
 }
 
 -(void)viewDidUnload
@@ -40,9 +40,19 @@
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+#pragma mark - 
+
+-(void)reloadAlbums {
+    NSLog(@"STRAlbumViewController: Reloading the current user's albums");
+}
+
+#pragma mark - Button Handling
+
+
 
 @end

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "STRAppDelegate.h"
-#import "STRAlbumViewController.h"
+#import "STRAlbumsViewController.h"
 #import "STRSignInViewController.h"
 
 /**

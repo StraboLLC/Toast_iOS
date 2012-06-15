@@ -14,7 +14,7 @@
                     <view key="view" contentMode="scaleToFill" id="WZp-at-bR6">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.1764705926" blue="0.070588238540000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                 </viewController>
             </objects>
@@ -289,11 +289,11 @@
             </objects>
             <point key="canvasLocation" x="1173" y="1667"/>
         </scene>
-        <!--Album View Controller - Select Album-->
+        <!--Albums View Controller - Select Album-->
         <scene sceneID="omO-nd-ZvD">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUQ-nY-89j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="albumViewController" title="Select Album" id="FMd-6y-P8D" customClass="STRAlbumViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="albumViewController" title="Select Album" id="FMd-6y-P8D" customClass="STRAlbumsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nqf-w8-Vn8">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -336,11 +336,11 @@
             </objects>
             <point key="canvasLocation" x="1173" y="36"/>
         </scene>
-        <!--View Controller - User Preferences-->
+        <!--Preferences View Controller - User Preferences-->
         <scene sceneID="db1-qU-e2W">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rtv-aC-CWt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController title="User Preferences" id="Tch-ke-qcM" sceneMemberID="viewController">
+                <viewController title="User Preferences" id="Tch-ke-qcM" customClass="STRPreferencesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yGo-3i-P4N">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -356,6 +356,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonWasPressed:" destination="Tch-ke-qcM" eventType="touchUpInside" id="v1g-xk-MjO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -364,11 +367,11 @@
             </objects>
             <point key="canvasLocation" x="1173" y="-645"/>
         </scene>
-        <!--View Controller - Create a New Album-->
+        <!--New Album View Controller - Create a New Album-->
         <scene sceneID="Yug-oi-MIM">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJV-Rw-UUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController title="Create a New Album" id="kJB-GY-1WN" sceneMemberID="viewController">
+                <viewController title="Create a New Album" id="kJB-GY-1WN" customClass="STRNewAlbumViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8HE-rV-oIS">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -384,6 +387,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonWasPressed:" destination="kJB-GY-1WN" eventType="touchUpInside" id="PBh-GT-Iw6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -394,8 +400,20 @@
         </scene>
     </scenes>
     <classes>
-        <class className="STRAlbumViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/STRAlbumViewController.h"/>
+        <class className="STRAlbumsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/STRAlbumsViewController.h"/>
+        </class>
+        <class className="STRNewAlbumViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/STRNewAlbumViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="submitButtonWasPressed:"/>
+            </relationships>
+        </class>
+        <class className="STRPreferencesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/STRPreferencesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="submitButtonWasPressed:"/>
+            </relationships>
         </class>
         <class className="STRRegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/STRRegistrationViewController.h"/>

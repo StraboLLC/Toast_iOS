@@ -31,7 +31,9 @@
     UINavigationController * albumNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"albumNavigationController"];
     
     // Set up the child view controller
-    albumNavigationController.view.frame = self.view.frame;
+    CGRect newFrame = self.view.frame;
+    newFrame.origin.y = 0;
+    albumNavigationController.view.frame = newFrame;
     albumNavigationController.navigationBar.hidden = YES;
     [self addChildViewController:albumNavigationController];
     [self.view addSubview:albumNavigationController.view];

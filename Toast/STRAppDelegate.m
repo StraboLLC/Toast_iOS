@@ -26,13 +26,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [_window setBackgroundColor:[UIColor redColor]];
     
     // Set up the login manager
     self.loginManager = [[LoginManager alloc] init];
     
     // FOR TESTING ONLY
-    [self.loginManager logCurrentUserOut];
+    //[self.loginManager logCurrentUserOut];
     
     return YES;
 }
