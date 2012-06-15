@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9629BFE9158A3177007E8291 /* STRRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9629BFE8158A3177007E8291 /* STRRegistrationViewController.m */; };
 		963EE5151587BF870046BD04 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 963EE5141587BF870046BD04 /* SenTestingKit.framework */; };
 		963EE5161587BF870046BD04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4B158258B30007F167 /* UIKit.framework */; };
 		963EE5171587BF870046BD04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4D158258B30007F167 /* Foundation.framework */; };
@@ -30,6 +31,8 @@
 		96F422C61586A9BC002AE72D /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422C51586A9BC002AE72D /* NSString+MD5.m */; };
 		96F422CD1586AA68002AE72D /* CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422CA1586AA68002AE72D /* CurrentUser.m */; };
 		96F422D415877321002AE72D /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422D315877321002AE72D /* LoginManager.m */; };
+		96F79B59158B7BDD00F29BEC /* album_names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96F79B58158B7BDD00F29BEC /* album_names.plist */; };
+		96F79B5D158B7F9500F29BEC /* redmoleskin.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F79B5C158B7F9500F29BEC /* redmoleskin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9629BFE7158A3177007E8291 /* STRRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRRegistrationViewController.h; sourceTree = "<group>"; };
+		9629BFE8158A3177007E8291 /* STRRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRRegistrationViewController.m; sourceTree = "<group>"; };
 		963EE5131587BF870046BD04 /* ToastLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToastLogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		963EE5141587BF870046BD04 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		963EE51A1587BF870046BD04 /* ToastLogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToastLogicTests-Info.plist"; sourceTree = "<group>"; };
@@ -81,6 +86,8 @@
 		96F422D11586AE21002AE72D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		96F422D215877321002AE72D /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
 		96F422D315877321002AE72D /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
+		96F79B58158B7BDD00F29BEC /* album_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = album_names.plist; path = album_covers/album_names.plist; sourceTree = "<group>"; };
+		96F79B5C158B7F9500F29BEC /* redmoleskin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redmoleskin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +178,7 @@
 				96C9ABDF1586725F002F8260 /* View Controllers */,
 				96F422CF1586AA70002AE72D /* Model Objects */,
 				96F422C81586A9C9002AE72D /* Categories */,
+				96F79B5B158B7BEB00F29BEC /* album_covers */,
 				965E2C54158258B30007F167 /* Supporting Files */,
 			);
 			path = Toast;
@@ -204,6 +212,8 @@
 			children = (
 				969F1DA5158687D20094154B /* STRSignInViewController.h */,
 				969F1DA6158687D20094154B /* STRSignInViewController.m */,
+				9629BFE7158A3177007E8291 /* STRRegistrationViewController.h */,
+				9629BFE8158A3177007E8291 /* STRRegistrationViewController.m */,
 			);
 			name = "Log In";
 			sourceTree = "<group>";
@@ -238,6 +248,15 @@
 				96F422CA1586AA68002AE72D /* CurrentUser.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		96F79B5B158B7BEB00F29BEC /* album_covers */ = {
+			isa = PBXGroup;
+			children = (
+				96F79B58158B7BDD00F29BEC /* album_names.plist */,
+				96F79B5C158B7F9500F29BEC /* redmoleskin.png */,
+			);
+			name = album_covers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +342,8 @@
 				965E2C58158258B30007F167 /* InfoPlist.strings in Resources */,
 				965E2C68158258C80007F167 /* MainStoryboard.storyboard in Resources */,
 				963EE5291587C8DD0046BD04 /* AppledocSettings.plist in Resources */,
+				96F79B59158B7BDD00F29BEC /* album_names.plist in Resources */,
+				96F79B5D158B7F9500F29BEC /* redmoleskin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +389,7 @@
 				963EE52F1587E2C10046BD04 /* NSString+downloadHash.m in Sources */,
 				964C765515890E9D0020E315 /* STRAlbumViewController.m in Sources */,
 				964C765915891DFF0020E315 /* STRRootViewController.m in Sources */,
+				9629BFE9158A3177007E8291 /* STRRegistrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -67,7 +67,7 @@
         NSLog(@"STRRootViewController: Presenting the login screen.");
         UINavigationController * loginNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginNavigationController"];
         loginNavigationController.navigationBar.hidden = YES;
-        [self presentViewController:loginNavigationController animated:YES completion:nil];
+        [self presentViewController:loginNavigationController animated:NO completion:nil];
     }
 }
 @end

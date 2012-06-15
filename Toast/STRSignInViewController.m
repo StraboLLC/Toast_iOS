@@ -41,10 +41,11 @@
 
 #pragma mark - Button Handling
 
--(IBAction)signInButtonWasPressed:(id)sender {
+-(IBAction)submitButtonWasPressed:(id)sender {
     NSLog(@"STRSignInViewController: Sign In button was pressed.");
     // Attempt to log the user in with the information in the text fields
-    [[(STRAppDelegate *)[[UIApplication sharedApplication] delegate] loginManager] logUserInWithEmail:emailField.text password:passwordField.text];
+    [[(STRAppDelegate *)[[UIApplication sharedApplication] delegate] loginManager] logUserInWithEmail:emailField.text 
+                                                                                             password:passwordField.text];
 }
 
 -(IBAction)backButtonWasPressed:(id)sender {
@@ -61,7 +62,7 @@
 }
 
 -(void)loginDidFailWithError:(NSError *)error {
-    #warning Incomplete implementation
+#warning Incomplete implementation
     NSLog(@"STRSignInViewController: !!!ERROR: Sign-In failed. Must notify the user of the error.");
     // Notify the user that the login failed and why.
 }

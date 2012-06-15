@@ -116,7 +116,7 @@
 }
 
 -(void)logCurrentUserOut {
-    NSLog(@"LoginManager: Logging the current user out");
+    NSLog(@"LoginManager: Logging the current user out.");
     // Set the currentUser to nil
     self.currentUser = nil;
     // Remove necessary values from NSUserDefaults
