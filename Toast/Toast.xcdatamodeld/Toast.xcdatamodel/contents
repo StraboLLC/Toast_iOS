@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+    <entity name="Album" representedClassName="Album" syncable="YES">
+        <attribute name="coverArtURL" attributeType="String" syncable="YES"/>
+        <attribute name="creationDate" attributeType="Date" syncable="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString="Untitled Track" syncable="YES"/>
+        <relationship name="capture" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Capture" inverseName="album" inverseEntity="Capture" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="album" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Capture" representedClassName="Capture" syncable="YES">
+        <attribute name="creationDate" attributeType="Date" syncable="YES"/>
+        <attribute name="geodataURL" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="mediaURL" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailURL" attributeType="String" syncable="YES"/>
+        <attribute name="title" attributeType="String" defaultValueString="Untitled" syncable="YES"/>
+        <attribute name="token" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <attribute name="uploadDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="album" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="capture" inverseEntity="Album" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="userID" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="album" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Album" inverseName="user" inverseEntity="Album" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Album" positionX="-3807" positionY="-2421" width="128" height="105"/>
+        <element name="User" positionX="-4016" positionY="-2376" width="128" height="75"/>
+        <element name="Capture" positionX="-3647" positionY="-2217" width="128" height="210"/>
+    </elements>
 </model>

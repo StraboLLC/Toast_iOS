@@ -33,6 +33,9 @@
 		96F422D415877321002AE72D /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422D315877321002AE72D /* LoginManager.m */; };
 		96F79B59158B7BDD00F29BEC /* album_names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96F79B58158B7BDD00F29BEC /* album_names.plist */; };
 		96F79B5D158B7F9500F29BEC /* redmoleskin.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F79B5C158B7F9500F29BEC /* redmoleskin.png */; };
+		96F79B64158BAFA200F29BEC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B63158BAFA200F29BEC /* User.m */; };
+		96F79B67158BAFA300F29BEC /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B66158BAFA300F29BEC /* Album.m */; };
+		96F79B6A158BAFA300F29BEC /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B69158BAFA300F29BEC /* Capture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,12 @@
 		96F422D315877321002AE72D /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
 		96F79B58158B7BDD00F29BEC /* album_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = album_names.plist; path = album_covers/album_names.plist; sourceTree = "<group>"; };
 		96F79B5C158B7F9500F29BEC /* redmoleskin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redmoleskin.png; sourceTree = "<group>"; };
+		96F79B62158BAFA200F29BEC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		96F79B63158BAFA200F29BEC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		96F79B65158BAFA300F29BEC /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		96F79B66158BAFA300F29BEC /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
+		96F79B68158BAFA300F29BEC /* Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
+		96F79B69158BAFA300F29BEC /* Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Capture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +243,7 @@
 		96F422CF1586AA70002AE72D /* Model Objects */ = {
 			isa = PBXGroup;
 			children = (
+				96F79B6B158BAFAD00F29BEC /* Core Data Objects */,
 				96F422D01586AA82002AE72D /* Login */,
 			);
 			name = "Model Objects";
@@ -257,6 +267,19 @@
 				96F79B5C158B7F9500F29BEC /* redmoleskin.png */,
 			);
 			name = album_covers;
+			sourceTree = "<group>";
+		};
+		96F79B6B158BAFAD00F29BEC /* Core Data Objects */ = {
+			isa = PBXGroup;
+			children = (
+				96F79B62158BAFA200F29BEC /* User.h */,
+				96F79B63158BAFA200F29BEC /* User.m */,
+				96F79B65158BAFA300F29BEC /* Album.h */,
+				96F79B66158BAFA300F29BEC /* Album.m */,
+				96F79B68158BAFA300F29BEC /* Capture.h */,
+				96F79B69158BAFA300F29BEC /* Capture.m */,
+			);
+			name = "Core Data Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +413,9 @@
 				964C765515890E9D0020E315 /* STRAlbumViewController.m in Sources */,
 				964C765915891DFF0020E315 /* STRRootViewController.m in Sources */,
 				9629BFE9158A3177007E8291 /* STRRegistrationViewController.m in Sources */,
+				96F79B64158BAFA200F29BEC /* User.m in Sources */,
+				96F79B67158BAFA300F29BEC /* Album.m in Sources */,
+				96F79B6A158BAFA300F29BEC /* Capture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
