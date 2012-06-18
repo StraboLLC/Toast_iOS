@@ -11,6 +11,13 @@
 
 @class Album;
 
+/**
+ Contains information about captured media.
+ 
+ ##Types
+ 
+ There are four different types of possible captured media: video, image, note, and audio. This object is set up so that it contains all of the information necessary for any one of these media types.
+ */
 @interface Capture : NSManagedObject
 
 @property (nonatomic, retain) NSDate * creationDate;

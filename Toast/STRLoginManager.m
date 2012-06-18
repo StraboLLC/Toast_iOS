@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Strabo. All rights reserved.
 //
 
-#import "LoginManager.h"
+#import "STRLoginManager.h"
 #import "STRAppDelegate.h"
 
-@interface LoginManager (InternalMethods)
+@interface STRLoginManager (InternalMethods)
 -(NSData *)sendSynchronousPostRequestTo:(NSURL *)outgoingURL withKeyValuePairs:(NSDictionary *)args;
 -(void)saveLoginEmail:(NSString *)email userID:(NSNumber *)userID token:(NSString *)token;
 -(void)refreshLogin;
@@ -19,7 +19,7 @@
 -(void)newCoreDataUserObjectWithID:(NSNumber *)userID;
 @end
 
-@implementation LoginManager
+@implementation STRLoginManager
 
 @synthesize delegate;
 @synthesize currentUser;
@@ -31,6 +31,10 @@
         
     }
     return self;
+}
+
++(STRLoginManager *)defaultManager {
+    return [(STRAppDelegate *)[[UIApplication sharedApplication] delegate] loginManager];
 }
 
 -(void)logUserInWithEmail:(NSString *)emailAddress password:(NSString *)password {
@@ -139,7 +143,7 @@
 
 @end
 
-@implementation LoginManager (InternalMethods)
+@implementation STRLoginManager (InternalMethods)
 
 -(NSData *)sendSynchronousPostRequestTo:(NSURL *)outgoingURL withKeyValuePairs:(NSDictionary *)args {
 #warning Not multithreaded: This needs to be done eventually.

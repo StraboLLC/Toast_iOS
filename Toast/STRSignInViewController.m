@@ -8,7 +8,7 @@
 
 #import "STRSignInViewController.h"
 
-@interface STRSignInViewController (LoginManagerDelegate) <LoginManagerDelegate>
+@interface STRSignInViewController (STRLoginManagerDelegate) <STRLoginManagerDelegate>
 -(void)userWasLoggedInSuccessfully;
 -(void)loginDidFailWithError:(NSError *)error;
 @end

@@ -11,6 +11,9 @@
 
 @class Capture, User;
 
+/**
+ An album holds many captures.
+ */
 @interface Album : NSManagedObject
 
 @property (nonatomic, retain) NSString * coverArtURL;

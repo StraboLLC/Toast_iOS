@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STRAppDelegate.h"
+
 
 @interface STRNewAlbumViewController : UIViewController {
-
+    IBOutlet UITextField * titleField;
 }
 
 ///---------------------------------------------------------------------------------------

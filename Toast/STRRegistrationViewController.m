@@ -8,7 +8,7 @@
 
 #import "STRRegistrationViewController.h"
 
-@interface STRRegistrationViewController (LoginManagerDelegate) <LoginManagerDelegate>
+@interface STRRegistrationViewController (STRLoginManagerDelegate) <STRLoginManagerDelegate>
 
 -(void)userAccountCreatedSuccessfully;
 -(void)userAccountCreationDidFailWithError:(NSError *)error;

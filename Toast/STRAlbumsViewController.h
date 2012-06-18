@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "STRAlbumManager.h"
+
 /**
  Handles the coverflow view of a user's albums.
  

@@ -8,7 +8,7 @@
 
 #import "STRNewAlbumViewController.h"
 
-@interface STRNewAlbumViewController ()
+@interface STRNewAlbumViewController (InternalMethods)
 
 @end
 
@@ -43,12 +43,19 @@
 #pragma mark - Button Handling
 
 -(IBAction)submitButtonWasPressed:(id)sender {
-    // Add a new album with the specs in this view
     
+    // Save a new album to core data
+    NSError * error;
+    [[STRAlbumManager defaultManager] saveNewAlbumWithTitle:titleField.text 
+                                                   coverArt:@"Red Moleskine" 
+                                                      error:&error];
     // Dismiss this view controller
-    
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+@end
+
+@implementation STRNewAlbumViewController (InternalMethods)
 
 @end

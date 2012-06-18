@@ -377,7 +377,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sA9-3m-s24">
-                                <rect key="frame" x="228" y="403" width="72" height="37"/>
+                                <rect key="frame" x="228" y="97" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
@@ -388,12 +388,21 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitButtonWasPressed:" destination="kJB-GY-1WN" eventType="touchUpInside" id="PBh-GT-Iw6"/>
+                                    <action selector="submitButtonWasPressed:" destination="kJB-GY-1WN" eventType="touchUpInside" id="DUY-ZS-PNb"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="xo1-KX-zTW">
+                                <rect key="frame" x="20" y="58" width="280" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="titleField" destination="xo1-KX-zTW" id="4Kb-Ci-bD8"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1712" y="-645"/>
@@ -407,6 +416,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/STRNewAlbumViewController.h"/>
             <relationships>
                 <relationship kind="action" name="submitButtonWasPressed:"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="STRPreferencesViewController" superclassName="UIViewController">

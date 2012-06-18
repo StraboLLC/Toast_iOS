@@ -10,7 +10,8 @@
 
 @interface STRAppDelegate ()
 
-@property(nonatomic, strong, readwrite) LoginManager * loginManager;
+@property(nonatomic, strong, readwrite) STRLoginManager * loginManager;
+@property(nonatomic, strong, readwrite) STRAlbumManager * albumManager;
 
 @end
 
@@ -18,7 +19,7 @@
 
 @synthesize window = _window;
 
-@synthesize loginManager;
+@synthesize loginManager, albumManager;
 
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
@@ -27,11 +28,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    // Set up the login manager
-    self.loginManager = [[LoginManager alloc] init];
+    // Set up the data managers
+    self.loginManager = [[STRLoginManager alloc] init];
+    self.albumManager = [[STRAlbumManager alloc] init];
     
     // FOR TESTING ONLY
-    [self.loginManager logCurrentUserOut];
+    //[self.loginManager logCurrentUserOut];
     
     return YES;
 }

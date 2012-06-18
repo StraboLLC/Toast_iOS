@@ -9,9 +9,7 @@
 #import "STRAlbumsViewController.h"
 #import "STRAppDelegate.h"
 
-@interface STRAlbumsViewController (InternalMethods)
-
--(NSArray *)getAllAlbumsForUser:(NSNumber *)userID;
+@interface STRAlbumsViewController ()
 
 @end
 
@@ -54,9 +52,7 @@
 
 -(void)reloadAlbums {
     NSLog(@"STRAlbumViewController: Reloading the current user's albums");
-    // Fetch the current user's userID
-    NSNumber * currentUserID = [[[(STRAppDelegate *)[[UIApplication sharedApplication] delegate] loginManager] currentUser] userID];
-    NSArray * allAlbums = [self getAllAlbumsForUser:currentUserID];
+    NSArray * allAlbums = [[STRAlbumManager defaultManager] albumsForCurrentUser];
     #warning Incomplete implementation
     // Present the albums on the screen
     NSLog(@"Saved Albums: %@", allAlbums);
@@ -64,40 +60,5 @@
 }
 
 #pragma mark - Button Handling
-
-@end
-
-@implementation STRAlbumsViewController (InternalMethods)
-
--(NSArray *)getAllAlbumsForUser:(NSNumber *)userID {
-    // Returns an array of a user's albums sorted by date created
-    // Get pointers to the object context
-    STRAppDelegate * appDelegate = [[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext * context = [appDelegate managedObjectContext];
-    
-    // Set up the request
-    NSEntityDescription * entity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:context];
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"userID == %@", userID];
-    NSFetchRequest * request = [[NSFetchRequest alloc] init];
-    [request setEntity:entity];
-    [request setPredicate:predicate];
-    
-    //[request setSortDescriptors:sortDescriptors];
-    
-    // Execute the request
-    NSError * error;
-    User * user = [[context executeFetchRequest:request error:&error] objectAtIndex:0];    
-    if (error) {
-        NSLog(@"STRAlbumViewController: !!!Error occurred while trying to fetch user: %@", error);
-        return nil;
-    } else {
-        // Get the user's albums
-        NSSet * allAlbums = user.albums;
-        NSLog(@"STRAlbumViewController: Fetched %i albums for user %i successfully.", allAlbums.count, userID.intValue);
-        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"creationDate" ascending:YES];
-        NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        return [[allAlbums allObjects] sortedArrayUsingDescriptors:sortDescriptors];;
-    }
-}
 
 @end

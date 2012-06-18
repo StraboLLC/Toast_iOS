@@ -24,4 +24,6 @@
 #define STRNSUserDefaultsEmailKey @"STRNSUserDefaultsEmailKey"
 #define STRNSUserDefaultsUserIDKey @"STRNSUserDefaultsUserIDKey"
 
+#define STRNSUserDefaultsUUIDKey @"STRNSUserDefaultsUUIDKey"
+
 #endif

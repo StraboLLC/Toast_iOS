@@ -64,6 +64,7 @@
 @end
 
 @implementation STRRootViewController (InternalMethods)
+
 -(void)presentLoginControllerIfNecessary {
     if (![[(STRAppDelegate *)[[UIApplication sharedApplication] delegate] loginManager] isUserLoggedIn]) {
         NSLog(@"STRRootViewController: Presenting the login screen.");
@@ -72,4 +73,5 @@
         [self presentViewController:loginNavigationController animated:NO completion:nil];
     }
 }
+
 @end
