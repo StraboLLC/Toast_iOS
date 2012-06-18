@@ -14,9 +14,10 @@
 #define kSTRDownloadSalt @"g04ts"
 
 // Server connections
-#define KSTRBaseURL @"http://toastit.heroku.com/"
-#define kSTRLoginURL KSTRBaseURL @"/mobile/api/login"
-#define kSTRRegisterURL KSTRBaseURL @"/mobile/api/register"
+//#define KSTRBaseURL @"http://toastit.heroku.com/"
+#define kSTRBaseURL @"http://willpotter.local:3000/"
+#define kSTRLoginURL kSTRBaseURL @"/mobile/api/login"
+#define kSTRRegisterURL kSTRBaseURL @"/mobile/api/register"
 
 // NSUserDefaults constants
 #define STRNSUserDefaultsTokenKey @"STRNSUserDefaultsTokenKey"

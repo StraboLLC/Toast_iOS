@@ -2,20 +2,22 @@
 //  Album.m
 //  Toast
 //
-//  Created by Thomas Beatty on 6/15/12.
+//  Created by Thomas Beatty on 6/18/12.
 //  Copyright (c) 2012 Strabo. All rights reserved.
 //
 
 #import "Album.h"
+#import "Capture.h"
 #import "User.h"
 
 
 @implementation Album
 
-@dynamic title;
-@dynamic creationDate;
 @dynamic coverArtURL;
+@dynamic creationDate;
+@dynamic title;
+@dynamic token;
+@dynamic captures;
 @dynamic user;
-@dynamic capture;
 
 @end

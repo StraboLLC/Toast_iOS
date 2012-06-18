@@ -5,8 +5,8 @@
         <attribute name="creationDate" attributeType="Date" syncable="YES"/>
         <attribute name="title" attributeType="String" defaultValueString="Untitled Track" syncable="YES"/>
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="capture" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Capture" inverseName="album" inverseEntity="Capture" syncable="YES"/>
-        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="album" inverseEntity="User" syncable="YES"/>
+        <relationship name="captures" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Capture" inverseName="album" inverseEntity="Capture" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="albums" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Capture" representedClassName="Capture" syncable="YES">
         <attribute name="creationDate" attributeType="Date" syncable="YES"/>
@@ -19,15 +19,15 @@
         <attribute name="token" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
         <attribute name="uploadDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="album" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="capture" inverseEntity="Album" syncable="YES"/>
+        <relationship name="album" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="captures" inverseEntity="Album" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="userID" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="album" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Album" inverseName="user" inverseEntity="Album" syncable="YES"/>
+        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Album" inverseName="user" inverseEntity="Album" syncable="YES"/>
     </entity>
     <elements>
         <element name="Album" positionX="-3834" positionY="-2286" width="128" height="135"/>
-        <element name="User" positionX="-4016" positionY="-2376" width="128" height="75"/>
         <element name="Capture" positionX="-3647" positionY="-2217" width="128" height="210"/>
+        <element name="User" positionX="-4016" positionY="-2376" width="128" height="75"/>
     </elements>
 </model>

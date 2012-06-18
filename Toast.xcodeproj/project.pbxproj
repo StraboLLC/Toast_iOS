@@ -28,14 +28,14 @@
 		965E2C61158258B30007F167 /* Toast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C5F158258B30007F167 /* Toast.xcdatamodeld */; };
 		965E2C68158258C80007F167 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965E2C67158258C80007F167 /* MainStoryboard.storyboard */; };
 		969F1DA7158687D20094154B /* STRSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969F1DA6158687D20094154B /* STRSignInViewController.m */; };
+		96AE9706158F7B1E007A02D0 /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9705158F7B1E007A02D0 /* Capture.m */; };
+		96AE970A158F7B1F007A02D0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9709158F7B1F007A02D0 /* User.m */; };
+		96AE970D158F7B1F007A02D0 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE970C158F7B1F007A02D0 /* Album.m */; };
 		96F422C61586A9BC002AE72D /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422C51586A9BC002AE72D /* NSString+MD5.m */; };
 		96F422CD1586AA68002AE72D /* CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422CA1586AA68002AE72D /* CurrentUser.m */; };
 		96F422D415877321002AE72D /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422D315877321002AE72D /* LoginManager.m */; };
 		96F79B59158B7BDD00F29BEC /* album_names.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96F79B58158B7BDD00F29BEC /* album_names.plist */; };
 		96F79B5D158B7F9500F29BEC /* redmoleskin.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F79B5C158B7F9500F29BEC /* redmoleskin.png */; };
-		96F79B64158BAFA200F29BEC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B63158BAFA200F29BEC /* User.m */; };
-		96F79B67158BAFA300F29BEC /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B66158BAFA300F29BEC /* Album.m */; };
-		96F79B6A158BAFA300F29BEC /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B69158BAFA300F29BEC /* Capture.m */; };
 		96F79B6E158BBC6000F29BEC /* STRNewAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B6D158BBC6000F29BEC /* STRNewAlbumViewController.m */; };
 		96F79B71158BBC7F00F29BEC /* STRAlbumPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B70158BBC7E00F29BEC /* STRAlbumPreferencesViewController.m */; };
 		96F79B75158BBDEC00F29BEC /* STRAlbumGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B74158BBDEC00F29BEC /* STRAlbumGalleryViewController.m */; };
@@ -87,6 +87,12 @@
 		965E2C67158258C80007F167 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		969F1DA5158687D20094154B /* STRSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRSignInViewController.h; sourceTree = "<group>"; };
 		969F1DA6158687D20094154B /* STRSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRSignInViewController.m; sourceTree = "<group>"; };
+		96AE9704158F7B1E007A02D0 /* Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
+		96AE9705158F7B1E007A02D0 /* Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Capture.m; sourceTree = "<group>"; };
+		96AE9708158F7B1F007A02D0 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		96AE9709158F7B1F007A02D0 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		96AE970B158F7B1F007A02D0 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
+		96AE970C158F7B1F007A02D0 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		96F422C41586A9BC002AE72D /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		96F422C51586A9BC002AE72D /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		96F422C91586AA68002AE72D /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUser.h; sourceTree = "<group>"; };
@@ -96,12 +102,6 @@
 		96F422D315877321002AE72D /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
 		96F79B58158B7BDD00F29BEC /* album_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = album_names.plist; path = album_covers/album_names.plist; sourceTree = "<group>"; };
 		96F79B5C158B7F9500F29BEC /* redmoleskin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redmoleskin.png; sourceTree = "<group>"; };
-		96F79B62158BAFA200F29BEC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		96F79B63158BAFA200F29BEC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		96F79B65158BAFA300F29BEC /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
-		96F79B66158BAFA300F29BEC /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
-		96F79B68158BAFA300F29BEC /* Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
-		96F79B69158BAFA300F29BEC /* Capture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Capture.m; sourceTree = "<group>"; };
 		96F79B6C158BBC6000F29BEC /* STRNewAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRNewAlbumViewController.h; sourceTree = "<group>"; };
 		96F79B6D158BBC6000F29BEC /* STRNewAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRNewAlbumViewController.m; sourceTree = "<group>"; };
 		96F79B6F158BBC7E00F29BEC /* STRAlbumPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumPreferencesViewController.h; sourceTree = "<group>"; };
@@ -287,12 +287,12 @@
 		96F79B6B158BAFAD00F29BEC /* Core Data Objects */ = {
 			isa = PBXGroup;
 			children = (
-				96F79B62158BAFA200F29BEC /* User.h */,
-				96F79B63158BAFA200F29BEC /* User.m */,
-				96F79B65158BAFA300F29BEC /* Album.h */,
-				96F79B66158BAFA300F29BEC /* Album.m */,
-				96F79B68158BAFA300F29BEC /* Capture.h */,
-				96F79B69158BAFA300F29BEC /* Capture.m */,
+				96AE970B158F7B1F007A02D0 /* Album.h */,
+				96AE970C158F7B1F007A02D0 /* Album.m */,
+				96AE9708158F7B1F007A02D0 /* User.h */,
+				96AE9709158F7B1F007A02D0 /* User.m */,
+				96AE9704158F7B1E007A02D0 /* Capture.h */,
+				96AE9705158F7B1E007A02D0 /* Capture.m */,
 			);
 			name = "Core Data Objects";
 			sourceTree = "<group>";
@@ -443,13 +443,13 @@
 				964C765515890E9D0020E315 /* STRAlbumViewController.m in Sources */,
 				964C765915891DFF0020E315 /* STRRootViewController.m in Sources */,
 				9629BFE9158A3177007E8291 /* STRRegistrationViewController.m in Sources */,
-				96F79B64158BAFA200F29BEC /* User.m in Sources */,
-				96F79B67158BAFA300F29BEC /* Album.m in Sources */,
-				96F79B6A158BAFA300F29BEC /* Capture.m in Sources */,
 				96F79B6E158BBC6000F29BEC /* STRNewAlbumViewController.m in Sources */,
 				96F79B71158BBC7F00F29BEC /* STRAlbumPreferencesViewController.m in Sources */,
 				96F79B75158BBDEC00F29BEC /* STRAlbumGalleryViewController.m in Sources */,
 				96F79B7C158BC91B00F29BEC /* STRPreferencesViewController.m in Sources */,
+				96AE9706158F7B1E007A02D0 /* Capture.m in Sources */,
+				96AE970A158F7B1F007A02D0 /* User.m in Sources */,
+				96AE970D158F7B1F007A02D0 /* Album.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

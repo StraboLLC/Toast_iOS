@@ -241,7 +241,7 @@
         
     } else if ([users count] != 0) {
         NSLog(@"LoginManager: %i duplicate user object found in the Core Data stack.", [users count]);
-        
+        NSLog(@"LoginManager: Not saving new core data object to prevent duplicate users.");
     } else {
         NSLog(@"LoginManager: No duplicate core data user objects found.");
         User * newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];

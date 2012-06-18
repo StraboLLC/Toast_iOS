@@ -2,7 +2,7 @@
 //  Capture.m
 //  Toast
 //
-//  Created by Thomas Beatty on 6/15/12.
+//  Created by Thomas Beatty on 6/18/12.
 //  Copyright (c) 2012 Strabo. All rights reserved.
 //
 
@@ -12,16 +12,16 @@
 
 @implementation Capture
 
-@dynamic token;
-@dynamic title;
-@dynamic type;
-@dynamic mediaURL;
-@dynamic geodataURL;
-@dynamic thumbnailURL;
 @dynamic creationDate;
-@dynamic uploadDate;
+@dynamic geodataURL;
 @dynamic latitude;
 @dynamic longitude;
+@dynamic mediaURL;
+@dynamic thumbnailURL;
+@dynamic title;
+@dynamic token;
+@dynamic type;
+@dynamic uploadDate;
 @dynamic album;
 
 @end
