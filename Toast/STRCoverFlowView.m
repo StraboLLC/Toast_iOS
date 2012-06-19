@@ -37,7 +37,7 @@
     if (self) {
         // Initialization code
         
-        NSLog(@"STRCoverFlowView: Initializing with frame %@", [self printFrameStats:frame]);
+        NSLog(@"STRCoverFlowView: Initializing with frame: %@ and array: %@", [self printFrameStats:frame], albumArray);
         
         self.albums = albumArray;
         
@@ -77,7 +77,8 @@
 }
 
 -(NSUInteger)arrayIndexForSelectedAlbum {
-    int index = scrollSubView.frame.origin.x/(scrollSubView.frame.size.width/albums.count);
+    int index = (int)scrollView.contentOffset.x/((int)scrollSubView.frame.size.width/(int)albums.count);
+    NSLog(@"!!!Content-offset: %f, total width: %i, album count: %i", scrollView.contentOffset.x, (int)scrollSubView.frame.size.width, albums.count);
     NSLog(@"STRCoverFlowView: Album at index: %i selected.", index);
     return index;
 }

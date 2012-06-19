@@ -14,6 +14,7 @@
 @interface STRNewAlbumViewController : UIViewController {
     IBOutlet UITextField * titleField;
     IBOutlet UIView * coverFlowView;
+    STRCoverFlowView * coverFlowSubView;
 }
 
 ///---------------------------------------------------------------------------------------

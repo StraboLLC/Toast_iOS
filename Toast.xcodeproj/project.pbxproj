@@ -36,6 +36,8 @@
 		96DA53111590B7A100C38314 /* STRCoverFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53101590B7A100C38314 /* STRCoverFlowView.m */; };
 		96DA53151590BA0A00C38314 /* STRClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53141590BA0A00C38314 /* STRClipView.m */; };
 		96DA53171590F75100C38314 /* randomalbum.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DA53161590F75100C38314 /* randomalbum.png */; };
+		96DA531A1590FD5B00C38314 /* STRAlbumDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53191590FD5A00C38314 /* STRAlbumDetailView.m */; };
+		96DA531C1590FD6900C38314 /* STRAlbumDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DA531B1590FD6900C38314 /* STRAlbumDetailView.xib */; };
 		96F422C61586A9BC002AE72D /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422C51586A9BC002AE72D /* NSString+MD5.m */; };
 		96F422CD1586AA68002AE72D /* CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422CA1586AA68002AE72D /* CurrentUser.m */; };
 		96F422D415877321002AE72D /* STRLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422D315877321002AE72D /* STRLoginManager.m */; };
@@ -107,6 +109,9 @@
 		96DA53131590BA0A00C38314 /* STRClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRClipView.h; sourceTree = "<group>"; };
 		96DA53141590BA0A00C38314 /* STRClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRClipView.m; sourceTree = "<group>"; };
 		96DA53161590F75100C38314 /* randomalbum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = randomalbum.png; path = album_covers/randomalbum.png; sourceTree = "<group>"; };
+		96DA53181590FD5A00C38314 /* STRAlbumDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumDetailView.h; sourceTree = "<group>"; };
+		96DA53191590FD5A00C38314 /* STRAlbumDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumDetailView.m; sourceTree = "<group>"; };
+		96DA531B1590FD6900C38314 /* STRAlbumDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STRAlbumDetailView.xib; sourceTree = "<group>"; };
 		96F422C41586A9BC002AE72D /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		96F422C51586A9BC002AE72D /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		96F422C91586AA68002AE72D /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUser.h; sourceTree = "<group>"; };
@@ -254,6 +259,9 @@
 				96DA53101590B7A100C38314 /* STRCoverFlowView.m */,
 				96DA53131590BA0A00C38314 /* STRClipView.h */,
 				96DA53141590BA0A00C38314 /* STRClipView.m */,
+				96DA53181590FD5A00C38314 /* STRAlbumDetailView.h */,
+				96DA53191590FD5A00C38314 /* STRAlbumDetailView.m */,
+				96DA531B1590FD6900C38314 /* STRAlbumDetailView.xib */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -430,6 +438,7 @@
 				96F79B5D158B7F9500F29BEC /* redmoleskine.png in Resources */,
 				96DA53091590AF9B00C38314 /* blackmoleskine.png in Resources */,
 				96DA53171590F75100C38314 /* randomalbum.png in Resources */,
+				96DA531C1590FD6900C38314 /* STRAlbumDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +495,7 @@
 				96AE9711158F9EAB007A02D0 /* STRAlbumManager.m in Sources */,
 				96DA53111590B7A100C38314 /* STRCoverFlowView.m in Sources */,
 				96DA53151590BA0A00C38314 /* STRClipView.m in Sources */,
+				96DA531A1590FD5B00C38314 /* STRAlbumDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

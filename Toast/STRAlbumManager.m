@@ -100,7 +100,7 @@
 #pragma mark - Saving Objects
 
 -(void)saveNewAlbumWithTitle:(NSString *)title coverArt:(NSString *)coverArt error:(NSError *__autoreleasing *)error {
-    NSLog(@"STRAlbumManager: Creating a new album: %@", title);
+    NSLog(@"STRAlbumManager: Creating a new album: %@ with cover art:%@", title, coverArt);
     
     NSManagedObjectContext * context = [(STRAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
@@ -108,7 +108,7 @@
     newAlbum.title = title;
     newAlbum.token = [self generateUniqueAlbumToken];
     newAlbum.creationDate = [NSDate date];
-    newAlbum.coverArtURL = [NSString stringWithFormat:@"%@", [self coverPathForAlbumName:@"Red Moleskine"]];
+    newAlbum.coverArtURL = [NSString stringWithFormat:@"%@", [self coverPathForAlbumName:coverArt]];
     
     // Save the album to core data
     [[self theUser] addAlbumsObject:newAlbum];

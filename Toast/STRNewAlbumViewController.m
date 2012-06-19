@@ -30,8 +30,8 @@
     
     CGRect cfViewFrame = coverFlowView.frame;
     cfViewFrame.origin = CGPointMake(0, 0);
-    STRCoverFlowView * cfView = [[STRCoverFlowView alloc] initWithFrame:cfViewFrame albums:[[STRAlbumManager defaultManager] allAlbumCoverNames]];
-    [coverFlowView addSubview:cfView];
+    coverFlowSubView = [[STRCoverFlowView alloc] initWithFrame:cfViewFrame albums:[[STRAlbumManager defaultManager] allAlbumCoverNames]];
+    [coverFlowView addSubview:coverFlowSubView];
 }
 
 - (void)viewDidUnload
@@ -48,11 +48,11 @@
 #pragma mark - Button Handling
 
 -(IBAction)submitButtonWasPressed:(id)sender {
-    
+    NSLog(@"STRNewAlbumViewController: Submit button was pressed.");
     // Save a new album to core data
     NSError * error;
     [[STRAlbumManager defaultManager] saveNewAlbumWithTitle:titleField.text 
-                                                   coverArt:@"Red Moleskine" 
+                                                   coverArt:[[coverFlowSubView albums] objectAtIndex:[coverFlowSubView arrayIndexForSelectedAlbum]]
                                                       error:&error];
     // Dismiss this view controller
     [self dismissViewControllerAnimated:YES completion:nil];
