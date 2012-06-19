@@ -32,6 +32,7 @@
 		96AE970A158F7B1F007A02D0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9709158F7B1F007A02D0 /* User.m */; };
 		96AE970D158F7B1F007A02D0 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE970C158F7B1F007A02D0 /* Album.m */; };
 		96AE9711158F9EAB007A02D0 /* STRAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9710158F9EAA007A02D0 /* STRAlbumManager.m */; };
+		96DA53091590AF9B00C38314 /* blackmoleskine.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DA53081590AF9B00C38314 /* blackmoleskine.png */; };
 		96F422C61586A9BC002AE72D /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422C51586A9BC002AE72D /* NSString+MD5.m */; };
 		96F422CD1586AA68002AE72D /* CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422CA1586AA68002AE72D /* CurrentUser.m */; };
 		96F422D415877321002AE72D /* STRLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F422D315877321002AE72D /* STRLoginManager.m */; };
@@ -97,6 +98,7 @@
 		96AE970E158F9A3A007A02D0 /* StringCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringCategories.h; sourceTree = "<group>"; };
 		96AE970F158F9EAA007A02D0 /* STRAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumManager.h; sourceTree = "<group>"; };
 		96AE9710158F9EAA007A02D0 /* STRAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumManager.m; sourceTree = "<group>"; };
+		96DA53081590AF9B00C38314 /* blackmoleskine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackmoleskine.png; path = album_covers/blackmoleskine.png; sourceTree = "<group>"; };
 		96F422C41586A9BC002AE72D /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		96F422C51586A9BC002AE72D /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		96F422C91586AA68002AE72D /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUser.h; sourceTree = "<group>"; };
@@ -105,7 +107,7 @@
 		96F422D215877321002AE72D /* STRLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRLoginManager.h; sourceTree = "<group>"; };
 		96F422D315877321002AE72D /* STRLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRLoginManager.m; sourceTree = "<group>"; };
 		96F79B58158B7BDD00F29BEC /* album_names.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = album_names.plist; path = album_covers/album_names.plist; sourceTree = "<group>"; };
-		96F79B5C158B7F9500F29BEC /* redmoleskine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redmoleskine.png; sourceTree = "<group>"; };
+		96F79B5C158B7F9500F29BEC /* redmoleskine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = redmoleskine.png; path = album_covers/redmoleskine.png; sourceTree = "<group>"; };
 		96F79B6C158BBC6000F29BEC /* STRNewAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRNewAlbumViewController.h; sourceTree = "<group>"; };
 		96F79B6D158BBC6000F29BEC /* STRNewAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRNewAlbumViewController.m; sourceTree = "<group>"; };
 		96F79B6F158BBC7E00F29BEC /* STRAlbumPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumPreferencesViewController.h; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				96F79B58158B7BDD00F29BEC /* album_names.plist */,
+				96DA53081590AF9B00C38314 /* blackmoleskine.png */,
 				96F79B5C158B7F9500F29BEC /* redmoleskine.png */,
 			);
 			name = album_covers;
@@ -404,6 +407,7 @@
 				963EE5291587C8DD0046BD04 /* AppledocSettings.plist in Resources */,
 				96F79B59158B7BDD00F29BEC /* album_names.plist in Resources */,
 				96F79B5D158B7F9500F29BEC /* redmoleskine.png in Resources */,
+				96DA53091590AF9B00C38314 /* blackmoleskine.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
