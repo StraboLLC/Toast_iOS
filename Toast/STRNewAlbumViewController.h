@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "STRAppDelegate.h"
+#import "STRCoverFlowView.h"
 
 
 @interface STRNewAlbumViewController : UIViewController {
     IBOutlet UITextField * titleField;
+    IBOutlet UIView * coverFlowView;
 }
 
 ///---------------------------------------------------------------------------------------

@@ -10,7 +10,7 @@
 #import "STRAppDelegate.h"
 
 @interface STRAlbumManager (InternalMethods)
--(NSDictionary *)albumNamesDictionary;
+
 @end
 
 @implementation STRAlbumManager
@@ -21,14 +21,14 @@
 
 #pragma mark - Album Cover Handling
 
--(NSURL *)coverURLForAlbumName:(NSString *)albumName {
-    NSURL * coverURL = [[[self albumNamesDictionary] allKeysForObject:albumName] objectAtIndex:0];
-    NSURL * coverAbsoluteURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@", coverURL]];
-    NSLog(@"STRAlbumManager: Coverart URL: %@ found for album name: %@", coverURL, albumName);
-    return coverAbsoluteURL; // Shut the compiler up
+-(NSString *)coverPathForAlbumName:(NSString *)albumName {
+    NSURL * coverURL = [NSURL URLWithString:[[[self albumNamesDictionary] allKeysForObject:albumName] objectAtIndex:0]];
+    NSString * coverAbsoluteURL = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", [coverURL URLByDeletingPathExtension]] ofType:@"png"];
+    NSLog(@"STRAlbumManager: Coverart URL: %@ found for album name: %@", coverAbsoluteURL, albumName);
+    return coverAbsoluteURL;
 }
 
--(NSString *)albumNameForCoverURL:(NSURL *)coverURL {
+-(NSString *)albumNameForCoverURL:(NSString *)coverURL {
     NSString * albumName = [[self albumNamesDictionary] objectForKey:[NSString stringWithFormat:@"%@", coverURL.lastPathComponent]];
     NSLog(@"STRAlbumManager: Album name: %@ found for coverart URL: %@", albumName, coverURL);
     return albumName; // Shut the compiler up
@@ -42,6 +42,22 @@
     NSString * token = [[NSString stringWithFormat:@"%@%d", userIDNumber, dateNumber] MD5];
     NSLog(@"STRAlbumManager: Unique album token generated: %@", token);
     return token;
+}
+
+-(NSDictionary *)albumNamesDictionary {
+    NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"album_names" ofType:@"plist"];
+    NSLog(@"STRAlbumManager: Generating dictionary of album names and coverart paths from file: %@.", dataPath);
+    return [NSDictionary dictionaryWithContentsOfFile:dataPath];
+}
+
+-(NSArray *)allAlbumCoverNames {
+    NSDictionary * albumDictionary = [self albumNamesDictionary];
+    NSMutableArray * albumNameArray = [[NSMutableArray alloc] initWithCapacity:albumDictionary.count];
+    NSString * key;
+    for (key in albumDictionary) {
+        [albumNameArray addObject:[albumDictionary objectForKey:key]];
+    }
+    return albumNameArray;
 }
 
 #pragma mark - Retrieving Objects
@@ -92,7 +108,7 @@
     newAlbum.title = title;
     newAlbum.token = [self generateUniqueAlbumToken];
     newAlbum.creationDate = [NSDate date];
-    newAlbum.coverArtURL = [NSString stringWithFormat:@"%@", [self coverURLForAlbumName:@"Red Moleskine"]];
+    newAlbum.coverArtURL = [NSString stringWithFormat:@"%@", [self coverPathForAlbumName:@"Red Moleskine"]];
     
     // Save the album to core data
     [[self theUser] addAlbumsObject:newAlbum];
@@ -106,15 +122,5 @@
     }
 }
 
-
-@end
-
-@implementation STRAlbumManager (InternalMethods)
-
--(NSDictionary *)albumNamesDictionary {
-    NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"album_names" ofType:@"plist"];
-    NSLog(@"STRAlbumManager: Generating dictionary of album names and coverart paths from file: %@.", dataPath);
-    return [NSDictionary dictionaryWithContentsOfFile:dataPath];
-}
 
 @end

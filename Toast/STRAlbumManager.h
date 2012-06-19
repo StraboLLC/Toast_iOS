@@ -44,7 +44,7 @@
  
  @return The path to the image URL for the album.
  */
--(NSURL *)coverURLForAlbumName:(NSString *)albumName;
+-(NSString *)coverPathForAlbumName:(NSString *)albumName;
 
 /**
  Matches a name (string) to the cover image URL of an album.
@@ -67,6 +67,20 @@
  
  */
 -(NSString *)generateUniqueAlbumToken;
+
+/**
+ Returns a dictionary of album names and cover art file names.
+ 
+ @return Dictionary with the contents of album_covers/album_names.plist
+ */
+-(NSDictionary *)albumNamesDictionary;
+
+/**
+ Generates an array of all of the possible cover names.
+ 
+ @return An array of album names with the contents of album_covers/album_names.plist
+ */
+-(NSArray *)allAlbumCoverNames;
 
 ///---------------------------------------------------------------------------------------
 /// @name Retrieving Objects From Core Data

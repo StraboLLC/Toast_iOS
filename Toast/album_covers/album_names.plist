@@ -4,7 +4,9 @@
 <dict>
 	<key>redmoleskine.png</key>
 	<string>Red Moleskine</string>
-	<key>blackboleskine.png</key>
+	<key>blackmoleskine.png</key>
 	<string>Black Moleskine</string>
+	<key>randomalbum.png</key>
+	<string>Randome Notebook</string>
 </dict>
 </plist>
