@@ -12,6 +12,14 @@
 #import "STRClipView.h"
 #import "STRAlbumDetailView.h"
 
+@protocol STRCoverFlowViewDelegate
+
+@required
+
+-(void)shouldPresentGalleryViewForAlbum:(Album *)album;
+
+@end
+
 /**
  A cover flow view to select albums in Toast.
  
@@ -20,6 +28,8 @@
  To populate the album covers, loadAlbumCovers: or loadAlbums: should be called immediately after initialization.
  */
 @interface STRCoverFlowView : UIView {
+    
+    id delegate;
     
     NSArray * albums;
     
@@ -31,6 +41,9 @@
     // Padding on the right and left of each album
     int padding;
 }
+
+@property(nonatomic, strong)id delegate;
+
 /**
  The array of albums loaded into the view.
  

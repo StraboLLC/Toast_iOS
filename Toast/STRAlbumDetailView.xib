@@ -43,7 +43,7 @@
 						<string key="NSFrameSize">{230, 325}</string>
 						<reference key="NSSuperview" ref="67352896"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="883151983"/>
+						<reference key="NSNextKeyView" ref="550841226"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -79,19 +79,20 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUIButton" id="863817731">
+					<object class="IBUIButton" id="550841226">
 						<reference key="NSNextResponder" ref="67352896"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{19, 20}, {72, 37}}</string>
 						<reference key="NSSuperview" ref="67352896"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="883151983"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<object class="NSColor" key="IBUIHighlightedTitleColor" id="35001434">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="121966548">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -119,7 +120,7 @@
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="766963390"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
-				<reference key="IBUIBackgroundColor" ref="35001434"/>
+				<reference key="IBUIBackgroundColor" ref="121966548"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</array>
@@ -140,6 +141,15 @@
 						<reference key="destination" ref="883151983"/>
 					</object>
 					<int key="connectionID">23</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">buttonWasPressed:</string>
+						<reference key="source" ref="550841226"/>
+						<reference key="destination" ref="67352896"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">28</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -167,7 +177,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="766963390"/>
 							<reference ref="883151983"/>
-							<reference ref="863817731"/>
+							<reference ref="550841226"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -183,7 +193,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">27</int>
-						<reference key="object" ref="863817731"/>
+						<reference key="object" ref="550841226"/>
 						<reference key="parent" ref="67352896"/>
 					</object>
 				</array>
@@ -202,13 +212,24 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">27</int>
+			<int key="maxID">28</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">STRAlbumDetailView</string>
 					<string key="superclassName">UIView</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">buttonWasPressed:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">buttonWasPressed:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">buttonWasPressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="imageView">UIImageView</string>
 						<string key="titleLabel">UILabel</string>

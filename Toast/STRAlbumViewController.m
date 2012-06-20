@@ -13,6 +13,12 @@
 
 @end
 
+@interface STRAlbumsViewController (STRCoverFlowViewDelegate) <STRCoverFlowViewDelegate>
+
+-(void)shouldPresentGalleryViewForAlbum:(Album *)album;
+
+@end
+
 @implementation STRAlbumsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -64,11 +70,25 @@
     CGRect cfViewFrame = coverFlowView.frame;
     cfViewFrame.origin = CGPointMake(0, 0);
     coverFlowSubView = [[STRCoverFlowView alloc] initWithFrame:cfViewFrame];
+    coverFlowSubView.delegate = self;
     [coverFlowSubView loadAlbums:allAlbums];
     [coverFlowView addSubview:coverFlowSubView];
     
 }
 
 #pragma mark - Button Handling
+
+@end
+
+@implementation STRAlbumsViewController (STRCoverFlowViewDelegate)
+
+-(void)shouldPresentGalleryViewForAlbum:(Album *)album {
+#warning Incomplete implementation
+    NSLog(@"STRAlbumViewController: Should present gallery view for the album: %@", album.title);
+    // Create a new gallery view controller with the given album
+    
+    // Push the new gallery view controller to the navigator stack
+    
+}
 
 @end

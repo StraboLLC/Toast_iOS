@@ -10,7 +10,8 @@
 
 @implementation STRAlbumDetailView
 
-@synthesize imageView, titleLabel;
+@synthesize delegate;
+@synthesize album, imageView, titleLabel;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -30,6 +31,10 @@
     // Drawing code
 }
 */
+
+-(IBAction)buttonWasPressed:(id)sender {
+    [self.delegate albumWasTapped:self.album];
+}
 
 
 @end

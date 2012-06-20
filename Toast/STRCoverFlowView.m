@@ -29,8 +29,15 @@
 
 @end
 
+@interface STRAlbumDetailView (STRAlbumDetailViewDelegate) <STRAlbumDetailViewDelegate>
+
+-(void)albumWasTapped:(Album *)album;
+
+@end
+
 @implementation STRCoverFlowView
 
+@synthesize delegate;
 @synthesize albums;
 
 - (id)initWithFrame:(CGRect)frame {
@@ -190,6 +197,9 @@
         albumCoverDetailView.imageView.image = [UIImage imageWithContentsOfFile:album.coverArtURL];
         albumCoverDetailView.titleLabel.text = [album title];
         
+        albumCoverDetailView.album = album;
+        albumCoverDetailView.delegate = self;
+        
         [newSubView addSubview:albumCoverDetailView];
         xMarker += (albumWidth+(padding*2));
     }
@@ -208,6 +218,15 @@
 -(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     NSLog(@"STRCoverFlowView: Scroll view ended scrolling animation.");
     [self arrayIndexForSelectedAlbum];
+}
+
+@end
+
+@implementation STRCoverFlowView (STRAlbumDetailViewDelegate)
+
+-(void)albumWasTapped:(Album *)album {
+    NSLog(@"STRCoverViewController: '%@' album was tapped.", album.title);
+    [self.delegate shouldPresentGalleryViewForAlbum:album];
 }
 
 @end
