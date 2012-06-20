@@ -10,11 +10,14 @@
 
 @implementation STRAlbumDetailView
 
+@synthesize imageView, titleLabel;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        NSLog(@"STRAlbumDetailView: View initialized.");
     }
     return self;
 }
@@ -27,5 +30,6 @@
     // Drawing code
 }
 */
+
 
 @end

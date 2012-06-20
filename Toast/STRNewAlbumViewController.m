@@ -30,7 +30,8 @@
     
     CGRect cfViewFrame = coverFlowView.frame;
     cfViewFrame.origin = CGPointMake(0, 0);
-    coverFlowSubView = [[STRCoverFlowView alloc] initWithFrame:cfViewFrame albums:[[STRAlbumManager defaultManager] allAlbumCoverNames]];
+    coverFlowSubView = [[STRCoverFlowView alloc] initWithFrame:cfViewFrame];
+    [coverFlowSubView loadAlbumCovers:[[STRAlbumManager defaultManager] allAlbumCoverNames]];
     [coverFlowView addSubview:coverFlowSubView];
 }
 

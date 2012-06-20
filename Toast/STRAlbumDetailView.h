@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface STRAlbumDetailView : UIView
+@interface STRAlbumDetailView : UIView {
+    IBOutlet UIImageView * imageView;
+    IBOutlet UILabel * titleLabel;
+}
+
+@property(nonatomic, strong)IBOutlet UIImageView * imageView;
+@property(nonatomic, strong)IBOutlet UILabel * titleLabel;
 
 @end

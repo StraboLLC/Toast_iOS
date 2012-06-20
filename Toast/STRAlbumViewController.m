@@ -29,6 +29,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -51,11 +52,20 @@
 #pragma mark - 
 
 -(void)reloadAlbums {
+    
+    // First, remove the old view if necessary
+    [coverFlowSubView removeFromSuperview];
+    coverFlowSubView = nil;
+    
     NSLog(@"STRAlbumViewController: Reloading the current user's albums");
+    
     NSArray * allAlbums = [[STRAlbumManager defaultManager] albumsForCurrentUser];
-    #warning Incomplete implementation
-    // Present the albums on the screen
-    NSLog(@"Saved Albums: %@", allAlbums);
+    
+    CGRect cfViewFrame = coverFlowView.frame;
+    cfViewFrame.origin = CGPointMake(0, 0);
+    coverFlowSubView = [[STRCoverFlowView alloc] initWithFrame:cfViewFrame];
+    [coverFlowSubView loadAlbums:allAlbums];
+    [coverFlowView addSubview:coverFlowSubView];
     
 }
 

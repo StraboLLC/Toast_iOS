@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "STRAlbumManager.h"
+
+#import "STRCoverFlowView.h"
 
 /**
  Handles the coverflow view of a user's albums.
@@ -18,7 +19,8 @@
  Contains a preferences button which requests the modal presentaton of a main preferences view.
  */
 @interface STRAlbumsViewController : UIViewController {
-    
+    IBOutlet UIView * coverFlowView;
+    STRCoverFlowView * coverFlowSubView;
 }
 
 /**

@@ -328,10 +328,17 @@
                                     <segue destination="Tch-ke-qcM" kind="modal" id="uhw-rC-WqZ"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="KzQ-Az-VF9">
+                                <rect key="frame" x="0.0" y="104" width="320" height="322"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1cF-8s-jeh"/>
+                    <connections>
+                        <outlet property="coverFlowView" destination="KzQ-Az-VF9" id="HA3-Eb-jFH"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1173" y="36"/>
@@ -400,7 +407,6 @@
                             <view contentMode="scaleToFill" id="Dna-WX-Oog">
                                 <rect key="frame" x="0.0" y="104" width="320" height="221"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -417,6 +423,9 @@
     <classes>
         <class className="STRAlbumsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/STRAlbumsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="coverFlowView" candidateClass="UIView"/>
+            </relationships>
         </class>
         <class className="STRNewAlbumViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/STRNewAlbumViewController.h"/>
