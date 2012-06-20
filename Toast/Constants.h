@@ -15,7 +15,7 @@
 
 // Server connections
 //#define KSTRBaseURL @"http://toastit.heroku.com/"
-#define kSTRBaseURL @"http://willpotter.local:3000/"
+#define kSTRBaseURL @"http://toastit.heroku.com/"
 #define kSTRLoginURL kSTRBaseURL @"/mobile/api/login"
 #define kSTRRegisterURL kSTRBaseURL @"/mobile/api/register"
 

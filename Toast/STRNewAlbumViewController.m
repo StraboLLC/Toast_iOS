@@ -48,6 +48,11 @@
 
 #pragma mark - Button Handling
 
+-(IBAction)cancelButtonWasPressed:(id)sender {
+    // Dismiss this view controller without saving a new album object
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(IBAction)submitButtonWasPressed:(id)sender {
     NSLog(@"STRNewAlbumViewController: Submit button was pressed.");
     // Save a new album to core data

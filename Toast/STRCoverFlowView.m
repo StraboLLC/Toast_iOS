@@ -130,7 +130,7 @@
     clipView = [[STRClipView alloc] initWithFrame:self.frame];
     clipView.scrollView = scrollView;
     
-    [self addSubview:clipView];
+    //[self addSubview:clipView];
 }
 
 @end

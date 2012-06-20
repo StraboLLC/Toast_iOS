@@ -21,6 +21,8 @@
 /// @name Button Handling
 ///---------------------------------------------------------------------------------------
 
+-(IBAction)cancelButtonWasPressed:(id)sender;
+
 -(IBAction)submitButtonWasPressed:(id)sender;
 
 @end

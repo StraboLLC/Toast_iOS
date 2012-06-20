@@ -59,12 +59,14 @@
 ///---------------------------------------------------------------------------------------
 
 /**
- Loads all of the 
+ Loads all of the possible album covers into the scroll view.
+ 
+ @param albumCoverNames An array of NSStrings specifying the names of albums.
  */
 -(void)loadAlbumCovers:(NSArray *)albumCoverNames;
 
 /**
- 
+ Loads a specific array of albums including their covers, titles, and a button link to their gallery views.
  */
 -(void)loadAlbums:(NSArray *)allAlbums;
 

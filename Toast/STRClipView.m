@@ -21,6 +21,7 @@
     return self;
 }
 
+// Pass swipe events to the scrollview
 -(UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     if ([self pointInside:point withEvent:event]) {
         return scrollView;
@@ -28,13 +29,11 @@
     return nil;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+// Pass touch events to the parent view 
+// Allows touch on objects owned by the album detail views
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event 
 {
-    // Drawing code
+	[[self superview] touchesEnded:touches withEvent:event];
 }
-*/
 
 @end
