@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "STRAlbumManager.h"
+#import "STRAppDelegate.h"
+#import "STRGalleryTabController.h"
+
 
 #import "STRCoverFlowView.h"
 

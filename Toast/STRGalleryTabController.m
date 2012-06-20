@@ -40,4 +40,11 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Button Handling
+
+-(IBAction)backButtonWasPressed:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

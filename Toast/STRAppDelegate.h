@@ -8,17 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "STRLoginManager.h"
-#import "STRAlbumManager.h"
+#import "STRAlbumObjectManager.h"
 
 @interface STRAppDelegate : UIResponder <UIApplicationDelegate> {
     STRLoginManager * loginManager;
-    STRAlbumManager * albumManager;
+    STRAlbumObjectManager * albumManager;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic, readonly) STRLoginManager * loginManager;
-@property (strong, nonatomic, readonly) STRAlbumManager * albumManager;
+@property (strong, nonatomic, readonly) STRAlbumObjectManager * albumManager;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

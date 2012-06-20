@@ -65,7 +65,7 @@
     
     NSLog(@"STRAlbumViewController: Reloading the current user's albums");
     
-    NSArray * allAlbums = [[STRAlbumManager defaultManager] albumsForCurrentUser];
+    NSArray * allAlbums = [[STRAlbumObjectManager defaultManager] albumsForCurrentUser];
     
     CGRect cfViewFrame = coverFlowView.frame;
     cfViewFrame.origin = CGPointMake(0, 0);
@@ -83,11 +83,12 @@
 @implementation STRAlbumsViewController (STRCoverFlowViewDelegate)
 
 -(void)shouldPresentGalleryViewForAlbum:(Album *)album {
-#warning Incomplete implementation
+#warning Incomplete implementation - needs to add album to galleryTabController
     NSLog(@"STRAlbumViewController: Should present gallery view for the album: %@", album.title);
-    // Create a new gallery view controller with the given album
-    
+    // Create a new gallery view controller **with the given album
+    STRGalleryTabController * galleryTabController = [self.storyboard instantiateViewControllerWithIdentifier:@"galleryTabController"];
     // Push the new gallery view controller to the navigator stack
+    [self.navigationController pushViewController:galleryTabController animated:YES];
     
 }
 

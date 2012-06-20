@@ -165,7 +165,7 @@
     for (NSString * album in albumArray) {
         CGRect albumCoverImageViewFrame = CGRectMake(xMarker, 0, albumWidth, height);
         UIImageView * albumCoverImageView = [[UIImageView alloc] initWithFrame:albumCoverImageViewFrame];
-        NSString * imageURLString = [[STRAlbumManager defaultManager] coverPathForAlbumName:album];
+        NSString * imageURLString = [[STRAlbumObjectManager defaultManager] coverPathForAlbumName:album];
         NSLog(@"STRCoverFlow: Adding cover image from URL: %@", imageURLString);
         albumCoverImageView.image = [UIImage imageWithContentsOfFile:imageURLString];
         albumCoverImageView.contentMode = UIViewContentModeScaleToFill;

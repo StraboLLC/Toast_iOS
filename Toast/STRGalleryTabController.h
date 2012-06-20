@@ -10,4 +10,6 @@
 
 @interface STRGalleryTabController : UIViewController
 
+-(IBAction)backButtonWasPressed:(id)sender;
+
 @end

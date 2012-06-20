@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface STRCaptureObjectManager : NSObject
+@interface STRCaptureObjectManager : NSObject 
+
++(STRCaptureObjectManager *)defaultManager;
 
 @end

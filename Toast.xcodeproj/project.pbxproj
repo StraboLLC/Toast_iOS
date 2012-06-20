@@ -19,6 +19,8 @@
 		964C765515890E9D0020E315 /* STRAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964C765415890E9D0020E315 /* STRAlbumViewController.m */; };
 		964C765915891DFF0020E315 /* STRRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964C765815891DFF0020E315 /* STRRootViewController.m */; };
 		96561D2F1592048600204E36 /* blackmoleskine.png in Resources */ = {isa = PBXBuildFile; fileRef = 96561D2E1592048600204E36 /* blackmoleskine.png */; };
+		96561D371592554E00204E36 /* STRGalleryTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96561D361592554E00204E36 /* STRGalleryTabController.m */; };
+		96561D3B15926E6400204E36 /* STRCaptureObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96561D3A15926E6300204E36 /* STRCaptureObjectManager.m */; };
 		965E2C4C158258B30007F167 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4B158258B30007F167 /* UIKit.framework */; };
 		965E2C4E158258B30007F167 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4D158258B30007F167 /* Foundation.framework */; };
 		965E2C50158258B30007F167 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4F158258B30007F167 /* CoreGraphics.framework */; };
@@ -32,7 +34,7 @@
 		96AE9706158F7B1E007A02D0 /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9705158F7B1E007A02D0 /* Capture.m */; };
 		96AE970A158F7B1F007A02D0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9709158F7B1F007A02D0 /* User.m */; };
 		96AE970D158F7B1F007A02D0 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE970C158F7B1F007A02D0 /* Album.m */; };
-		96AE9711158F9EAB007A02D0 /* STRAlbumManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9710158F9EAA007A02D0 /* STRAlbumManager.m */; };
+		96AE9711158F9EAB007A02D0 /* STRAlbumObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9710158F9EAA007A02D0 /* STRAlbumObjectManager.m */; };
 		96DA53111590B7A100C38314 /* STRCoverFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53101590B7A100C38314 /* STRCoverFlowView.m */; };
 		96DA53151590BA0A00C38314 /* STRClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53141590BA0A00C38314 /* STRClipView.m */; };
 		96DA531A1590FD5B00C38314 /* STRAlbumDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53191590FD5A00C38314 /* STRAlbumDetailView.m */; };
@@ -44,7 +46,6 @@
 		96F79B5D158B7F9500F29BEC /* redmoleskine.png in Resources */ = {isa = PBXBuildFile; fileRef = 96F79B5C158B7F9500F29BEC /* redmoleskine.png */; };
 		96F79B6E158BBC6000F29BEC /* STRNewAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B6D158BBC6000F29BEC /* STRNewAlbumViewController.m */; };
 		96F79B71158BBC7F00F29BEC /* STRAlbumPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B70158BBC7E00F29BEC /* STRAlbumPreferencesViewController.m */; };
-		96F79B75158BBDEC00F29BEC /* STRAlbumGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B74158BBDEC00F29BEC /* STRAlbumGalleryViewController.m */; };
 		96F79B7C158BC91B00F29BEC /* STRPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F79B7B158BC91B00F29BEC /* STRPreferencesViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,10 @@
 		964C765715891DFF0020E315 /* STRRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRRootViewController.h; sourceTree = "<group>"; };
 		964C765815891DFF0020E315 /* STRRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRRootViewController.m; sourceTree = "<group>"; };
 		96561D2E1592048600204E36 /* blackmoleskine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackmoleskine.png; path = album_covers/blackmoleskine.png; sourceTree = "<group>"; };
+		96561D351592554E00204E36 /* STRGalleryTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRGalleryTabController.h; sourceTree = "<group>"; };
+		96561D361592554E00204E36 /* STRGalleryTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRGalleryTabController.m; sourceTree = "<group>"; };
+		96561D3915926E6300204E36 /* STRCaptureObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCaptureObjectManager.h; sourceTree = "<group>"; };
+		96561D3A15926E6300204E36 /* STRCaptureObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCaptureObjectManager.m; sourceTree = "<group>"; };
 		965DE4FF158BD7B100DAAA92 /* CoreDataObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataObjects.h; sourceTree = "<group>"; };
 		965E2C47158258B30007F167 /* Toast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		965E2C4B158258B30007F167 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -101,8 +106,8 @@
 		96AE970B158F7B1F007A02D0 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		96AE970C158F7B1F007A02D0 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
 		96AE970E158F9A3A007A02D0 /* StringCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringCategories.h; sourceTree = "<group>"; };
-		96AE970F158F9EAA007A02D0 /* STRAlbumManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumManager.h; sourceTree = "<group>"; };
-		96AE9710158F9EAA007A02D0 /* STRAlbumManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumManager.m; sourceTree = "<group>"; };
+		96AE970F158F9EAA007A02D0 /* STRAlbumObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumObjectManager.h; sourceTree = "<group>"; };
+		96AE9710158F9EAA007A02D0 /* STRAlbumObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumObjectManager.m; sourceTree = "<group>"; };
 		96DA530F1590B7A100C38314 /* STRCoverFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCoverFlowView.h; sourceTree = "<group>"; };
 		96DA53101590B7A100C38314 /* STRCoverFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCoverFlowView.m; sourceTree = "<group>"; };
 		96DA53131590BA0A00C38314 /* STRClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRClipView.h; sourceTree = "<group>"; };
@@ -123,8 +128,6 @@
 		96F79B6D158BBC6000F29BEC /* STRNewAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRNewAlbumViewController.m; sourceTree = "<group>"; };
 		96F79B6F158BBC7E00F29BEC /* STRAlbumPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumPreferencesViewController.h; sourceTree = "<group>"; };
 		96F79B70158BBC7E00F29BEC /* STRAlbumPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumPreferencesViewController.m; sourceTree = "<group>"; };
-		96F79B73158BBDEC00F29BEC /* STRAlbumGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumGalleryViewController.h; sourceTree = "<group>"; };
-		96F79B74158BBDEC00F29BEC /* STRAlbumGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumGalleryViewController.m; sourceTree = "<group>"; };
 		96F79B7A158BC91B00F29BEC /* STRPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRPreferencesViewController.h; sourceTree = "<group>"; };
 		96F79B7B158BC91B00F29BEC /* STRPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRPreferencesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +175,15 @@
 				963EE5211587BF870046BD04 /* ToastLogicTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96561D381592555D00204E36 /* Gallery VCs */ = {
+			isa = PBXGroup;
+			children = (
+				96561D351592554E00204E36 /* STRGalleryTabController.h */,
+				96561D361592554E00204E36 /* STRGalleryTabController.m */,
+			);
+			name = "Gallery VCs";
 			sourceTree = "<group>";
 		};
 		965E2C3C158258B30007F167 = {
@@ -244,6 +256,7 @@
 				964C765815891DFF0020E315 /* STRRootViewController.m */,
 				96F79B7A158BC91B00F29BEC /* STRPreferencesViewController.h */,
 				96F79B7B158BC91B00F29BEC /* STRPreferencesViewController.m */,
+				96561D381592555D00204E36 /* Gallery VCs */,
 				96F79B72158BBC8A00F29BEC /* Album VCs */,
 				96DFCB1515868FDF002BA57C /* Log In */,
 			);
@@ -291,8 +304,10 @@
 		96F422CF1586AA70002AE72D /* Model Objects */ = {
 			isa = PBXGroup;
 			children = (
-				96AE970F158F9EAA007A02D0 /* STRAlbumManager.h */,
-				96AE9710158F9EAA007A02D0 /* STRAlbumManager.m */,
+				96AE970F158F9EAA007A02D0 /* STRAlbumObjectManager.h */,
+				96AE9710158F9EAA007A02D0 /* STRAlbumObjectManager.m */,
+				96561D3915926E6300204E36 /* STRCaptureObjectManager.h */,
+				96561D3A15926E6300204E36 /* STRCaptureObjectManager.m */,
 				96F79B6B158BAFAD00F29BEC /* Core Data Objects */,
 				96F422D01586AA82002AE72D /* Login */,
 			);
@@ -342,8 +357,6 @@
 				96F79B6D158BBC6000F29BEC /* STRNewAlbumViewController.m */,
 				96F79B6F158BBC7E00F29BEC /* STRAlbumPreferencesViewController.h */,
 				96F79B70158BBC7E00F29BEC /* STRAlbumPreferencesViewController.m */,
-				96F79B73158BBDEC00F29BEC /* STRAlbumGalleryViewController.h */,
-				96F79B74158BBDEC00F29BEC /* STRAlbumGalleryViewController.m */,
 			);
 			name = "Album VCs";
 			sourceTree = "<group>";
@@ -483,15 +496,16 @@
 				9629BFE9158A3177007E8291 /* STRRegistrationViewController.m in Sources */,
 				96F79B6E158BBC6000F29BEC /* STRNewAlbumViewController.m in Sources */,
 				96F79B71158BBC7F00F29BEC /* STRAlbumPreferencesViewController.m in Sources */,
-				96F79B75158BBDEC00F29BEC /* STRAlbumGalleryViewController.m in Sources */,
 				96F79B7C158BC91B00F29BEC /* STRPreferencesViewController.m in Sources */,
 				96AE9706158F7B1E007A02D0 /* Capture.m in Sources */,
 				96AE970A158F7B1F007A02D0 /* User.m in Sources */,
 				96AE970D158F7B1F007A02D0 /* Album.m in Sources */,
-				96AE9711158F9EAB007A02D0 /* STRAlbumManager.m in Sources */,
+				96AE9711158F9EAB007A02D0 /* STRAlbumObjectManager.m in Sources */,
 				96DA53111590B7A100C38314 /* STRCoverFlowView.m in Sources */,
 				96DA53151590BA0A00C38314 /* STRClipView.m in Sources */,
 				96DA531A1590FD5B00C38314 /* STRAlbumDetailView.m in Sources */,
+				96561D371592554E00204E36 /* STRGalleryTabController.m in Sources */,
+				96561D3B15926E6400204E36 /* STRCaptureObjectManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
 @interface STRAppDelegate ()
 
 @property(nonatomic, strong, readwrite) STRLoginManager * loginManager;
-@property(nonatomic, strong, readwrite) STRAlbumManager * albumManager;
+@property(nonatomic, strong, readwrite) STRAlbumObjectManager * albumManager;
 
 @end
 
@@ -30,7 +30,7 @@
     
     // Set up the data managers
     self.loginManager = [[STRLoginManager alloc] init];
-    self.albumManager = [[STRAlbumManager alloc] init];
+    self.albumManager = [[STRAlbumObjectManager alloc] init];
     
     // FOR TESTING ONLY
     //[self.loginManager logCurrentUserOut];

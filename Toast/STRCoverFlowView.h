@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "STRAlbumManager.h"
+#import "STRAppDelegate.h"
 
 #import "STRClipView.h"
 #import "STRAlbumDetailView.h"

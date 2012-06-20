@@ -22,7 +22,7 @@
  
  Because the AlbumManager is accessed by many different objects and methods, it is useful to intantiate only one STRAlbumManager object and keep a pointer to it in the app delegate. defaultManager looks for property albumManager in the app delegate (a STRAppDelegate) and returns the pointer to this object. This way, the album manager that was instantiated at application start can be easily accessed.
  */
-@interface STRAlbumManager : NSObject
+@interface STRAlbumObjectManager : NSObject
 
 /**
  Accesses the app delegate and obtains the pointer to the AlbumManager
@@ -31,7 +31,7 @@
  
  @return The default STRAlbumManager object.
  */
-+(STRAlbumManager *)defaultManager;
++(STRAlbumObjectManager *)defaultManager;
 
 ///---------------------------------------------------------------------------------------
 /// @name Handling Album Covers
