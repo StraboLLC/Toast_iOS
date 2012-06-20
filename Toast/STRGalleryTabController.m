@@ -1,18 +1,18 @@
 //
-//  STRAlbumGalleryViewController.m
+//  STRGalleryTabController.m
 //  Toast
 //
-//  Created by Thomas Beatty on 6/15/12.
+//  Created by Thomas Beatty on 6/20/12.
 //  Copyright (c) 2012 Strabo. All rights reserved.
 //
 
-#import "STRAlbumGalleryViewController.h"
+#import "STRGalleryTabController.h"
 
-@interface STRAlbumGalleryViewController ()
+@interface STRGalleryTabController ()
 
 @end
 
-@implementation STRAlbumGalleryViewController
+@implementation STRGalleryTabController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
