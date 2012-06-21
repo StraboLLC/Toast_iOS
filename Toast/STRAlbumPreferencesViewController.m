@@ -63,7 +63,11 @@
 
 -(IBAction)submitButtonWasPressed:(id)sender {
     // Save any changed preferences
-    [[STRAlbumObjectManager defaultManager] saveTitle:titleField.text andCoverArt:[[coverFlowSubView albums] objectAtIndex:[coverFlowSubView arrayIndexForSelectedAlbum]] changesToAlbum:self.album];
+    NSError * error;
+    [[STRAlbumObjectManager defaultManager] saveTitle:titleField.text andCoverArt:[[coverFlowSubView albums] objectAtIndex:[coverFlowSubView arrayIndexForSelectedAlbum]] changesToAlbum:self.album error:&error];
+    if (error) {
+        NSLog(@"STRAlbumPreferencesViewController: !!!ERROR: There was an error saving changes to your album.");
+    }
     // Dismiss the view controller
     NSLog(@"STRPreferencesViewController: Dismissing preferences view contoller");
     [self dismissViewControllerAnimated:YES completion:nil];

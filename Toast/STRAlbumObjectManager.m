@@ -133,11 +133,16 @@
     }
 }
 
--(void)saveTitle:(NSString *)title andCoverArt:(NSString *)coverArt changesToAlbum:(Album *)album {
+-(void)saveTitle:(NSString *)title andCoverArt:(NSString *)coverArt changesToAlbum:(Album *)album error:(NSError *__autoreleasing *)error {
     album.title = title;
     album.coverArtURL = [self coverPathForAlbumName:coverArt];
     NSManagedObjectContext * context = [(STRAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    [context save:nil];
+    
+    NSError * newError;
+    [context save:&newError];
+    if (newError) {
+        *error = newError;
+    }
 }
 
 @end

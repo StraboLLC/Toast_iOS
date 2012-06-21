@@ -41,6 +41,7 @@
 /**
  
  */
+-(IBAction)preferencesButtonWasPressed:(id)sender;
 
 
 @end

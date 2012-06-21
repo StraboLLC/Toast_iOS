@@ -78,6 +78,10 @@
 
 #pragma mark - Button Handling
 
+-(IBAction)preferencesButtonWasPressed:(id)sender {
+    
+}
+
 @end
 
 @implementation STRAlbumsViewController (STRCoverFlowViewDelegate)
