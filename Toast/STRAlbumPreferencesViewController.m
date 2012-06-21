@@ -14,11 +14,13 @@
 
 @implementation STRAlbumPreferencesViewController
 
+@synthesize album, titleField;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -28,7 +30,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	// Load the title
+    titleField.text = self.album.title;
+    
+    // Load the coverflow
+    CGRect cfViewFrame = coverFlowView.frame;
+    cfViewFrame.origin = CGPointMake(0, 0);
+    coverFlowSubView = [[STRCoverFlowView alloc] initWithFrame:cfViewFrame];
+    [coverFlowSubView loadAlbumCovers:[[STRAlbumObjectManager defaultManager] allAlbumCoverNames]];
+    [coverFlowView addSubview:coverFlowSubView];
+    
+    // Update the coverflow to the proper album cover
+    NSString * coverArtName = [[STRAlbumObjectManager defaultManager] albumNameForCoverURL:[NSURL URLWithString:self.album.coverArtURL.lastPathComponent]];
+    NSLog(@"STRAlbumPreferencesViewController: Displaying album cover art: %@", coverArtName);
+    NSUInteger index = [[coverFlowSubView albums] indexOfObject:coverArtName];
+    NSLog(@"STRAlbumPreferencesViewController: Requesting the display of album at index: %i", index);
+    [coverFlowSubView scrollToIndex:index];
 }
 
 - (void)viewDidUnload
@@ -46,9 +63,14 @@
 
 -(IBAction)submitButtonWasPressed:(id)sender {
     // Save any changed preferences
-    
+    [[STRAlbumObjectManager defaultManager] saveTitle:titleField.text andCoverArt:[[coverFlowSubView albums] objectAtIndex:[coverFlowSubView arrayIndexForSelectedAlbum]] changesToAlbum:self.album];
     // Dismiss the view controller
     NSLog(@"STRPreferencesViewController: Dismissing preferences view contoller");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(IBAction)cancelButtonWasPressed:(id)sender {
+    NSLog(@"STRPreferencesViewController: Dismissing preferences view controller without saving.");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

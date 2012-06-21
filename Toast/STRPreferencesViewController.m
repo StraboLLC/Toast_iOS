@@ -44,7 +44,7 @@
 
 -(IBAction)submitButtonWasPressed:(id)sender {
     // Save any changed preferences
-
+    
     // Dismiss the view controller
     NSLog(@"STRPreferencesViewController: Dismissing preferences view contoller");
     [self dismissViewControllerAnimated:YES completion:nil];

@@ -47,7 +47,7 @@
 /**
  The array of albums loaded into the view.
  
- The array is an array of strings if loadAlbumCovers: is used to populate the albums. If loadAlbums: is used to populate the album covers, then the array contains a series of [Album] objects.
+ The array is an array of strings (names of albums) if loadAlbumCovers: is used to populate the albums. If loadAlbums: is used to populate the album covers, then the array contains a series of [Album] objects.
  */
 @property(nonatomic, readonly)NSArray * albums;
 
@@ -66,6 +66,13 @@
  @return Integer value of the index of the currently selected album in albums.
  */
 -(NSUInteger)arrayIndexForSelectedAlbum;
+
+/**
+ Scrolls the scrollSubView to display the apropriate cover.
+ 
+ @param index The index of the array that the scrollview should scroll to.
+ */
+-(void)scrollToIndex:(NSInteger)index;
 
 ///---------------------------------------------------------------------------------------
 /// @name Loading Albums

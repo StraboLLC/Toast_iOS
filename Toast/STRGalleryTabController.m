@@ -65,7 +65,6 @@
 #pragma mark - Button Handling
 
 -(IBAction)backButtonWasPressed:(id)sender {
-    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -75,6 +74,13 @@
 
 -(IBAction)tileTabButtonWasPressed:(id)sender {
     [self shouldTransitionFromViewController:self.mapGalleryViewController toViewController:self.tileGalleryViewController];
+}
+
+
+-(IBAction)preferencesButtonWasPressed:(id)sender {
+    STRAlbumPreferencesViewController * albumPreferencesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"albumPreferencesViewController"];
+    albumPreferencesViewController.album = self.album;
+    [self presentViewController:albumPreferencesViewController animated:YES completion:nil];
 }
 
 @end

@@ -51,9 +51,13 @@
 
 -(NSUInteger)arrayIndexForSelectedAlbum {
     int index = (int)scrollView.contentOffset.x/((int)scrollSubView.frame.size.width/(int)albums.count);
-    NSLog(@"!!!Content-offset: %f, total width: %i, album count: %i", scrollView.contentOffset.x, (int)scrollSubView.frame.size.width, albums.count);
+    NSLog(@"STRCoverFlowView: Content-offset: %f, total width: %i, album count: %i", scrollView.contentOffset.x, (int)scrollSubView.frame.size.width, albums.count);
     NSLog(@"STRCoverFlowView: Album at index: %i selected.", index);
     return index;
+}
+
+-(void)scrollToIndex:(NSInteger)index {
+    scrollView.contentOffset = CGPointMake(((int)index*scrollView.frame.size.width), 0);
 }
 
 #pragma mark - Loading Albums

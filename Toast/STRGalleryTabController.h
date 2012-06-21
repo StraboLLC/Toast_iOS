@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "STRMapGalleryViewController.h"
 #import "STRTileGalleryViewController.h"
+#import "STRAlbumPreferencesViewController.h"
 
 #import "CoreDataObjects.h"
 #import "STRCaptureObjectManager.h"
@@ -31,7 +32,12 @@
 @property(nonatomic, strong)STRMapGalleryViewController * mapGalleryViewController;
 @property(nonatomic, strong)STRTileGalleryViewController * tileGalleryViewController;
 
+///---------------------------------------------------------------------------------------
+/// @name Button Handling
+///---------------------------------------------------------------------------------------
+
 -(IBAction)backButtonWasPressed:(id)sender;
+-(IBAction)preferencesButtonWasPressed:(id)sender;
 
 -(IBAction)mapTabButtonWasPressed:(id)sender;
 -(IBAction)tileTabButtonWasPressed:(id)sender;

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "STRAppDelegate.h"
 #import "STRGalleryTabController.h"
+#import "STRAlbumPreferencesViewController.h"
 
 
 #import "STRCoverFlowView.h"
@@ -31,5 +32,15 @@
  Checks the core data stack for all of the albums associated with the user, orders them according to date created, and displays them in the cover-flow style album selector.
  */
 -(void)reloadAlbums;
+
+
+///---------------------------------------------------------------------------------------
+/// @name Button Handling
+///---------------------------------------------------------------------------------------
+
+/**
+ 
+ */
+
 
 @end

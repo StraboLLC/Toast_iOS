@@ -7,11 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STRCoverFlowView.h"
 
 @interface STRAlbumPreferencesViewController : UIViewController {
     
+    Album * album;
+    
+    IBOutlet UITextField * titleField;
+    IBOutlet UIView * coverFlowView;
+    STRCoverFlowView * coverFlowSubView;
 }
 
+@property(nonatomic, strong)Album * album;
+
+@property(nonatomic, strong)IBOutlet UITextField * titleField;
+
 -(IBAction)submitButtonWasPressed:(id)sender;
+-(IBAction)cancelButtonWasPressed:(id)sender;
 
 @end

@@ -117,4 +117,6 @@
  */
 -(void)saveNewAlbumWithTitle:(NSString *)title coverArt:(NSString *)coverArt error:(NSError *__autoreleasing *)error;
 
+-(void)saveTitle:(NSString *)title andCoverArt:(NSString *)coverArt changesToAlbum:(Album *)album;
+
 @end
