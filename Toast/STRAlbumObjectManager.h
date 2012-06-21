@@ -16,11 +16,11 @@
  
  Interfaces with Core Data to handle all aspects of album management.
  
- New STRAlbumManagers can be instantiated and used at any time, but it is recommended that you access the defaultManager as described below instead.
+ New STRAlbumObjectManagers can be instantiated and used at any time, but it is recommended that you access the defaultManager as described below instead.
  
  ##Default Manager
  
- Because the AlbumManager is accessed by many different objects and methods, it is useful to intantiate only one STRAlbumManager object and keep a pointer to it in the app delegate. defaultManager looks for property albumManager in the app delegate (a STRAppDelegate) and returns the pointer to this object. This way, the album manager that was instantiated at application start can be easily accessed.
+ Because the STRAlbumObjectManager is accessed by many different objects and methods, it is useful to intantiate only one STRAlbumObjectManager object and keep a pointer to it in the app delegate. defaultManager looks for property albumManager in the app delegate (a STRAppDelegate) and returns the pointer to this object. This way, the album manager that was instantiated at application start can be easily accessed.
  */
 @interface STRAlbumObjectManager : NSObject
 

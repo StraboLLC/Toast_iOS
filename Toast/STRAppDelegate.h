@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "STRLoginManager.h"
 #import "STRAlbumObjectManager.h"
+#import "STRCaptureObjectManager.h"
 
 @interface STRAppDelegate : UIResponder <UIApplicationDelegate> {
     STRLoginManager * loginManager;

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface STRAlbumPreferencesViewController : UIViewController
+@interface STRAlbumPreferencesViewController : UIViewController {
+    
+}
+
+-(IBAction)submitButtonWasPressed:(id)sender;
 
 @end

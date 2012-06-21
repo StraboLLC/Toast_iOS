@@ -1,18 +1,18 @@
 //
-//  STRAlbumPreferencesViewController.m
+//  STRMapGalleryViewController.m
 //  Toast
 //
-//  Created by Thomas Beatty on 6/15/12.
+//  Created by Thomas Beatty on 6/21/12.
 //  Copyright (c) 2012 Strabo. All rights reserved.
 //
 
-#import "STRAlbumPreferencesViewController.h"
+#import "STRMapGalleryViewController.h"
 
-@interface STRAlbumPreferencesViewController ()
+@interface STRMapGalleryViewController ()
 
 @end
 
-@implementation STRAlbumPreferencesViewController
+@implementation STRMapGalleryViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,8 +22,6 @@
     }
     return self;
 }
-
-#pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
@@ -40,16 +38,6 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-#pragma mark - Button Handling
-
--(IBAction)submitButtonWasPressed:(id)sender {
-    // Save any changed preferences
-    
-    // Dismiss the view controller
-    NSLog(@"STRPreferencesViewController: Dismissing preferences view contoller");
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

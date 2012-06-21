@@ -8,11 +8,16 @@
 
 #import "STRGalleryTabController.h"
 
-@interface STRGalleryTabController ()
+@interface STRGalleryTabController (InternalMethods)
+
+-(void)shouldTransitionFromViewController:(UIViewController *)sourceViewController toViewController:(UIViewController *)destinationViewController;
 
 @end
 
 @implementation STRGalleryTabController
+
+@synthesize album, captureManager;
+@synthesize mapGalleryViewController, tileGalleryViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,10 +28,27 @@
     return self;
 }
 
+#pragma mark - View Lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	NSLog(@"STRGalleryTabController: Tab controller did load. Setting up the child views.");
+    // Set up the child views
+    self.mapGalleryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mapGalleryViewController"];
+    self.tileGalleryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"tileGalleryViewController"];
+    self.mapGalleryViewController.view.frame = containerView.frame;
+    self.tileGalleryViewController.view.frame = containerView.frame;
+    
+    [self addChildViewController:self.mapGalleryViewController];
+    [self addChildViewController:self.tileGalleryViewController];
+    
+    [containerView addSubview:self.mapGalleryViewController.view];
+    [containerView addSubview:self.tileGalleryViewController.view];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.captureManager logAllAssociatedCaptures];
 }
 
 - (void)viewDidUnload
@@ -45,6 +67,27 @@
 -(IBAction)backButtonWasPressed:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(IBAction)mapTabButtonWasPressed:(id)sender {
+    [self shouldTransitionFromViewController:self.tileGalleryViewController toViewController:self.mapGalleryViewController];
+}
+
+-(IBAction)tileTabButtonWasPressed:(id)sender {
+    [self shouldTransitionFromViewController:self.mapGalleryViewController toViewController:self.tileGalleryViewController];
+}
+
+@end
+
+@implementation STRGalleryTabController (InternalMethods)
+
+-(void)shouldTransitionFromViewController:(UIViewController *)sourceViewController toViewController:(UIViewController *)destinationViewController {
+    [self transitionFromViewController:sourceViewController 
+                      toViewController:destinationViewController 
+                              duration:0.0 
+                               options:UIViewAnimationTransitionNone 
+                            animations:^{} 
+                            completion:nil];
 }
 
 @end

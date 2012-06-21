@@ -83,10 +83,13 @@
 @implementation STRAlbumsViewController (STRCoverFlowViewDelegate)
 
 -(void)shouldPresentGalleryViewForAlbum:(Album *)album {
-#warning Incomplete implementation - needs to add album to galleryTabController
     NSLog(@"STRAlbumViewController: Should present gallery view for the album: %@", album.title);
-    // Create a new gallery view controller **with the given album
+    // Create a new gallery view controller - Set it up
     STRGalleryTabController * galleryTabController = [self.storyboard instantiateViewControllerWithIdentifier:@"galleryTabController"];
+    // Add album to the galleryTabController
+    galleryTabController.album = album;
+    // Add an STRCaptureObjectManager to the galleryTabController
+    galleryTabController.captureManager = [STRCaptureObjectManager captureManagerWithAlbum:album];
     // Push the new gallery view controller to the navigator stack
     [self.navigationController pushViewController:galleryTabController animated:YES];
     
