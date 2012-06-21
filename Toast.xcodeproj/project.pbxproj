@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96110759159386B500374A55 /* STRTabControllerSegueToTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 96110758159386B500374A55 /* STRTabControllerSegueToTile.m */; };
 		9629BFE9158A3177007E8291 /* STRRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9629BFE8158A3177007E8291 /* STRRegistrationViewController.m */; };
 		963EE5151587BF870046BD04 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 963EE5141587BF870046BD04 /* SenTestingKit.framework */; };
 		963EE5161587BF870046BD04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4B158258B30007F167 /* UIKit.framework */; };
@@ -38,7 +37,6 @@
 		96AE9711158F9EAB007A02D0 /* STRAlbumObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9710158F9EAA007A02D0 /* STRAlbumObjectManager.m */; };
 		96C002711593774400DDD980 /* STRMapGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C002701593774400DDD980 /* STRMapGalleryViewController.m */; };
 		96C002751593775000DDD980 /* STRTileGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C002741593775000DDD980 /* STRTileGalleryViewController.m */; };
-		96C002781593795F00DDD980 /* STRTabControllerSegueToMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C002771593795F00DDD980 /* STRTabControllerSegueToMap.m */; };
 		96DA53111590B7A100C38314 /* STRCoverFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53101590B7A100C38314 /* STRCoverFlowView.m */; };
 		96DA53151590BA0A00C38314 /* STRClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53141590BA0A00C38314 /* STRClipView.m */; };
 		96DA531A1590FD5B00C38314 /* STRAlbumDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53191590FD5A00C38314 /* STRAlbumDetailView.m */; };
@@ -64,8 +62,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		96110757159386B500374A55 /* STRTabControllerSegueToTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRTabControllerSegueToTile.h; sourceTree = "<group>"; };
-		96110758159386B500374A55 /* STRTabControllerSegueToTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRTabControllerSegueToTile.m; sourceTree = "<group>"; };
 		9629BFE7158A3177007E8291 /* STRRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRRegistrationViewController.h; sourceTree = "<group>"; };
 		9629BFE8158A3177007E8291 /* STRRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRRegistrationViewController.m; sourceTree = "<group>"; };
 		963EE5131587BF870046BD04 /* ToastLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToastLogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,8 +114,6 @@
 		96C002701593774400DDD980 /* STRMapGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRMapGalleryViewController.m; sourceTree = "<group>"; };
 		96C002731593775000DDD980 /* STRTileGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRTileGalleryViewController.h; sourceTree = "<group>"; };
 		96C002741593775000DDD980 /* STRTileGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRTileGalleryViewController.m; sourceTree = "<group>"; };
-		96C002761593795E00DDD980 /* STRTabControllerSegueToMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRTabControllerSegueToMap.h; sourceTree = "<group>"; };
-		96C002771593795F00DDD980 /* STRTabControllerSegueToMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRTabControllerSegueToMap.m; sourceTree = "<group>"; };
 		96DA530F1590B7A100C38314 /* STRCoverFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCoverFlowView.h; sourceTree = "<group>"; };
 		96DA53101590B7A100C38314 /* STRCoverFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCoverFlowView.m; sourceTree = "<group>"; };
 		96DA53131590BA0A00C38314 /* STRClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRClipView.h; sourceTree = "<group>"; };
@@ -269,10 +263,6 @@
 		96C002791593796200DDD980 /* Storyboard Segues */ = {
 			isa = PBXGroup;
 			children = (
-				96C002761593795E00DDD980 /* STRTabControllerSegueToMap.h */,
-				96C002771593795F00DDD980 /* STRTabControllerSegueToMap.m */,
-				96110757159386B500374A55 /* STRTabControllerSegueToTile.h */,
-				96110758159386B500374A55 /* STRTabControllerSegueToTile.m */,
 			);
 			name = "Storyboard Segues";
 			sourceTree = "<group>";
@@ -536,8 +526,6 @@
 				96561D3B15926E6400204E36 /* STRCaptureObjectManager.m in Sources */,
 				96C002711593774400DDD980 /* STRMapGalleryViewController.m in Sources */,
 				96C002751593775000DDD980 /* STRTileGalleryViewController.m in Sources */,
-				96C002781593795F00DDD980 /* STRTabControllerSegueToMap.m in Sources */,
-				96110759159386B500374A55 /* STRTabControllerSegueToTile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
