@@ -16,6 +16,7 @@
  */
 @interface Album : NSManagedObject
 
+@property (nonatomic, retain) NSString * abstract;
 @property (nonatomic, retain) NSString * coverArtURL;
 @property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSString * title;

@@ -13,6 +13,7 @@
 
 @implementation Album
 
+@dynamic abstract;
 @dynamic coverArtURL;
 @dynamic creationDate;
 @dynamic title;
