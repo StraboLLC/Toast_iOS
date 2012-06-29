@@ -37,6 +37,7 @@
 		965E2C5E158258B30007F167 /* STRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C5D158258B30007F167 /* STRAppDelegate.m */; };
 		965E2C61158258B30007F167 /* Toast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C5F158258B30007F167 /* Toast.xcdatamodeld */; };
 		965E2C68158258C80007F167 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965E2C67158258C80007F167 /* MainStoryboard.storyboard */; };
+		968F39BA159E2EFA0044E9AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F39B9159E2EFA0044E9AA /* QuartzCore.framework */; };
 		969F1DA7158687D20094154B /* STRSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969F1DA6158687D20094154B /* STRSignInViewController.m */; };
 		96AE9706158F7B1E007A02D0 /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9705158F7B1E007A02D0 /* Capture.m */; };
 		96AE970A158F7B1F007A02D0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9709158F7B1F007A02D0 /* User.m */; };
@@ -121,6 +122,7 @@
 		965E2C5D158258B30007F167 /* STRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STRAppDelegate.m; sourceTree = "<group>"; };
 		965E2C60158258B30007F167 /* Toast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Toast.xcdatamodel; sourceTree = "<group>"; };
 		965E2C67158258C80007F167 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		968F39B9159E2EFA0044E9AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		969F1DA5158687D20094154B /* STRSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRSignInViewController.h; sourceTree = "<group>"; };
 		969F1DA6158687D20094154B /* STRSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRSignInViewController.m; sourceTree = "<group>"; };
 		96AE9704158F7B1E007A02D0 /* Capture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Capture.h; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				965E2C52158258B30007F167 /* CoreData.framework in Frameworks */,
 				96C85223159CE33800C24C24 /* AVFoundation.framework in Frameworks */,
 				96C85229159CFBD100C24C24 /* CoreLocation.framework in Frameworks */,
+				968F39BA159E2EFA0044E9AA /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +273,7 @@
 		965E2C4A158258B30007F167 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				968F39B9159E2EFA0044E9AA /* QuartzCore.framework */,
 				96C85228159CFBD100C24C24 /* CoreLocation.framework */,
 				96C85222159CE33800C24C24 /* AVFoundation.framework */,
 				965E2C4B158258B30007F167 /* UIKit.framework */,

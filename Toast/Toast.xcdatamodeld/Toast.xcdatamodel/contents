@@ -22,13 +22,18 @@
         <attribute name="uploadDate" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="album" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="captures" inverseEntity="Album" syncable="YES"/>
     </entity>
+    <entity name="Preferences" syncable="YES">
+        <relationship name="relationship" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="preferences" inverseEntity="User" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="userID" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="albums" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Album" inverseName="user" inverseEntity="Album" syncable="YES"/>
+        <relationship name="preferences" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Preferences" inverseName="relationship" inverseEntity="Preferences" syncable="YES"/>
     </entity>
     <elements>
         <element name="Album" positionX="-3834" positionY="-2286" width="128" height="150"/>
         <element name="Capture" positionX="-3647" positionY="-2217" width="128" height="210"/>
-        <element name="User" positionX="-4016" positionY="-2376" width="128" height="75"/>
+        <element name="User" positionX="-4016" positionY="-2376" width="128" height="90"/>
+        <element name="Preferences" positionX="-4016" positionY="-2223" width="128" height="60"/>
     </elements>
 </model>

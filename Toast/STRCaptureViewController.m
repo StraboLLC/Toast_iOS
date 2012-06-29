@@ -8,11 +8,70 @@
 
 #import "STRCaptureViewController.h"
 
-@interface STRCaptureViewController ()
+@interface STRCaptureViewController (InternalMathods)
+
+// -- Service Initialization -- //
+
+/**
+ Set up the location services.
+ 
+ Initialize the CLLocationManager (locationManager) and assign values like accuracy and purpose.
+ */
+-(void)setUpLocationServices;
+
+/**
+ Set up the camera capture object.
+ 
+ Set up the STRCaptureDataCollector to receive data from video and audio sources. Prepare to record either audio or video.
+ */
+-(void)setUpCaptureServices;
+
+// -- Error Handling -- //
+
+/**
+ Check to make sure the user has enabled location services.
+ 
+ Dismiss the current view and call the delegate method [STRCaptureViewControllerDelegate locationServicesNotAuthorized] if location services are not enabled.
+ */
+-(void)checkEnabledLocationServices;
+
+// -- Recording Services -- //
+
+/**
+ Record a datapoint to the geoLocationData object if the recorder happens to be on.
+ 
+ Gets the location directly from the locationManager.
+ */
+-(void)recordCurrentLocationToGeodataObject;
+
+-(void)startCapturingVideo;
+-(void)stopCapturingVideo;
+-(void)captureStillImage;
+
+@end
+
+@interface STRCaptureViewController (STRCaptureDataControllerDelegate) <STRCaptureDataCollectorDelegate>
+
+
+@end
+
+@interface STRCaptureViewController (CLLocationManagerDelegate) <CLLocationManagerDelegate>
+
+// Responding to location events
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation;
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error;
+
+// Responding to heading events
+-(void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading;
+-(BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager;
+
+// Responding to authorization changes
 
 @end
 
 @implementation STRCaptureViewController
+
+@synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +85,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    preferencesManager = [STRUserPreferencesManager preferencesForCurrentUser];
+    
+    mediaStartTime = CACurrentMediaTime();
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    // Set up location and capture here while the shutter is displayed
+    // This will be done after the view loads.
+    [self setUpLocationServices];
+    [self setUpCaptureServices];
+    
 }
 
 - (void)viewDidUnload
@@ -38,6 +108,124 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Button Handling
+
+-(IBAction)doneButtonWasPressed:(id)sender {
+    NSLog(@"STRCaptureViewController: Dismissing capture controller.");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+@end
+
+@implementation STRCaptureViewController (InternalMathods)
+
+#pragma mark - Service Initialization
+
+-(void)setUpLocationServices {
+    // Set up the location support
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.purpose = @"Geotagging your Toast video captures.";
+    locationManager.desiredAccuracy = preferencesManager.desiredLocationAccuracy;
+    [locationManager startUpdatingHeading];
+    [locationManager startUpdatingLocation];
+}
+
+-(void)setUpCaptureServices {
+    captureDataCollector = [[STRCaptureDataCollector alloc] init];
+}
+
+#pragma mark - Error Handling
+
+-(void)checkEnabledLocationServices {
+    // Check to make sure that the user has location services enabled.
+    // If not, present the user with a warning message and kill.
+    if (![CLLocationManager locationServicesEnabled] || ![CLLocationManager authorizationStatus]) {
+        // Tell the delegate about the problem
+        if ([_delegate respondsToSelector:@selector(locationServicesNotAuthorized)]) {
+            [_delegate locationServicesNotAuthorized];
+        }
+        // Dismiss the view
+        [self dismissViewControllerAnimated:NO completion:nil];
+    }
+}
+
+#pragma mark - Recording Services
+
+-(void)recordCurrentLocationToGeodataObject {
+    // Add a point taken from the locationManager
+    [geoLocationData addDataPointWithLatitude:locationManager.location.coordinate.latitude
+                                    longitude:locationManager.location.coordinate.longitude 
+                                      heading:locationManager.heading.trueHeading 
+                                    timestamp:(CACurrentMediaTime() - mediaStartTime) 
+                                     accuracy:locationManager.location.horizontalAccuracy];
+}
+
+-(void)startCapturingVideo {
+    
+}
+
+-(void)stopCapturingVideo {
+    
+}
+
+-(void)captureStillImage {
+    
+}
+
+@end
+
+@implementation STRCaptureViewController (CLLocationManagerDelegate)
+
+#pragma mark - Responding to location events
+-(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    
+    // Log the current location and heading
+    if (isRecording) {
+        [self recordCurrentLocationToGeodataObject];
+    }
+    
+    // Update the accuracy indicator
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"STRCaptureViewController: Location manager failed and could not receive location data: %@", error.description);
+}
+
+#pragma mark - Responding to heading events
+-(void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
+    // Log the current heading and location
+    if (isRecording) {
+        [self recordCurrentLocationToGeodataObject];
+    }
+    
+    // Update the compass
+}
+
+-(BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager {
+    
+    if (isRecording) return NO;
+    return YES;
+}
+
+@end
+
+@implementation STRCaptureViewController (STRCaptureDataControllerDelegate)
+
+
+-(void)videoRecordingDidBegin {
+    
+}
+
+-(void)videoRecordingDidEnd {
+    
+}
+
+-(void)videoRecordingDidFailWithError:(NSError *)error {
+    
 }
 
 @end
