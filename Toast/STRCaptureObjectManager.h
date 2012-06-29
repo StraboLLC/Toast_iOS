@@ -28,13 +28,27 @@
 /// @name Getting Captures
 ///---------------------------------------------------------------------------------------
 
+/**
+ Returns an array of all of the capture objects for the album.
+ 
+ @return An array of [Capture] objects.
+ */
 -(NSArray *)allCaptures;
+
+/**
+ Returns all of the video captures associated with the album.
+ 
+ @return an array of [Capture] objects.
+ */
 -(NSArray *)allVideoCaptures;
 
 ///---------------------------------------------------------------------------------------
 /// @name Utility Methods
 ///---------------------------------------------------------------------------------------
 
+/**
+ Writes a list of the captures associated with the album to the log.
+ */
 -(void)logAllAssociatedCaptures;
 
 @end

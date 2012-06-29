@@ -44,10 +44,15 @@
 		96AE9711158F9EAB007A02D0 /* STRAlbumObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9710158F9EAA007A02D0 /* STRAlbumObjectManager.m */; };
 		96C002711593774400DDD980 /* STRMapGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C002701593774400DDD980 /* STRMapGalleryViewController.m */; };
 		96C002751593775000DDD980 /* STRTileGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C002741593775000DDD980 /* STRTileGalleryViewController.m */; };
+		96C85223159CE33800C24C24 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C85222159CE33800C24C24 /* AVFoundation.framework */; };
+		96C85227159CE38A00C24C24 /* STRCaptureDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C85226159CE38A00C24C24 /* STRCaptureDataCollector.m */; };
+		96C85229159CFBD100C24C24 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C85228159CFBD100C24C24 /* CoreLocation.framework */; };
 		96DA53111590B7A100C38314 /* STRCoverFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53101590B7A100C38314 /* STRCoverFlowView.m */; };
 		96DA53151590BA0A00C38314 /* STRClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53141590BA0A00C38314 /* STRClipView.m */; };
 		96DA531A1590FD5B00C38314 /* STRAlbumDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53191590FD5A00C38314 /* STRAlbumDetailView.m */; };
 		96DA531C1590FD6900C38314 /* STRAlbumDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DA531B1590FD6900C38314 /* STRAlbumDetailView.xib */; };
+		96DEE4DF159CB83700C1C4F0 /* STRCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DEE4DE159CB83700C1C4F0 /* STRCaptureViewController.m */; };
+		96DEE4EE159CBAB700C1C4F0 /* STRGeoLocationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DEE4ED159CBAB700C1C4F0 /* STRGeoLocationData.m */; };
 		96DF98A31593C507004032E2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DF98A11593C507004032E2 /* Default.png */; };
 		96DF98A41593C507004032E2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DF98A21593C507004032E2 /* Default@2x.png */; };
 		96DF98A71593CA18004032E2 /* STRUserPreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DF98A61593CA18004032E2 /* STRUserPreferencesManager.m */; };
@@ -131,6 +136,10 @@
 		96C002701593774400DDD980 /* STRMapGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRMapGalleryViewController.m; sourceTree = "<group>"; };
 		96C002731593775000DDD980 /* STRTileGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRTileGalleryViewController.h; sourceTree = "<group>"; };
 		96C002741593775000DDD980 /* STRTileGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRTileGalleryViewController.m; sourceTree = "<group>"; };
+		96C85222159CE33800C24C24 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		96C85225159CE38900C24C24 /* STRCaptureDataCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCaptureDataCollector.h; sourceTree = "<group>"; };
+		96C85226159CE38A00C24C24 /* STRCaptureDataCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCaptureDataCollector.m; sourceTree = "<group>"; };
+		96C85228159CFBD100C24C24 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		96DA530F1590B7A100C38314 /* STRCoverFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCoverFlowView.h; sourceTree = "<group>"; };
 		96DA53101590B7A100C38314 /* STRCoverFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCoverFlowView.m; sourceTree = "<group>"; };
 		96DA53131590BA0A00C38314 /* STRClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRClipView.h; sourceTree = "<group>"; };
@@ -138,6 +147,10 @@
 		96DA53181590FD5A00C38314 /* STRAlbumDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumDetailView.h; sourceTree = "<group>"; };
 		96DA53191590FD5A00C38314 /* STRAlbumDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumDetailView.m; sourceTree = "<group>"; };
 		96DA531B1590FD6900C38314 /* STRAlbumDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STRAlbumDetailView.xib; sourceTree = "<group>"; };
+		96DEE4DD159CB83700C1C4F0 /* STRCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCaptureViewController.h; sourceTree = "<group>"; };
+		96DEE4DE159CB83700C1C4F0 /* STRCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCaptureViewController.m; sourceTree = "<group>"; };
+		96DEE4EC159CBAB700C1C4F0 /* STRGeoLocationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRGeoLocationData.h; sourceTree = "<group>"; };
+		96DEE4ED159CBAB700C1C4F0 /* STRGeoLocationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRGeoLocationData.m; sourceTree = "<group>"; };
 		96DF98A11593C507004032E2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		96DF98A21593C507004032E2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		96DF98A51593CA18004032E2 /* STRUserPreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRUserPreferencesManager.h; sourceTree = "<group>"; };
@@ -178,6 +191,8 @@
 				965E2C4E158258B30007F167 /* Foundation.framework in Frameworks */,
 				965E2C50158258B30007F167 /* CoreGraphics.framework in Frameworks */,
 				965E2C52158258B30007F167 /* CoreData.framework in Frameworks */,
+				96C85223159CE33800C24C24 /* AVFoundation.framework in Frameworks */,
+				96C85229159CFBD100C24C24 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +270,8 @@
 		965E2C4A158258B30007F167 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96C85228159CFBD100C24C24 /* CoreLocation.framework */,
+				96C85222159CE33800C24C24 /* AVFoundation.framework */,
 				965E2C4B158258B30007F167 /* UIKit.framework */,
 				965E2C4D158258B30007F167 /* Foundation.framework */,
 				965E2C4F158258B30007F167 /* CoreGraphics.framework */,
@@ -312,6 +329,8 @@
 				964C765815891DFF0020E315 /* STRRootViewController.m */,
 				96F79B7A158BC91B00F29BEC /* STRPreferencesViewController.h */,
 				96F79B7B158BC91B00F29BEC /* STRPreferencesViewController.m */,
+				96DEE4DD159CB83700C1C4F0 /* STRCaptureViewController.h */,
+				96DEE4DE159CB83700C1C4F0 /* STRCaptureViewController.m */,
 				96561D381592555D00204E36 /* Gallery VCs */,
 				96F79B72158BBC8A00F29BEC /* Album VCs */,
 				96DFCB1515868FDF002BA57C /* Log In */,
@@ -331,6 +350,17 @@
 				96DA531B1590FD6900C38314 /* STRAlbumDetailView.xib */,
 			);
 			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		96DEE4E8159CB93500C1C4F0 /* Capture Support */ = {
+			isa = PBXGroup;
+			children = (
+				96C85225159CE38900C24C24 /* STRCaptureDataCollector.h */,
+				96C85226159CE38A00C24C24 /* STRCaptureDataCollector.m */,
+				96DEE4EC159CBAB700C1C4F0 /* STRGeoLocationData.h */,
+				96DEE4ED159CBAB700C1C4F0 /* STRGeoLocationData.m */,
+			);
+			name = "Capture Support";
 			sourceTree = "<group>";
 		};
 		96DF98A81593CA69004032E2 /* Object Managers */ = {
@@ -373,6 +403,7 @@
 			children = (
 				96DF98A51593CA18004032E2 /* STRUserPreferencesManager.h */,
 				96DF98A61593CA18004032E2 /* STRUserPreferencesManager.m */,
+				96DEE4E8159CB93500C1C4F0 /* Capture Support */,
 				96DF98A81593CA69004032E2 /* Object Managers */,
 				96F79B6B158BAFAD00F29BEC /* Core Data Objects */,
 				96F422D01586AA82002AE72D /* Login */,
@@ -584,6 +615,9 @@
 				96C002711593774400DDD980 /* STRMapGalleryViewController.m in Sources */,
 				96C002751593775000DDD980 /* STRTileGalleryViewController.m in Sources */,
 				96DF98A71593CA18004032E2 /* STRUserPreferencesManager.m in Sources */,
+				96DEE4DF159CB83700C1C4F0 /* STRCaptureViewController.m in Sources */,
+				96DEE4EE159CBAB700C1C4F0 /* STRGeoLocationData.m in Sources */,
+				96C85227159CE38A00C24C24 /* STRCaptureDataCollector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
