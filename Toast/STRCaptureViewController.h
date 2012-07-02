@@ -39,9 +39,12 @@
     
     // Camera capture support
     STRCaptureDataCollector * captureDataCollector;
+    AVCaptureVideoPreviewLayer * capturePreviewLayer;
+    IBOutlet UIView * videoPreviewLayer;
     
     // General capture support
     double mediaStartTime;
+    UIDeviceOrientation currentOrientation;
     
 }
 
@@ -52,12 +55,12 @@
  */
 @property(strong)id delegate;
 
-
-
 ///---------------------------------------------------------------------------------------
 /// @name Button Handling
 ///---------------------------------------------------------------------------------------
+
 -(IBAction)doneButtonWasPressed:(id)sender;
+-(IBAction)recordButtonWasPressed:(id)sender;
     
 
 @end

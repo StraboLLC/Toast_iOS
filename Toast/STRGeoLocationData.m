@@ -8,6 +8,12 @@
 
 #import "STRGeoLocationData.h"
 
+@interface STRGeoLocationData (InternalMathods)
+
+-(NSString *)tempFilePath;
+
+@end
+
 @implementation STRGeoLocationData
 
 -(id)init {
@@ -25,6 +31,35 @@
 
 -(NSArray *)dataPointList {
     return dataPoints;
+}
+
+-(void)writeDataPointsToTempFile {
+    
+    NSLog(@"STRGeoLocationData: Writing data points to JSON file.");
+    
+    NSDictionary * points = [NSDictionary dictionaryWithObject:dataPoints forKey:@"points"];
+    
+    NSOutputStream * output = [NSOutputStream outputStreamToFileAtPath:[self tempFilePath] append:NO];
+    [output open];
+    
+    [NSJSONSerialization writeJSONObject:points toStream:output options:0 error:nil];
+    
+    [output close];
+}
+
+@end
+
+
+@implementation STRGeoLocationData (InternalMathods)
+
+-(NSString *)tempFilePath {
+    NSString *outputPath = [[NSString alloc] initWithFormat:@"%@%@%@", NSTemporaryDirectory(), @"output", @".json"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:outputPath]) {
+        [fileManager removeItemAtPath:outputPath error:nil];
+    }
+    return outputPath;
 }
 
 @end

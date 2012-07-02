@@ -65,10 +65,12 @@
 
 -(void)startCapturingVideoWithOrientation:(AVCaptureVideoOrientation)deviceOrientation {
     [[self movieFileOutput] startRecordingToOutputFileURL:[self videoTempFileURL] recordingDelegate:self];
+    [_delegate videoRecordingDidBegin];
 }
 
 -(void)stopCapturingVideo {
     [[self movieFileOutput] stopRecording];
+    [_delegate videoRecordingDidEnd];
 }
 
 -(void)captureStillImage {

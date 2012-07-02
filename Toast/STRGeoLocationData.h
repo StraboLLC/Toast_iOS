@@ -56,4 +56,11 @@
  */
 -(NSArray *)dataPointList;
 
+/**
+ Write the collected data points to a temporary file in the tmp directory.
+ 
+ The name of this file will be output.JSON
+ */
+-(void)writeDataPointsToTempFile;
+
 @end

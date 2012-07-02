@@ -10,6 +10,8 @@
 
 @interface STRCaptureViewController (InternalMathods)
 
+-(void)deviceDidRotate;
+
 // -- Service Initialization -- //
 
 /**
@@ -91,12 +93,31 @@
     mediaStartTime = CACurrentMediaTime();
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:YES];
+}
+
 -(void)viewDidAppear:(BOOL)animated {
+    // Listen for orientation change events
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
     // Set up location and capture here while the shutter is displayed
     // This will be done after the view loads.
     [self setUpLocationServices];
     [self setUpCaptureServices];
     
+    // Now that the capture services are set up, 
+    // load the video preview layer with the captureSesson
+    capturePreviewLayer = [AVCaptureVideoPreviewLayer layerWithSession:[captureDataCollector session]];
+    capturePreviewLayer.frame = videoPreviewLayer.bounds;
+    capturePreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    [videoPreviewLayer.layer addSublayer:capturePreviewLayer];
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
 }
 
 - (void)viewDidUnload
@@ -117,9 +138,40 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(IBAction)recordButtonWasPressed:(id)sender {
+    if (isRecording) {
+        NSLog(@"STRCaptureViewController: Rec button pressed - stopping capture session.");
+        [self stopCapturingVideo];
+    } else {
+        NSLog(@"STRCaptureViewController: Rec button pressed - starting capture session.");
+        [self startCapturingVideo];
+    }
+}
+
 @end
 
 @implementation STRCaptureViewController (InternalMathods)
+
+-(void)deviceDidRotate {
+    NSLog(@"STRCaptureViewController: Orientation change requested.");
+    
+    UIDeviceOrientation newOrientation = [[UIDevice currentDevice] orientation];
+    
+    if (currentOrientation
+        && newOrientation
+        && (currentOrientation != newOrientation) 
+        && (!isRecording) 
+        && (newOrientation != UIDeviceOrientationFaceUp)
+        && (newOrientation != UIDeviceOrientationFaceDown)) {
+            
+        // Update currentOrientation to keep track of the old orientation
+        currentOrientation = newOrientation;
+        
+        // Update the Location Manager with the new orientation setting.
+        locationManager.headingOrientation = currentOrientation;
+        
+    }
+}
 
 #pragma mark - Service Initialization
 
@@ -164,11 +216,11 @@
 }
 
 -(void)startCapturingVideo {
-    
+    [captureDataCollector startCapturingVideoWithOrientation:currentOrientation];
 }
 
 -(void)stopCapturingVideo {
-    
+    [captureDataCollector stopCapturingVideo];
 }
 
 -(void)captureStillImage {
@@ -206,7 +258,6 @@
 }
 
 -(BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager {
-    
     if (isRecording) return NO;
     return YES;
 }
@@ -217,11 +268,15 @@
 
 
 -(void)videoRecordingDidBegin {
-    
+    isRecording = YES;
 }
 
 -(void)videoRecordingDidEnd {
+    isRecording = NO;
     
+    // Write files to a more permanent location
+    
+    // Add video to the user's album
 }
 
 -(void)videoRecordingDidFailWithError:(NSError *)error {
