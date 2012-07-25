@@ -21,8 +21,6 @@
 		963EE51D1587BF870046BD04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 963EE51B1587BF870046BD04 /* InfoPlist.strings */; };
 		963EE5201587BF870046BD04 /* ToastLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EE51F1587BF870046BD04 /* ToastLogicTests.m */; };
 		963EE5291587C8DD0046BD04 /* AppledocSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 963EE5281587C8DD0046BD04 /* AppledocSettings.plist */; };
-		963EE52C1587E2510046BD04 /* NSString+uploadHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EE52B1587E2510046BD04 /* NSString+uploadHash.m */; };
-		963EE52F1587E2C10046BD04 /* NSString+downloadHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 963EE52E1587E2C10046BD04 /* NSString+downloadHash.m */; };
 		964C765515890E9D0020E315 /* STRAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964C765415890E9D0020E315 /* STRAlbumViewController.m */; };
 		964C765915891DFF0020E315 /* STRRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964C765815891DFF0020E315 /* STRRootViewController.m */; };
 		96561D2F1592048600204E36 /* blackmoleskine.png in Resources */ = {isa = PBXBuildFile; fileRef = 96561D2E1592048600204E36 /* blackmoleskine.png */; };
@@ -98,10 +96,6 @@
 		963EE51F1587BF870046BD04 /* ToastLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToastLogicTests.m; sourceTree = "<group>"; };
 		963EE5211587BF870046BD04 /* ToastLogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToastLogicTests-Prefix.pch"; sourceTree = "<group>"; };
 		963EE5281587C8DD0046BD04 /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
-		963EE52A1587E2510046BD04 /* NSString+uploadHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+uploadHash.h"; sourceTree = "<group>"; };
-		963EE52B1587E2510046BD04 /* NSString+uploadHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+uploadHash.m"; sourceTree = "<group>"; };
-		963EE52D1587E2C10046BD04 /* NSString+downloadHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+downloadHash.h"; sourceTree = "<group>"; };
-		963EE52E1587E2C10046BD04 /* NSString+downloadHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+downloadHash.m"; sourceTree = "<group>"; };
 		964C765315890E9D0020E315 /* STRAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumsViewController.h; sourceTree = "<group>"; };
 		964C765415890E9D0020E315 /* STRAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumViewController.m; sourceTree = "<group>"; };
 		964C765715891DFF0020E315 /* STRRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRRootViewController.h; sourceTree = "<group>"; };
@@ -134,7 +128,6 @@
 		96AE9709158F7B1F007A02D0 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		96AE970B158F7B1F007A02D0 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		96AE970C158F7B1F007A02D0 /* Album.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Album.m; sourceTree = "<group>"; };
-		96AE970E158F9A3A007A02D0 /* StringCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringCategories.h; sourceTree = "<group>"; };
 		96AE970F158F9EAA007A02D0 /* STRAlbumObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumObjectManager.h; sourceTree = "<group>"; };
 		96AE9710158F9EAA007A02D0 /* STRAlbumObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumObjectManager.m; sourceTree = "<group>"; };
 		96C0026F1593774400DDD980 /* STRMapGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRMapGalleryViewController.h; sourceTree = "<group>"; };
@@ -296,7 +289,6 @@
 				963EE5281587C8DD0046BD04 /* AppledocSettings.plist */,
 				96F422D11586AE21002AE72D /* Constants.h */,
 				965DE4FF158BD7B100DAAA92 /* CoreDataObjects.h */,
-				96AE970E158F9A3A007A02D0 /* StringCategories.h */,
 				965E2C5C158258B30007F167 /* STRAppDelegate.h */,
 				965E2C5D158258B30007F167 /* STRAppDelegate.m */,
 				965E2C5F158258B30007F167 /* Toast.xcdatamodeld */,
@@ -401,10 +393,6 @@
 				96F9CFBE15C071C600CB5B20 /* NSDate+Date_Utilities.m */,
 				96F9CFBF15C071C600CB5B20 /* NSString+Hash.h */,
 				96F9CFC015C071C600CB5B20 /* NSString+Hash.m */,
-				963EE52A1587E2510046BD04 /* NSString+uploadHash.h */,
-				963EE52B1587E2510046BD04 /* NSString+uploadHash.m */,
-				963EE52D1587E2C10046BD04 /* NSString+downloadHash.h */,
-				963EE52E1587E2C10046BD04 /* NSString+downloadHash.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -607,8 +595,6 @@
 				969F1DA7158687D20094154B /* STRSignInViewController.m in Sources */,
 				96F422CD1586AA68002AE72D /* CurrentUser.m in Sources */,
 				96F422D415877321002AE72D /* STRLoginManager.m in Sources */,
-				963EE52C1587E2510046BD04 /* NSString+uploadHash.m in Sources */,
-				963EE52F1587E2C10046BD04 /* NSString+downloadHash.m in Sources */,
 				964C765515890E9D0020E315 /* STRAlbumViewController.m in Sources */,
 				964C765915891DFF0020E315 /* STRRootViewController.m in Sources */,
 				9629BFE9158A3177007E8291 /* STRRegistrationViewController.m in Sources */,

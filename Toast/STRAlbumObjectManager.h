@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "StringCategories.h"
+#import "NSString+Hash.h"
 #import "CoreDataObjects.h"
 
 /**

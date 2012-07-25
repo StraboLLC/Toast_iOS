@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import "CurrentUser.h"
 
-#import "StringCategories.h"
+#import "NSString+Hash.h"
 
 /**
  The LoginManagerDelegate protocol defines optional methods for receiving status updates about a login to the Strabo and Facebook systems.

@@ -11,11 +11,11 @@
     </entity>
     <entity name="Capture" representedClassName="Capture" syncable="YES">
         <attribute name="creationDate" attributeType="Date" syncable="YES"/>
-        <attribute name="geodataURL" attributeType="String" syncable="YES"/>
+        <attribute name="geodataPath" attributeType="String" syncable="YES"/>
         <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="mediaURL" attributeType="String" syncable="YES"/>
-        <attribute name="thumbnailURL" attributeType="String" syncable="YES"/>
+        <attribute name="mediaPath" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnailPath" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" defaultValueString="Untitled" syncable="YES"/>
         <attribute name="token" attributeType="String" syncable="YES"/>
         <attribute name="type" attributeType="String" syncable="YES"/>
@@ -31,9 +31,9 @@
         <relationship name="preferences" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Preferences" inverseName="relationship" inverseEntity="Preferences" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Album" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Capture" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Preferences" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Album" positionX="-3834" positionY="-2286" width="128" height="150"/>
+        <element name="Capture" positionX="-3647" positionY="-2217" width="128" height="210"/>
+        <element name="Preferences" positionX="-4050" positionY="-2211" width="128" height="60"/>
+        <element name="User" positionX="-4016" positionY="-2376" width="128" height="90"/>
     </elements>
 </model>

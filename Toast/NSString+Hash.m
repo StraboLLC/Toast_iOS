@@ -7,9 +7,10 @@
 //
 
 #import "NSString+Hash.h"
-#import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString(Hash)
+
+#pragma mark - Hash Functions
 
 -(NSString *)MD5 {
     // Create pointer to the string as UTF8
@@ -46,6 +47,20 @@
         [output appendFormat:@"%02x",sha2Buffer[i]];
     }
     return output;
+}
+
+#pragma mark - Salted Tokens
+
+-(NSString *)downloadHash {
+    NSString * concatonatedString = [self stringByAppendingString:kSTRDownloadSalt];
+    
+    return [concatonatedString MD5];
+}
+
+-(NSString *)uploadHash {
+    NSString * concatonatedString = [self stringByAppendingString:kSTRUploadSalt];
+    
+    return [concatonatedString MD5];
 }
 
 @end
