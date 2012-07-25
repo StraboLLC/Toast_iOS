@@ -169,9 +169,7 @@
     for (NSString * album in albumArray) {
         CGRect albumCoverImageViewFrame = CGRectMake(xMarker, 0, albumWidth, height);
         UIImageView * albumCoverImageView = [[UIImageView alloc] initWithFrame:albumCoverImageViewFrame];
-        NSString * imageURLString = [[STRAlbumObjectManager defaultManager] coverPathForAlbumName:album];
-        NSLog(@"STRCoverFlow: Adding cover image from URL: %@", imageURLString);
-        albumCoverImageView.image = [UIImage imageWithContentsOfFile:imageURLString];
+        albumCoverImageView.image = [[STRAlbumObjectManager defaultManager] coverImageForCoverWithName:album];
         albumCoverImageView.contentMode = UIViewContentModeScaleToFill;
         [newSubView addSubview:albumCoverImageView];
         xMarker += (albumWidth+(padding*2));
@@ -197,8 +195,8 @@
         CGRect albumCoverDetailViewFrame = CGRectMake(xMarker, 0, albumWidth, height);
         STRAlbumDetailView * albumCoverDetailView = [xib objectAtIndex:0];
         albumCoverDetailView.frame = albumCoverDetailViewFrame;
-        NSLog(@"STRCoverFlowView: Loading image at path: %@", album.coverArtURL);
-        albumCoverDetailView.imageView.image = [UIImage imageWithContentsOfFile:album.coverArtURL];
+        //albumCoverDetailView.imageView.image = [UIImage imageWithContentsOfFile:album.coverArt];
+        albumCoverDetailView.imageView.image = [[STRAlbumObjectManager defaultManager] coverImageForCoverWithName:album.coverArt];
         albumCoverDetailView.titleLabel.text = [album title];
         
         albumCoverDetailView.album = album;

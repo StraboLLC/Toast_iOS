@@ -32,17 +32,14 @@
 
 #pragma mark - Album Cover Handling
 
--(NSString *)coverPathForAlbumName:(NSString *)albumName {
-    NSURL * coverURL = [NSURL URLWithString:[[[self albumNamesDictionary] allKeysForObject:albumName] objectAtIndex:0]];
-    NSString * coverAbsoluteURL = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", [coverURL URLByDeletingPathExtension]] ofType:@"png"];
-    NSLog(@"STRAlbumManager: Coverart URL: %@ found for album name: %@", coverAbsoluteURL, albumName);
-    return coverAbsoluteURL;
+-(NSString *)coverPathForCoverArt:(NSString *)coverArt {
+    NSURL * coverPath = [NSURL URLWithString:[[[self albumNamesDictionary] allKeysForObject:coverArt] objectAtIndex:0]];
+    return [NSString stringWithFormat:@"%@", coverPath];
 }
 
--(NSString *)albumNameForCoverURL:(NSString *)coverURL {
-    NSString * albumName = [[self albumNamesDictionary] objectForKey:[NSString stringWithFormat:@"%@", coverURL.lastPathComponent]];
-    NSLog(@"STRAlbumManager: Album name: %@ found for coverart URL: %@", albumName, coverURL);
-    return albumName; // Shut the compiler up
+-(NSString *)coverArtForCoverPath:(NSString *)coverPath {
+    NSString * albumName = [[self albumNamesDictionary] objectForKey:[NSString stringWithFormat:@"%@", coverPath.lastPathComponent]];
+    return albumName;
 }
 
 #pragma mark - Utility Methods
@@ -50,7 +47,7 @@
 -(NSString *)generateUniqueAlbumToken {
     NSNumber * userIDNumber = [[[(STRAppDelegate *)[[UIApplication sharedApplication] delegate] loginManager] currentUser] userID];
     NSTimeInterval dateNumber = [[NSDate date] timeIntervalSince1970];
-    NSString * token = [[NSString stringWithFormat:@"%@%d", userIDNumber, dateNumber] MD5];
+    NSString * token = [[NSString stringWithFormat:@"%@%f", userIDNumber, dateNumber] MD5];
     NSLog(@"STRAlbumManager: Unique album token generated: %@", token);
     return token;
 }
@@ -69,6 +66,12 @@
         [albumNameArray addObject:[albumDictionary objectForKey:key]];
     }
     return albumNameArray;
+}
+
+-(UIImage *)coverImageForCoverWithName:(NSString *)coverArt {
+    NSString * coverArtPath = [self coverPathForCoverArt:coverArt];
+    UIImage * albumImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[coverArtPath stringByDeletingPathExtension] ofType:[coverArtPath pathExtension]]];
+    return albumImage;
 }
 
 #pragma mark - Retrieving Objects
@@ -119,7 +122,7 @@
     newAlbum.title = title;
     newAlbum.token = [self generateUniqueAlbumToken];
     newAlbum.creationDate = [NSDate date];
-    newAlbum.coverArtURL = [NSString stringWithFormat:@"%@", [self coverPathForAlbumName:coverArt]];
+    newAlbum.coverArt = [NSString stringWithFormat:@"%@", coverArt];
     
     // Save the album to core data
     [[self theUser] addAlbumsObject:newAlbum];
@@ -135,7 +138,7 @@
 
 -(void)saveTitle:(NSString *)title andCoverArt:(NSString *)coverArt changesToAlbum:(Album *)album error:(NSError *__autoreleasing *)error {
     album.title = title;
-    album.coverArtURL = [self coverPathForAlbumName:coverArt];
+    album.coverArt = coverArt;
     NSManagedObjectContext * context = [(STRAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
     NSError * newError;

@@ -55,6 +55,11 @@
  */
 @property(strong)id delegate;
 
+/**
+ Called to handle rotation events without updating UIInterfaceOrientation
+ */
+-(void)deviceDidRotate;
+
 ///---------------------------------------------------------------------------------------
 /// @name Button Handling
 ///---------------------------------------------------------------------------------------

@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="VoK-oI-u4s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2809" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="VoK-oI-u4s">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1884"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
         <scene sceneID="rBe-Ts-IUP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BRQ-5T-Mmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="VoK-oI-u4s" customClass="STRRootViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WZp-at-bR6">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -17,13 +14,13 @@
                         <color key="backgroundColor" red="1" green="0.1764705926" blue="0.070588238540000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BRQ-5T-Mmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="100" y="233"/>
         </scene>
         <!--Navigation Controller - Main Navigation Controller-->
         <scene sceneID="aFA-s2-xAB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="myB-OL-0Yf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="albumNavigationController" title="Main Navigation Controller" definesPresentationContext="YES" navigationBarHidden="YES" id="fAk-Gn-Pib" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="uKN-B5-1Nh">
@@ -33,13 +30,13 @@
                         <segue destination="FMd-6y-P8D" kind="relationship" relationship="rootViewController" id="HWw-Lv-A5a"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="myB-OL-0Yf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="677" y="36"/>
         </scene>
         <!--Navigation Controller - Login Nav Controller-->
         <scene sceneID="JWR-9g-PQF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nyo-Y3-psf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="loginNavigationController" title="Login Nav Controller" definesPresentationContext="YES" navigationBarHidden="YES" id="Sym-Lo-e8N" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="S6l-6d-MNl">
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,13 +45,13 @@
                         <segue destination="mfp-g4-w4S" kind="relationship" relationship="rootViewController" id="rxk-hb-vq5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nyo-Y3-psf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="145" y="1012"/>
         </scene>
         <!--View Controller - Select Log In-->
         <scene sceneID="ySg-Pz-7PG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9GQ-fd-eaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Select Log In" id="mfp-g4-w4S" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kgA-s6-Z4v">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -95,13 +92,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="s3g-01-9PX"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9GQ-fd-eaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="677" y="1012"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="NMS-yI-6B1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oV4-Gg-WGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="nbH-nc-4OX" customClass="STRSignInViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0VR-6c-MNJ">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -127,14 +124,14 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="SRs-RU-Vzs" userLabel="Email Text Field">
                                 <rect key="frame" x="20" y="81" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="e48-rT-ZNE" userLabel="Password Text Field">
                                 <rect key="frame" x="20" y="120" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tYC-Zb-yQW" userLabel="Back Button">
                                 <rect key="frame" x="20" y="20" width="72" height="37"/>
@@ -160,13 +157,13 @@
                         <outlet property="passwordField" destination="e48-rT-ZNE" id="TVD-H6-Ygd"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oV4-Gg-WGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1173" y="1012"/>
         </scene>
         <!--Album Preferences View Controller-->
         <scene sceneID="fNM-uT-5YX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1T1-dA-Cpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="albumPreferencesViewController" id="Tej-ur-W1X" customClass="STRAlbumPreferencesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IaZ-eW-tDa">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -190,8 +187,8 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="YtX-Ip-oLQ">
                                 <rect key="frame" x="20" y="65" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4y4-CV-2Nd">
                                 <rect key="frame" x="20" y="20" width="74" height="37"/>
@@ -220,13 +217,13 @@
                         <outlet property="titleField" destination="YtX-Ip-oLQ" id="4ar-ae-HHa"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1T1-dA-Cpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1728" y="900"/>
         </scene>
         <!--Registration View Controller - Sign Up - Enter Info-->
         <scene sceneID="M98-xf-DtU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gxx-GN-96h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Sign Up - Enter Info" id="MAW-eh-zt6" customClass="STRRegistrationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ut-B4-gqh">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -265,14 +262,14 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" minimumFontSize="17" id="j8Q-yM-2qk">
                                 <rect key="frame" x="20" y="65" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" minimumFontSize="17" id="QDF-b5-l7p">
                                 <rect key="frame" x="20" y="104" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -283,13 +280,13 @@
                         <outlet property="nameTextField" destination="j8Q-yM-2qk" id="xV5-gD-2pu"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gxx-GN-96h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="677" y="1667"/>
         </scene>
         <!--Registration View Controller - Sign Up - Confirm-->
         <scene sceneID="VWc-NM-wEQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1N-Zw-pns" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Sign Up - Confirm" id="A6K-bS-UWP" customClass="STRRegistrationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qK0-sO-vMO">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -313,14 +310,14 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" id="pTU-Rb-Mjk">
                                 <rect key="frame" x="20" y="65" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" minimumFontSize="17" id="aaa-vI-wcD">
                                 <rect key="frame" x="20" y="104" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="t6r-6h-kaF">
                                 <rect key="frame" x="228" y="143" width="72" height="37"/>
@@ -346,13 +343,13 @@
                         <outlet property="passwordTextField" destination="pTU-Rb-Mjk" id="gzy-jG-prD"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z1N-Zw-pns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1173" y="1667"/>
         </scene>
         <!--Albums View Controller - Select Album-->
         <scene sceneID="omO-nd-ZvD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bUQ-nY-89j" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="albumViewController" title="Select Album" id="FMd-6y-P8D" customClass="STRAlbumsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nqf-w8-Vn8">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -400,13 +397,13 @@
                         <outlet property="coverFlowView" destination="KzQ-Az-VF9" id="HA3-Eb-jFH"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bUQ-nY-89j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1173" y="36"/>
         </scene>
         <!--Gallery Tab Controller - Gallery Tab Controller-->
         <scene sceneID="yKf-qj-zUo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mF1-9R-7R9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="galleryTabController" title="Gallery Tab Controller" id="avf-Hm-1KC" customClass="STRGalleryTabController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hhn-r0-aHJ">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -500,24 +497,24 @@
                         <outlet property="containerView" destination="kbi-eF-xcw" id="Y4L-8w-ysc"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mF1-9R-7R9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1728" y="233"/>
         </scene>
         <!--Map Gallery View Controller-->
         <scene sceneID="Al3-3m-sdb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5D4-7K-ABQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="mapGalleryViewController" id="iXk-Qh-Ata" customClass="STRMapGalleryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pLW-TE-RUc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Map Gallery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="YuW-6I-oCu">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" text="Map Gallery" textAlignment="center" autoshrinkMode="minimumFontSize" id="YuW-6I-oCu">
                                 <rect key="frame" x="114" y="197" width="92" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -525,13 +522,13 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5D4-7K-ABQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2260" y="507"/>
         </scene>
         <!--Preferences View Controller - User Preferences-->
         <scene sceneID="db1-qU-e2W">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rtv-aC-CWt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="User Preferences" id="Tch-ke-qcM" customClass="STRPreferencesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yGo-3i-P4N">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -568,13 +565,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rtv-aC-CWt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1173" y="-645"/>
         </scene>
         <!--New Album View Controller - Create a New Album-->
         <scene sceneID="Yug-oi-MIM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CJV-Rw-UUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Create a New Album" id="kJB-GY-1WN" customClass="STRNewAlbumViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8HE-rV-oIS">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -598,8 +595,8 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="xo1-KX-zTW">
                                 <rect key="frame" x="20" y="20" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             </textField>
                             <view contentMode="scaleToFill" id="Dna-WX-Oog">
                                 <rect key="frame" x="0.0" y="104" width="320" height="221"/>
@@ -628,24 +625,24 @@
                         <outlet property="titleField" destination="xo1-KX-zTW" id="4Kb-Ci-bD8"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CJV-Rw-UUc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1712" y="-645"/>
         </scene>
         <!--Tile Gallery View Controller-->
         <scene sceneID="4uE-vh-za8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w8w-bQ-Yj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="tileGalleryViewController" id="TWQ-00-n8f" customClass="STRTileGalleryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E0U-uf-qOA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tile Gallery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="rnt-25-xHh">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" text="Tile Gallery" textAlignment="center" autoshrinkMode="minimumFontSize" id="rnt-25-xHh">
                                 <rect key="frame" x="117" y="197" width="86" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -653,13 +650,13 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w8w-bQ-Yj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2260" y="-40"/>
         </scene>
         <!--Capture View Controller-->
         <scene sceneID="U7x-bR-BhZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xGc-Sy-KYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="LXM-Kr-BAp" customClass="STRCaptureViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Tn-J0-Q8X">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -682,7 +679,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="recordButtonWasPressed:" destination="LXM-Kr-BAp" eventType="touchUpInside" id="uku-5O-tfJ"/>
+                                    <action selector="recordButtonWasPressed:" destination="LXM-Kr-BAp" eventType="touchUpInside" id="3Dy-IR-xmH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DCy-tx-NBo">
@@ -707,6 +704,7 @@
                         <outlet property="videoPreviewLayer" destination="tef-XG-zOQ" id="xdZ-Ek-Na2"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xGc-Sy-KYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2788" y="233"/>
         </scene>

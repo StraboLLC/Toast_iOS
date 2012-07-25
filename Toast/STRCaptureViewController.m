@@ -10,8 +10,6 @@
 
 @interface STRCaptureViewController (InternalMathods)
 
--(void)deviceDidRotate;
-
 // -- Service Initialization -- //
 
 /**
@@ -54,6 +52,9 @@
 
 @interface STRCaptureViewController (STRCaptureDataControllerDelegate) <STRCaptureDataCollectorDelegate>
 
+-(void)videoRecordingDidBegin;
+-(void)videoRecordingDidEnd;
+-(void)videoRecordingDidFailWithError:(NSError *)error;
 
 @end
 
@@ -91,6 +92,7 @@
     preferencesManager = [STRUserPreferencesManager preferencesForCurrentUser];
     
     mediaStartTime = CACurrentMediaTime();
+    isRecording = NO;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -100,7 +102,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     // Listen for orientation change events
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
     
     // Set up location and capture here while the shutter is displayed
     // This will be done after the view loads.
@@ -126,9 +128,32 @@
     // Release any retained subviews of the main view.
 }
 
+#pragma mark - Device Orientation Handling
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(void)deviceDidRotate {
+    NSLog(@"STRCaptureViewController: Orientation change requested.");
+    
+    UIDeviceOrientation newOrientation = [[UIDevice currentDevice] orientation];
+    
+    if (currentOrientation
+        && newOrientation
+        && (currentOrientation != newOrientation) 
+        && (!isRecording) 
+        && (newOrientation != UIDeviceOrientationFaceUp)
+        && (newOrientation != UIDeviceOrientationFaceDown)) {
+        
+        // Update currentOrientation to keep track of the old orientation
+        currentOrientation = newOrientation;
+        
+        // Update the Location Manager with the new orientation setting.
+        locationManager.headingOrientation = currentOrientation;
+        
+    }
 }
 
 #pragma mark - Button Handling
@@ -152,27 +177,6 @@
 
 @implementation STRCaptureViewController (InternalMathods)
 
--(void)deviceDidRotate {
-    NSLog(@"STRCaptureViewController: Orientation change requested.");
-    
-    UIDeviceOrientation newOrientation = [[UIDevice currentDevice] orientation];
-    
-    if (currentOrientation
-        && newOrientation
-        && (currentOrientation != newOrientation) 
-        && (!isRecording) 
-        && (newOrientation != UIDeviceOrientationFaceUp)
-        && (newOrientation != UIDeviceOrientationFaceDown)) {
-            
-        // Update currentOrientation to keep track of the old orientation
-        currentOrientation = newOrientation;
-        
-        // Update the Location Manager with the new orientation setting.
-        locationManager.headingOrientation = currentOrientation;
-        
-    }
-}
-
 #pragma mark - Service Initialization
 
 -(void)setUpLocationServices {
@@ -187,6 +191,7 @@
 
 -(void)setUpCaptureServices {
     captureDataCollector = [[STRCaptureDataCollector alloc] init];
+    captureDataCollector.delegate = self;
 }
 
 #pragma mark - Error Handling
@@ -208,6 +213,7 @@
 
 -(void)recordCurrentLocationToGeodataObject {
     // Add a point taken from the locationManager
+    NSLog(@"STRCaptureViewController: Recording a geodata point");
     [geoLocationData addDataPointWithLatitude:locationManager.location.coordinate.latitude
                                     longitude:locationManager.location.coordinate.longitude 
                                       heading:locationManager.heading.trueHeading 
@@ -268,19 +274,29 @@
 
 
 -(void)videoRecordingDidBegin {
+    NSLog(@"STRCaptureViewController: Video recording did begin.");
     isRecording = YES;
+    
+    // Force record the first geodata point
+    mediaStartTime = CACurrentMediaTime();
+    [self recordCurrentLocationToGeodataObject];
 }
 
 -(void)videoRecordingDidEnd {
+    NSLog(@"STRCaptureViewController: Video recording did end.");
     isRecording = NO;
+    
+    // Write the JSON geo-data
+    [geoLocationData writeDataPointsToTempFile];
     
     // Write files to a more permanent location
     
     // Add video to the user's album
+    
 }
 
 -(void)videoRecordingDidFailWithError:(NSError *)error {
-    
+    NSLog(@"STRCaptureViewController: !!!ERROR: Video recording failed: %@", error.description);
 }
 
 @end

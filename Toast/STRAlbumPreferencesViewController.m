@@ -41,7 +41,7 @@
     [coverFlowView addSubview:coverFlowSubView];
     
     // Update the coverflow to the proper album cover
-    NSString * coverArtName = [[STRAlbumObjectManager defaultManager] albumNameForCoverURL:[NSURL URLWithString:self.album.coverArtURL.lastPathComponent]];
+    NSString * coverArtName = self.album.coverArt;
     NSLog(@"STRAlbumPreferencesViewController: Displaying album cover art: %@", coverArtName);
     NSUInteger index = [[coverFlowSubView albums] indexOfObject:coverArtName];
     NSLog(@"STRAlbumPreferencesViewController: Requesting the display of album at index: %i", index);

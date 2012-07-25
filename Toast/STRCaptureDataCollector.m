@@ -64,6 +64,9 @@
 #pragma mark - Recording Audio and Video
 
 -(void)startCapturingVideoWithOrientation:(AVCaptureVideoOrientation)deviceOrientation {
+    
+    [[NSFileManager defaultManager] removeItemAtURL:[self videoTempFileURL] error:nil];
+    
     [[self movieFileOutput] startRecordingToOutputFileURL:[self videoTempFileURL] recordingDelegate:self];
     [_delegate videoRecordingDidBegin];
 }
@@ -105,6 +108,9 @@
         [_session addOutput:_imageFileOutput];
     }
     [_session commitConfiguration];
+    
+    // Set the video quality.
+    [self setCaptureQuality:AVCaptureSessionPreset640x480];
     
     if (![_session isRunning]) {
         [_session startRunning];

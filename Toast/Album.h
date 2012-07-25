@@ -20,7 +20,7 @@
  A description of the content of the album.
  */
 @property (nonatomic, retain) NSString * abstract;
-@property (nonatomic, retain) NSString * coverArtURL;
+@property (nonatomic, retain) NSString * coverArt;
 @property (nonatomic, retain) NSDate * creationDate;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * token;

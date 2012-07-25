@@ -14,7 +14,7 @@
 @implementation Album
 
 @dynamic abstract;
-@dynamic coverArtURL;
+@dynamic coverArt;
 @dynamic creationDate;
 @dynamic title;
 @dynamic token;

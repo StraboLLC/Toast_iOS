@@ -40,20 +40,20 @@
 /**
  Matches a URL to the cover image for a given album cover name.
  
- @param albumName The string which specifies the name of the cover image of the album.
+ @param coverArt The string which specifies the name of the cover image of the album.
  
- @return The path to the image URL for the album.
+ @return The path to the image for the album relative to the main bundle.
  */
--(NSString *)coverPathForAlbumName:(NSString *)albumName;
+-(NSString *)coverPathForCoverArt:(NSString *)coverArt;
 
 /**
- Matches a name (string) to the cover image URL of an album.
+ Matches a name (string) to the cover image path of an album.
  
- @param coverURL The URL of the cover image of the album.
+ @param coverPath The path of the cover image of the album. This can either be a path relative to the main bundle or an absolute path.
  
- @return The name of the cover art at the specified URL.
+ @return The name of the cover art at the specified path.
  */
--(NSString *)albumNameForCoverURL:(NSURL *)coverURL;
+-(NSString *)coverArtForCoverPath:(NSURL *)coverPath;
 
 
 ///---------------------------------------------------------------------------------------
@@ -64,7 +64,6 @@
  Returns a token that is saved with each album. 
  
  This value is created from a combination of the user's userID and the current date and time so that it is guaranteed to be unique.
- 
  */
 -(NSString *)generateUniqueAlbumToken;
 
@@ -81,6 +80,15 @@
  @return An array of album names with the contents of album_covers/album_names.plist
  */
 -(NSArray *)allAlbumCoverNames;
+
+/**
+ Returns a UIImage with the album cover associated with the cover art string.
+ 
+ @param coverArt The name of the album cover as noted in the album_names.plist file.
+ 
+ @return UIImage A UIImage representation of the cover art.
+ */
+-(UIImage *)coverImageForCoverWithName:(NSString *)coverArt;
 
 ///---------------------------------------------------------------------------------------
 /// @name Retrieving Objects From Core Data
@@ -111,7 +119,7 @@
  
  @param title The user-defined title of the album.
  
- @param coverArt the name of the cover art that should be represented on the album
+ @param coverArt The name of the cover art that should be represented on the album
  
  @param error Any errors that may occur while processing the Managed Object Context request.
  */
