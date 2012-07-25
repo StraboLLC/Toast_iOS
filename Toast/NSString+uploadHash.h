@@ -9,7 +9,7 @@
 #import "Constants.h"
 
 #import <Foundation/Foundation.h>
-#import "NSString+MD5.h"
+#import "NSString+Hash.h"
 
 /**
  Extends NSString with a function to produce a string and a salt hashed with the MD5 algorithm.
