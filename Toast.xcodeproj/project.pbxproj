@@ -35,6 +35,9 @@
 		965E2C5E158258B30007F167 /* STRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C5D158258B30007F167 /* STRAppDelegate.m */; };
 		965E2C61158258B30007F167 /* Toast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 965E2C5F158258B30007F167 /* Toast.xcdatamodeld */; };
 		965E2C68158258C80007F167 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965E2C67158258C80007F167 /* MainStoryboard.storyboard */; };
+		967FA6EE15C9C9F5000D3410 /* STRCaptureDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 967FA6EB15C9C9F5000D3410 /* STRCaptureDataCollector.m */; };
+		967FA6EF15C9C9F5000D3410 /* STRGeoLocationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 967FA6ED15C9C9F5000D3410 /* STRGeoLocationData.m */; };
+		967FA6F215C9CAD4000D3410 /* STRCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 967FA6F115C9CAD4000D3410 /* STRCaptureViewController.m */; };
 		968F39BA159E2EFA0044E9AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 968F39B9159E2EFA0044E9AA /* QuartzCore.framework */; };
 		969F1DA7158687D20094154B /* STRSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969F1DA6158687D20094154B /* STRSignInViewController.m */; };
 		96AE9706158F7B1E007A02D0 /* Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AE9705158F7B1E007A02D0 /* Capture.m */; };
@@ -44,14 +47,11 @@
 		96C002711593774400DDD980 /* STRMapGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C002701593774400DDD980 /* STRMapGalleryViewController.m */; };
 		96C002751593775000DDD980 /* STRTileGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C002741593775000DDD980 /* STRTileGalleryViewController.m */; };
 		96C85223159CE33800C24C24 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C85222159CE33800C24C24 /* AVFoundation.framework */; };
-		96C85227159CE38A00C24C24 /* STRCaptureDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C85226159CE38A00C24C24 /* STRCaptureDataCollector.m */; };
 		96C85229159CFBD100C24C24 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C85228159CFBD100C24C24 /* CoreLocation.framework */; };
 		96DA53111590B7A100C38314 /* STRCoverFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53101590B7A100C38314 /* STRCoverFlowView.m */; };
 		96DA53151590BA0A00C38314 /* STRClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53141590BA0A00C38314 /* STRClipView.m */; };
 		96DA531A1590FD5B00C38314 /* STRAlbumDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DA53191590FD5A00C38314 /* STRAlbumDetailView.m */; };
 		96DA531C1590FD6900C38314 /* STRAlbumDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96DA531B1590FD6900C38314 /* STRAlbumDetailView.xib */; };
-		96DEE4DF159CB83700C1C4F0 /* STRCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DEE4DE159CB83700C1C4F0 /* STRCaptureViewController.m */; };
-		96DEE4EE159CBAB700C1C4F0 /* STRGeoLocationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DEE4ED159CBAB700C1C4F0 /* STRGeoLocationData.m */; };
 		96DF98A31593C507004032E2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DF98A11593C507004032E2 /* Default.png */; };
 		96DF98A41593C507004032E2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96DF98A21593C507004032E2 /* Default@2x.png */; };
 		96DF98A71593CA18004032E2 /* STRUserPreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DF98A61593CA18004032E2 /* STRUserPreferencesManager.m */; };
@@ -119,6 +119,12 @@
 		965E2C5D158258B30007F167 /* STRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STRAppDelegate.m; sourceTree = "<group>"; };
 		965E2C60158258B30007F167 /* Toast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Toast.xcdatamodel; sourceTree = "<group>"; };
 		965E2C67158258C80007F167 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		967FA6EA15C9C9F5000D3410 /* STRCaptureDataCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCaptureDataCollector.h; sourceTree = "<group>"; };
+		967FA6EB15C9C9F5000D3410 /* STRCaptureDataCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCaptureDataCollector.m; sourceTree = "<group>"; };
+		967FA6EC15C9C9F5000D3410 /* STRGeoLocationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRGeoLocationData.h; sourceTree = "<group>"; };
+		967FA6ED15C9C9F5000D3410 /* STRGeoLocationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRGeoLocationData.m; sourceTree = "<group>"; };
+		967FA6F015C9CAD4000D3410 /* STRCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCaptureViewController.h; sourceTree = "<group>"; };
+		967FA6F115C9CAD4000D3410 /* STRCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCaptureViewController.m; sourceTree = "<group>"; };
 		968F39B9159E2EFA0044E9AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		969F1DA5158687D20094154B /* STRSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRSignInViewController.h; sourceTree = "<group>"; };
 		969F1DA6158687D20094154B /* STRSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRSignInViewController.m; sourceTree = "<group>"; };
@@ -135,8 +141,6 @@
 		96C002731593775000DDD980 /* STRTileGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRTileGalleryViewController.h; sourceTree = "<group>"; };
 		96C002741593775000DDD980 /* STRTileGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRTileGalleryViewController.m; sourceTree = "<group>"; };
 		96C85222159CE33800C24C24 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		96C85225159CE38900C24C24 /* STRCaptureDataCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCaptureDataCollector.h; sourceTree = "<group>"; };
-		96C85226159CE38A00C24C24 /* STRCaptureDataCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCaptureDataCollector.m; sourceTree = "<group>"; };
 		96C85228159CFBD100C24C24 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		96DA530F1590B7A100C38314 /* STRCoverFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCoverFlowView.h; sourceTree = "<group>"; };
 		96DA53101590B7A100C38314 /* STRCoverFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCoverFlowView.m; sourceTree = "<group>"; };
@@ -145,10 +149,6 @@
 		96DA53181590FD5A00C38314 /* STRAlbumDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRAlbumDetailView.h; sourceTree = "<group>"; };
 		96DA53191590FD5A00C38314 /* STRAlbumDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRAlbumDetailView.m; sourceTree = "<group>"; };
 		96DA531B1590FD6900C38314 /* STRAlbumDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STRAlbumDetailView.xib; sourceTree = "<group>"; };
-		96DEE4DD159CB83700C1C4F0 /* STRCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCaptureViewController.h; sourceTree = "<group>"; };
-		96DEE4DE159CB83700C1C4F0 /* STRCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCaptureViewController.m; sourceTree = "<group>"; };
-		96DEE4EC159CBAB700C1C4F0 /* STRGeoLocationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRGeoLocationData.h; sourceTree = "<group>"; };
-		96DEE4ED159CBAB700C1C4F0 /* STRGeoLocationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRGeoLocationData.m; sourceTree = "<group>"; };
 		96DF98A11593C507004032E2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		96DF98A21593C507004032E2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		96DF98A51593CA18004032E2 /* STRUserPreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRUserPreferencesManager.h; sourceTree = "<group>"; };
@@ -330,8 +330,8 @@
 				964C765815891DFF0020E315 /* STRRootViewController.m */,
 				96F79B7A158BC91B00F29BEC /* STRPreferencesViewController.h */,
 				96F79B7B158BC91B00F29BEC /* STRPreferencesViewController.m */,
-				96DEE4DD159CB83700C1C4F0 /* STRCaptureViewController.h */,
-				96DEE4DE159CB83700C1C4F0 /* STRCaptureViewController.m */,
+				967FA6F015C9CAD4000D3410 /* STRCaptureViewController.h */,
+				967FA6F115C9CAD4000D3410 /* STRCaptureViewController.m */,
 				96561D381592555D00204E36 /* Gallery VCs */,
 				96F79B72158BBC8A00F29BEC /* Album VCs */,
 				96DFCB1515868FDF002BA57C /* Log In */,
@@ -356,10 +356,10 @@
 		96DEE4E8159CB93500C1C4F0 /* Capture Support */ = {
 			isa = PBXGroup;
 			children = (
-				96C85225159CE38900C24C24 /* STRCaptureDataCollector.h */,
-				96C85226159CE38A00C24C24 /* STRCaptureDataCollector.m */,
-				96DEE4EC159CBAB700C1C4F0 /* STRGeoLocationData.h */,
-				96DEE4ED159CBAB700C1C4F0 /* STRGeoLocationData.m */,
+				967FA6EA15C9C9F5000D3410 /* STRCaptureDataCollector.h */,
+				967FA6EB15C9C9F5000D3410 /* STRCaptureDataCollector.m */,
+				967FA6EC15C9C9F5000D3410 /* STRGeoLocationData.h */,
+				967FA6ED15C9C9F5000D3410 /* STRGeoLocationData.m */,
 			);
 			name = "Capture Support";
 			sourceTree = "<group>";
@@ -582,6 +582,9 @@
 				963EE5201587BF870046BD04 /* ToastLogicTests.m in Sources */,
 				96F9CFC215C071C600CB5B20 /* NSDate+Date_Utilities.m in Sources */,
 				96F9CFC415C071C600CB5B20 /* NSString+Hash.m in Sources */,
+				967FA6EE15C9C9F5000D3410 /* STRCaptureDataCollector.m in Sources */,
+				967FA6EF15C9C9F5000D3410 /* STRGeoLocationData.m in Sources */,
+				967FA6F215C9CAD4000D3410 /* STRCaptureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,9 +616,6 @@
 				96C002711593774400DDD980 /* STRMapGalleryViewController.m in Sources */,
 				96C002751593775000DDD980 /* STRTileGalleryViewController.m in Sources */,
 				96DF98A71593CA18004032E2 /* STRUserPreferencesManager.m in Sources */,
-				96DEE4DF159CB83700C1C4F0 /* STRCaptureViewController.m in Sources */,
-				96DEE4EE159CBAB700C1C4F0 /* STRGeoLocationData.m in Sources */,
-				96C85227159CE38A00C24C24 /* STRCaptureDataCollector.m in Sources */,
 				96F9CFC115C071C600CB5B20 /* NSDate+Date_Utilities.m in Sources */,
 				96F9CFC315C071C600CB5B20 /* NSString+Hash.m in Sources */,
 			);
@@ -691,6 +691,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Thomas Beatty (HAF49YT948)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -706,6 +707,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "B640008A-FB67-4303-9BAE-D4E2365AFD11";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -716,6 +718,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Thomas Beatty (HAF49YT948)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -725,6 +728,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "B640008A-FB67-4303-9BAE-D4E2365AFD11";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -733,11 +737,15 @@
 		965E2C65158258B30007F167 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Thomas Beatty (HAF49YT948)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Thomas Beatty (HAF49YT948)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toast/Toast-Prefix.pch";
 				INFOPLIST_FILE = "Toast/Toast-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "B640008A-FB67-4303-9BAE-D4E2365AFD11";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B640008A-FB67-4303-9BAE-D4E2365AFD11";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -745,13 +753,15 @@
 		965E2C66158258B30007F167 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Beatty";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Thomas Beatty (HAF49YT948)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Thomas Beatty (HAF49YT948)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toast/Toast-Prefix.pch";
 				INFOPLIST_FILE = "Toast/Toast-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7F0633A1-9BE9-4AD6-AA3F-2FE16DB9339D";
+				PROVISIONING_PROFILE = "B640008A-FB67-4303-9BAE-D4E2365AFD11";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B640008A-FB67-4303-9BAE-D4E2365AFD11";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -17,6 +17,7 @@
 @implementation STRGeoLocationData
 
 -(id)init {
+    self = [super init];
     if (self) {
         dataPoints = [[NSMutableArray alloc] init];
     }
@@ -40,8 +41,6 @@
 
 -(void)writeDataPointsToTempFile {
     
-    NSLog(@"STRGeoLocationData: Writing data points to JSON file.");
-    
     NSDictionary * points = [NSDictionary dictionaryWithObject:dataPoints forKey:@"points"];
     
     NSOutputStream * output = [NSOutputStream outputStreamToFileAtPath:[self tempFilePath] append:NO];
@@ -61,9 +60,13 @@
     NSString *outputPath = [[NSString alloc] initWithFormat:@"%@%@%@", NSTemporaryDirectory(), @"output", @".json"];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
+    // Remove the old file
     if ([fileManager fileExistsAtPath:outputPath]) {
         [fileManager removeItemAtPath:outputPath error:nil];
     }
+    // Create a new file
+    [fileManager createFileAtPath:outputPath contents:nil attributes:nil];
+    
     return outputPath;
 }
 

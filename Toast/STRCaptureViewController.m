@@ -22,7 +22,7 @@
 /**
  Set up the camera capture object.
  
- Set up the STRCaptureDataCollector to receive data from video and audio sources. Prepare to record either audio or video.
+ Set up the STRCaptureDataCollector to receive data from video and audio sources. Prepare to record either an image or video.
  */
 -(void)setUpCaptureServices;
 
@@ -48,6 +48,19 @@
 -(void)stopCapturingVideo;
 -(void)captureStillImage;
 
+// -- File Handling -- //
+
+/**
+ Coppies the temporary files to a more permanent and organized location.
+ 
+ This method is called whenever a capture has finished recording to the temp files and is ready to be moved into the documents file heirarchy.
+ 
+ @param captureType The media type captured by the recorder. This value can either be the string @"video" or @"image" for now.
+ 
+ @warning This code should probably be in a model. The logic for moving files should be located somewhere else, not in the view controller, but this works for now.
+ */
+-(void)resaveTemporaryFilesOfType:(NSString *)captureType;
+
 @end
 
 @interface STRCaptureViewController (STRCaptureDataControllerDelegate) <STRCaptureDataCollectorDelegate>
@@ -72,9 +85,11 @@
 
 @end
 
-@implementation STRCaptureViewController
+@interface STRCaptureViewController ()
 
-@synthesize delegate = _delegate;
+@end
+
+@implementation STRCaptureViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -89,7 +104,7 @@
 {
     [super viewDidLoad];
     
-    preferencesManager = [STRUserPreferencesManager preferencesForCurrentUser];
+    //preferencesManager = [STRUserPreferencesManager preferencesForCurrentUser];
     
     mediaStartTime = CACurrentMediaTime();
     isRecording = NO;
@@ -100,6 +115,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+
     // Listen for orientation change events
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceDidRotate) name:UIDeviceOrientationDidChangeNotification object:nil];
@@ -109,13 +125,20 @@
     [self setUpLocationServices];
     [self setUpCaptureServices];
     
-    // Now that the capture services are set up, 
-    // load the video preview layer with the captureSesson
+    // Now that the capture services are set up,
+    // load the video preview layer with the captureSession
     capturePreviewLayer = [AVCaptureVideoPreviewLayer layerWithSession:[captureDataCollector session]];
     capturePreviewLayer.frame = videoPreviewLayer.bounds;
     capturePreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     [videoPreviewLayer.layer addSublayer:capturePreviewLayer];
     
+    // Set up the current orientation
+    currentOrientation = [[UIDevice currentDevice] orientation];
+    
+    // By default, make sure the activity indicator is off
+    if (!isRecording) {
+        [activityIndicator stopAnimating];
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -136,14 +159,11 @@
 }
 
 -(void)deviceDidRotate {
-    NSLog(@"STRCaptureViewController: Orientation change requested.");
-    
     UIDeviceOrientation newOrientation = [[UIDevice currentDevice] orientation];
-    
     if (currentOrientation
         && newOrientation
-        && (currentOrientation != newOrientation) 
-        && (!isRecording) 
+        && (currentOrientation != newOrientation)
+        && (!isRecording)
         && (newOrientation != UIDeviceOrientationFaceUp)
         && (newOrientation != UIDeviceOrientationFaceDown)) {
         
@@ -153,24 +173,39 @@
         // Update the Location Manager with the new orientation setting.
         locationManager.headingOrientation = currentOrientation;
         
+        NSLog(@"Orientation changed to: %i", currentOrientation);
+        
     }
+}
+
+#pragma mark - Class Methods
+
++(STRCaptureViewController *)captureManager {
+    UIStoryboard * recorderStoryboard = [UIStoryboard storyboardWithName:@"STRMultiRecorderStoryboard" bundle:[NSBundle mainBundle]];
+    return [recorderStoryboard instantiateViewControllerWithIdentifier:@"captureViewController"];
 }
 
 #pragma mark - Button Handling
 
 -(IBAction)doneButtonWasPressed:(id)sender {
-    NSLog(@"STRCaptureViewController: Dismissing capture controller.");
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate parentShouldDismissCaptureViewController:self];
 }
 
 -(IBAction)recordButtonWasPressed:(id)sender {
     if (isRecording) {
-        NSLog(@"STRCaptureViewController: Rec button pressed - stopping capture session.");
+        // Stop capturing
         [self stopCapturingVideo];
+        
+        // Start the activity spinner
+        [activityIndicator startAnimating];
+        
     } else {
-        NSLog(@"STRCaptureViewController: Rec button pressed - starting capture session.");
         [self startCapturingVideo];
     }
+}
+
+-(IBAction)tempImgButtonPressed:(id)sender {
+    [self captureStillImage];
 }
 
 @end
@@ -183,8 +218,7 @@
     // Set up the location support
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
-    locationManager.purpose = @"Geotagging your Toast video captures.";
-    locationManager.desiredAccuracy = preferencesManager.desiredLocationAccuracy;
+    //locationManager.desiredAccuracy = preferencesManager.desiredLocationAccuracy;
     [locationManager startUpdatingHeading];
     [locationManager startUpdatingLocation];
 }
@@ -213,15 +247,15 @@
 
 -(void)recordCurrentLocationToGeodataObject {
     // Add a point taken from the locationManager
-    NSLog(@"STRCaptureViewController: Recording a geodata point");
     [geoLocationData addDataPointWithLatitude:locationManager.location.coordinate.latitude
-                                    longitude:locationManager.location.coordinate.longitude 
-                                      heading:locationManager.heading.trueHeading 
-                                    timestamp:(CACurrentMediaTime() - mediaStartTime) 
+                                    longitude:locationManager.location.coordinate.longitude
+                                      heading:locationManager.heading.trueHeading
+                                    timestamp:(CACurrentMediaTime() - mediaStartTime)
                                      accuracy:locationManager.location.horizontalAccuracy];
 }
 
 -(void)startCapturingVideo {
+    geoLocationData = [[STRGeoLocationData alloc] init];
     [captureDataCollector startCapturingVideoWithOrientation:currentOrientation];
 }
 
@@ -230,6 +264,40 @@
 }
 
 -(void)captureStillImage {
+    // Write a new geoLocationData file
+    geoLocationData = [[STRGeoLocationData alloc] init];
+    initialLocation = locationManager.location;
+    initialHeading = locationManager.heading;
+    [geoLocationData addDataPointWithLatitude:locationManager.location.coordinate.latitude
+                                    longitude:locationManager.location.coordinate.longitude
+                                      heading:locationManager.heading.trueHeading
+                                    timestamp:0.00
+                                     accuracy:locationManager.location.horizontalAccuracy];
+    [geoLocationData writeDataPointsToTempFile];
+    
+    // Capture the image
+    [captureDataCollector captureStillImageWithOrientation:currentOrientation];
+}
+
+#pragma mark - File Handling
+
+-(void)resaveTemporaryFilesOfType:(NSString *)captureType {
+    
+    // Perform saving actions
+    STRCaptureFileOrganizer * fileOrganizer = [[STRCaptureFileOrganizer alloc] init];
+    
+    if ([captureType isEqualToString:@"video"]) {
+        // Move video files
+        [fileOrganizer saveTempVideoFilesWithInitialLocation:initialLocation heading:initialHeading];
+    } else if ([captureType isEqualToString:@"image"]) {
+        // Move image files
+        [fileOrganizer saveTempImageFilesWithInitialLocation:initialLocation heading:initialHeading];
+    } else {
+        NSLog(@"Method resaveTemporaryFilesOfType: called with improper parameters. Please see documentation.");
+    }
+    
+    // Stop the activity spinner
+    [activityIndicator stopAnimating];
     
 }
 
@@ -261,6 +329,7 @@
     }
     
     // Update the compass
+    
 }
 
 -(BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager {
@@ -279,7 +348,14 @@
     
     // Force record the first geodata point
     mediaStartTime = CACurrentMediaTime();
-    [self recordCurrentLocationToGeodataObject];
+    // Write an initial point to the data
+    initialLocation = locationManager.location;
+    initialHeading = locationManager.heading;
+    [geoLocationData addDataPointWithLatitude:locationManager.location.coordinate.latitude
+                                    longitude:locationManager.location.coordinate.longitude
+                                      heading:locationManager.heading.trueHeading
+                                    timestamp:0.00
+                                     accuracy:locationManager.location.horizontalAccuracy];
 }
 
 -(void)videoRecordingDidEnd {
@@ -290,13 +366,16 @@
     [geoLocationData writeDataPointsToTempFile];
     
     // Write files to a more permanent location
-    
-    // Add video to the user's album
-    
+    [self resaveTemporaryFilesOfType:@"video"];
 }
 
 -(void)videoRecordingDidFailWithError:(NSError *)error {
     NSLog(@"STRCaptureViewController: !!!ERROR: Video recording failed: %@", error.description);
+}
+
+-(void)stillImageWasCaptured {
+    // Save the temp files
+    [self resaveTemporaryFilesOfType:@"image"];
 }
 
 @end

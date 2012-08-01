@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+#import <UIKit/UIKit.h>
 
 @protocol STRCaptureDataCollectorDelegate
 
@@ -16,6 +17,7 @@
 -(void)videoRecordingDidBegin;
 -(void)videoRecordingDidEnd;
 -(void)videoRecordingDidFailWithError:(NSError *)error;
+-(void)stillImageWasCaptured;
 
 @end
 
@@ -25,13 +27,13 @@
  Upon initialization, this object sets up a recording session with some default values. Values like the recording quality can be altered by calling methods like setCaptureQuality.
  */
 @interface STRCaptureDataCollector : NSObject {
-    id delegate;
+    id _delegate;
     
-    AVCaptureSession * session;
-    AVCaptureDeviceInput * videoInput;
-    AVCaptureDeviceInput * audioInput;
-    AVCaptureMovieFileOutput * movieFileOutput;
-    AVCaptureStillImageOutput * imageFileOutput;
+    AVCaptureSession * _session;
+    AVCaptureDeviceInput * _videoInput;
+    AVCaptureDeviceInput * _audioInput;
+    AVCaptureMovieFileOutput * _movieFileOutput;
+    AVCaptureStillImageOutput * _imageFileOutput;
 }
 
 @property(strong)id delegate;
@@ -62,6 +64,6 @@
  */
 -(void)startCapturingVideoWithOrientation:(AVCaptureVideoOrientation)deviceOrientation;
 -(void)stopCapturingVideo;
--(void)captureStillImage;
+-(void)captureStillImageWithOrientation:(UIDeviceOrientation)deviceOrientation;
 
 @end
