@@ -15,6 +15,7 @@
 		9611076B15939A5600374A55 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9611076415939A5600374A55 /* icon@2x.png */; };
 		9611076C15939A5600374A55 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 9611076515939A5600374A55 /* iTunesArtwork */; };
 		9629BFE9158A3177007E8291 /* STRRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9629BFE8158A3177007E8291 /* STRRegistrationViewController.m */; };
+		963B554D15CAC65F0082B864 /* STRCaptureFileOrganizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 963B554C15CAC65F0082B864 /* STRCaptureFileOrganizer.m */; };
 		963EE5151587BF870046BD04 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 963EE5141587BF870046BD04 /* SenTestingKit.framework */; };
 		963EE5161587BF870046BD04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4B158258B30007F167 /* UIKit.framework */; };
 		963EE5171587BF870046BD04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 965E2C4D158258B30007F167 /* Foundation.framework */; };
@@ -88,6 +89,8 @@
 		9611076515939A5600374A55 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		9629BFE7158A3177007E8291 /* STRRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRRegistrationViewController.h; sourceTree = "<group>"; };
 		9629BFE8158A3177007E8291 /* STRRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRRegistrationViewController.m; sourceTree = "<group>"; };
+		963B554B15CAC65F0082B864 /* STRCaptureFileOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STRCaptureFileOrganizer.h; sourceTree = "<group>"; };
+		963B554C15CAC65F0082B864 /* STRCaptureFileOrganizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STRCaptureFileOrganizer.m; sourceTree = "<group>"; };
 		963EE5131587BF870046BD04 /* ToastLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToastLogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		963EE5141587BF870046BD04 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		963EE51A1587BF870046BD04 /* ToastLogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToastLogicTests-Info.plist"; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 				967FA6EB15C9C9F5000D3410 /* STRCaptureDataCollector.m */,
 				967FA6EC15C9C9F5000D3410 /* STRGeoLocationData.h */,
 				967FA6ED15C9C9F5000D3410 /* STRGeoLocationData.m */,
+				963B554B15CAC65F0082B864 /* STRCaptureFileOrganizer.h */,
+				963B554C15CAC65F0082B864 /* STRCaptureFileOrganizer.m */,
 			);
 			name = "Capture Support";
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 				967FA6EE15C9C9F5000D3410 /* STRCaptureDataCollector.m in Sources */,
 				967FA6EF15C9C9F5000D3410 /* STRGeoLocationData.m in Sources */,
 				967FA6F215C9CAD4000D3410 /* STRCaptureViewController.m in Sources */,
+				963B554D15CAC65F0082B864 /* STRCaptureFileOrganizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

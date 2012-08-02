@@ -7,6 +7,7 @@
 //
 
 #import "STRCaptureObjectManager.h"
+#import "STRAppDelegate.h"
 
 @implementation STRCaptureObjectManager
 
@@ -32,6 +33,48 @@
         }
     }
     return captures;
+}
+
+#pragma mark - New Captures
+-(Capture *)newCaptureWithToken:(NSString *)token type:(NSString *)type latitude:(double)latitude longitude:(double)longitude {
+    
+    NSManagedObjectContext * context = [(STRAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+    
+    // Path constants
+    NSString * capturesDirectory = @"StraboCaptures";
+    NSString * mediaExtension;
+    if ([type isEqualToString:@"video"]) {
+        mediaExtension = @".mov";
+    } else if ([type isEqualToString:@"image"]) {
+        mediaExtension = @".jpg";
+    } else {
+        mediaExtension = @".unknown";
+        NSLog(@"STRCaptureObjectManager: Unknown file type detected. Unsure what file extension to append to path.");
+    }
+    
+    Capture * newCapture = [NSEntityDescription insertNewObjectForEntityForName:@"Capture" inManagedObjectContext:context];
+    newCapture.creationDate = [NSDate date];
+    newCapture.geodataPath = [NSString stringWithFormat:@"%@/%@/%@.json", token, capturesDirectory, token];
+    newCapture.latitude = @(latitude);
+    newCapture.longitude = @(longitude);
+    newCapture.mediaPath = [NSString stringWithFormat:@"%@/%@/%@%@", token, capturesDirectory, token, mediaExtension];
+    newCapture.thumbnailPath = [NSString stringWithFormat:@"%@/%@/%@.png", token, capturesDirectory, token];
+    newCapture.title = @"Untitled Capture";
+    newCapture.token = token;
+    newCapture.type = type;
+    newCapture.uploadDate = [NSDate dateWithTimeIntervalSince1970:0];
+    
+    // Save the newly created capture to core data
+    [[self album] addCapturesObject:newCapture];
+    NSError * error;
+    [context save:&error];
+    if (error) {
+        NSLog(@"STRCaptureObjectManager: !!!Error saving new capture to the managed object context: %@", error.localizedDescription);
+        return nil;
+    } else {
+        NSLog(@"STRAlbumManager: New capture savedsuccessfully to the managed object context.");
+        return newCapture;
+    }
 }
 
 #pragma mark - Utility Methods

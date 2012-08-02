@@ -15,7 +15,9 @@
 #import "STRGeoLocationData.h"
 
 // File management
+#import "CoreDataObjects.h"
 #import "STRCaptureFileOrganizer.h"
+
 
 /**
  Capture delegate. Discussion goes here.
@@ -55,6 +57,8 @@
     
     id _delegate;
     BOOL isRecording;
+    
+    Album * album;
     
     IBOutlet UIActivityIndicatorView * activityIndicator;
     

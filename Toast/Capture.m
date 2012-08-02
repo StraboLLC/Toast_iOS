@@ -13,11 +13,11 @@
 @implementation Capture
 
 @dynamic creationDate;
-@dynamic geodataURL;
+@dynamic geodataPath;
 @dynamic latitude;
 @dynamic longitude;
-@dynamic mediaURL;
-@dynamic thumbnailURL;
+@dynamic mediaPath;
+@dynamic thumbnailPath;
 @dynamic title;
 @dynamic token;
 @dynamic type;

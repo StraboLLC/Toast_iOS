@@ -43,6 +43,26 @@
 -(NSArray *)allVideoCaptures;
 
 ///---------------------------------------------------------------------------------------
+/// @name New Captures
+///---------------------------------------------------------------------------------------
+
+/**
+ Adds a new capture to the currently specified album.
+ 
+ Creates a new capture and automatically fills out the following properties:
+ - creationDate
+ - geodataPath
+ - mediaPath
+ - thumbnailPath
+ - title
+ - token
+ - type
+ - latitude
+ - longitude
+ */
+-(Capture *)newCaptureWithToken:(NSString *)token type:(NSString *)type latitude:(double)latitude longitude:(double)longitude;
+
+///---------------------------------------------------------------------------------------
 /// @name Utility Methods
 ///---------------------------------------------------------------------------------------
 
